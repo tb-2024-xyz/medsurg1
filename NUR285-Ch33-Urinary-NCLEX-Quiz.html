@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NUR 285 Exam 1: Chapter 33: Urinary Disorders</title>
+<style>
+:root {
+  --ink: #16263a;
+  --muted: #5a6b7d;
+  --paper: #f5f9f9;
+  --card: #ffffff;
+  --line: #cfe0e0;
+  --teal: #0e6b6b;
+  --teal-deep: #0a4f4f;
+  --teal-soft: #dcefef;
+  --right: #2b7a4b;
+  --right-soft: #e1f2e8;
+  --wrong: #b3412a;
+  --wrong-soft: #f8e4de;
+  --amber: #b7791f;
+  --focus: #1d4ed8;
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e6eef3;
+    --muted: #9db0bf;
+    --paper: #0f1a24;
+    --card: #162433;
+    --line: #28404f;
+    --teal: #4fc3c3;
+    --teal-deep: #7bd9d9;
+    --teal-soft: #17353d;
+    --right: #66c48a;
+    --right-soft: #17332560;
+    --wrong: #f08c75;
+    --wrong-soft: #3b2420;
+    --amber: #e5b25d;
+    --focus: #8fb4ff;
+  }
+}
+
+* { box-sizing: border-box; }
+html { font-size: 17px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
+}
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+button { font: inherit; color: inherit; }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* ----- header ----- */
+.top { border-bottom: 1px solid var(--line); background: var(--card); }
+.top .wrap { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding-top: 1rem; padding-bottom: 1rem; }
+.brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; margin: 0; }
+.brand small { font-family: var(--sans); font-weight: 400; color: var(--muted); font-size: 0.85rem; margin-left: 0.5rem; }
+.linkbtn { background: none; border: 0; color: var(--teal); text-decoration: underline; cursor: pointer; padding: 0.25rem; }
+
+main { padding: 1.75rem 0 4rem; }
+h2 { font-family: var(--serif); font-size: 1.5rem; margin: 0 0 0.35rem; }
+h3 { font-family: var(--serif); font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+.lede { color: var(--muted); margin: 0 0 1.5rem; max-width: 60ch; }
+
+/* ----- panels ----- */
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 1.25rem; margin-bottom: 1.25rem; }
+.panel > h3:first-child { margin-top: 0; }
+
+.modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.mode { position: relative; display: block; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.85rem 1rem; cursor: pointer; background: var(--card); }
+.mode input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.mode strong { display: block; font-family: var(--serif); font-size: 1.05rem; }
+.mode span { color: var(--muted); font-size: 0.88rem; }
+.mode:has(input:checked) { border-color: var(--teal); background: var(--teal-soft); }
+.mode:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+fieldset { border: 0; padding: 0; margin: 0; }
+legend { font-family: var(--serif); font-weight: 700; margin-bottom: 0.4rem; padding: 0; }
+.chapter { margin: 0 0 0.9rem; }
+.chapter-head { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; margin-bottom: 0.3rem; }
+.topics { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip { position: relative; display: inline-flex; align-items: center; gap: 0.35rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.8rem; font-size: 0.9rem; cursor: pointer; background: var(--card); }
+.chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.chip:has(input:checked) { background: var(--teal); color: #fff; border-color: var(--teal); }
+@media (prefers-color-scheme: dark) { .chip:has(input:checked) { color: #0b1620; } }
+.chip:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+.chip em { font-style: normal; opacity: 0.75; font-size: 0.8rem; }
+
+.row { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; margin-top: 1rem; }
+select { font: inherit; padding: 0.35rem 0.5rem; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--ink); }
+.check { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+.btn { background: var(--teal); color: #fff; border: 0; border-radius: 8px; padding: 0.65rem 1.3rem; font-weight: 600; cursor: pointer; }
+@media (prefers-color-scheme: dark) { .btn { color: #0b1620; } }
+.btn:hover { background: var(--teal-deep); }
+@media (prefers-color-scheme: dark) { .btn:hover { color: #0b1620; } }
+.btn.ghost { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
+.btn.ghost:hover { background: var(--teal-soft); }
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.25rem; align-items: center; }
+.spacer { flex: 1; }
+
+/* ----- progress by topic ----- */
+.bars { display: grid; gap: 0.6rem; }
+.bar-row { display: grid; grid-template-columns: minmax(150px, 1.2fr) 3fr auto; gap: 0.75rem; align-items: center; font-size: 0.92rem; }
+.bar { height: 10px; background: var(--teal-soft); border-radius: 999px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--teal); }
+.bar i.low { background: var(--wrong); }
+.bar i.mid { background: var(--amber); }
+.bar i.hi { background: var(--right); }
+.num { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 6.5em; text-align: right; }
+
+/* ----- rhythm strip (progress) ----- */
+.strip { display: flex; align-items: flex-end; gap: 0; margin: 0 0 1.25rem; overflow-x: auto; padding-bottom: 4px; }
+.beat { flex: 0 0 auto; width: 28px; height: 30px; padding: 0; background: none; border: 0; cursor: pointer; }
+.beat svg { display: block; width: 100%; height: 100%; }
+.beat path { fill: none; stroke: var(--line); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.beat.seen path { stroke: var(--teal); }
+.beat.right path { stroke: var(--right); }
+.beat.wrong path { stroke: var(--wrong); }
+.beat.flagged path { stroke-dasharray: 3 2; }
+.beat.current { background: var(--teal-soft); border-radius: 4px; }
+.plainbar { height: 8px; background: var(--teal-soft); border-radius: 999px; overflow: hidden; margin: 0 0 1.25rem; }
+.plainbar i { display: block; height: 100%; background: var(--teal); }
+
+/* ----- question ----- */
+.meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; color: var(--muted); font-size: 0.88rem; margin-bottom: 0.6rem; }
+.tag { background: var(--teal-soft); color: var(--teal-deep); border-radius: 4px; padding: 0.1rem 0.5rem; }
+.timer { margin-left: auto; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+.timer.low { color: var(--wrong); }
+.stem { font-family: var(--serif); font-size: 1.2rem; line-height: 1.45; margin: 0 0 1rem; max-width: 62ch; }
+.hint { color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 0.9rem; }
+.bars + .hint { margin: 1rem 0 0; }
+
+.opts { display: grid; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.opt { position: relative; display: flex; gap: 0.75rem; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.7rem 0.9rem; background: var(--card); cursor: pointer; }
+.opt input { margin-top: 0.3rem; accent-color: var(--teal); }
+.opt:has(input:checked) { border-color: var(--teal); background: var(--teal-soft); }
+.opt:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+.opt.right, .opt.right:has(input:checked) { border-color: var(--right); background: var(--right-soft); }
+.opt.wrong, .opt.wrong:has(input:checked) { border-color: var(--wrong); background: var(--wrong-soft); }
+.opt.missed { border-style: dashed; border-color: var(--right); }
+.locked .opt { cursor: default; }
+.mark { margin-left: auto; font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
+.right .mark { color: var(--right); }
+.wrong .mark { color: var(--wrong); }
+.missed .mark { color: var(--right); }
+
+.fill { width: 100%; max-width: 24rem; font: inherit; padding: 0.6rem 0.75rem; border: 1.5px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); }
+.fill.right { border-color: var(--right); background: var(--right-soft); }
+.fill.wrong { border-color: var(--wrong); background: var(--wrong-soft); }
+
+.seq { display: grid; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.seq li { display: flex; align-items: center; gap: 0.6rem; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.55rem 0.75rem; background: var(--card); }
+.seq .pos { font-weight: 700; color: var(--teal); min-width: 1.4em; }
+.seq .txt { flex: 1; }
+.seq button { border: 1px solid var(--line); background: var(--card); border-radius: 6px; width: 2rem; height: 2rem; cursor: pointer; }
+.seq button[disabled] { opacity: 0.35; cursor: not-allowed; }
+.seq li.right { border-color: var(--right); background: var(--right-soft); }
+.seq li.wrong { border-color: var(--wrong); background: var(--wrong-soft); }
+
+.feedback { margin-top: 1.1rem; border-left: 4px solid var(--teal); background: var(--teal-soft); padding: 0.8rem 1rem; border-radius: 0 8px 8px 0; }
+.feedback.right { border-color: var(--right); background: var(--right-soft); }
+.feedback.wrong { border-color: var(--wrong); background: var(--wrong-soft); }
+.feedback strong { display: block; margin-bottom: 0.25rem; }
+.feedback p { margin: 0.25rem 0 0; }
+.feedback .ref { color: var(--muted); font-size: 0.88rem; }
+
+/* ----- results ----- */
+.score { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.25rem; margin-bottom: 0.5rem; }
+.score .big { font-family: var(--serif); font-size: 2.6rem; font-weight: 700; line-height: 1; }
+.review { display: grid; gap: 0.75rem; margin-top: 1rem; }
+.review details { border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+.review summary { cursor: pointer; padding: 0.7rem 0.9rem; display: flex; gap: 0.6rem; align-items: baseline; }
+.review summary .ok { color: var(--right); font-weight: 700; }
+.review summary .no { color: var(--wrong); font-weight: 700; }
+.review .body { padding: 0 0.9rem 0.9rem; }
+.review .body p { margin: 0.35rem 0; }
+.empty { color: var(--muted); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .modes { grid-template-columns: 1fr; }
+  .bar-row { grid-template-columns: 1fr; gap: 0.2rem; }
+  .num { text-align: left; }
+  .stem { font-size: 1.12rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bar i, .plainbar i { transition: width 0.4s ease; }
+}
+
+:root { --amber-soft: #f6e7c8; }
+@media (prefers-color-scheme: dark) { :root { --amber-soft: #3a3020; } }
+
+.badge { border-radius: 4px; padding: 0.1rem 0.5rem; font-size: 0.82rem; font-weight: 600; }
+.badge.med { background: var(--teal-soft); color: var(--teal-deep); }
+.badge.hard { background: var(--wrong-soft); color: var(--wrong); }
+.badge.pri { background: var(--amber-soft); color: var(--amber); border: 1px solid var(--amber); }
+.cov-note { margin: 0 0 0.9rem; }
+
+.feedback h4 { font-family: var(--serif); font-size: 1rem; margin: 0.9rem 0 0.2rem; }
+.feedback p { margin: 0.3rem 0; max-width: 68ch; }
+.feedback .tip { margin-top: 0.8rem; padding: 0.5rem 0.75rem; background: var(--card); border-radius: 6px; border: 1px dashed var(--line); }
+.review .feedback { margin-top: 0.5rem; }
+
+.vis { margin: 0.9rem 0; padding: 0.75rem; background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow-x: auto; }
+.vis svg { display: block; width: 100%; max-width: 680px; height: auto; margin: 0 auto; }
+.vis .t { fill: var(--ink); font: 13px var(--sans); }
+.vis .tb { fill: var(--ink); font: 700 13px var(--sans); }
+.vis .tm { fill: var(--muted); font: 12px var(--sans); }
+.vis .tr { fill: var(--wrong); font: 700 13px var(--sans); }
+.vis .tg { fill: var(--right); font: 700 13px var(--sans); }
+.vis .ln { stroke: var(--ink); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.vis .ln-teal { stroke: var(--teal); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.vis .ln-red { stroke: var(--wrong); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.vis .ln-green { stroke: var(--right); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.vis .dash { stroke: var(--muted); fill: none; stroke-width: 1.5; stroke-dasharray: 5 4; }
+.vis .arrow { stroke: var(--muted); stroke-width: 2; fill: none; marker-end: url(#ah); }
+.vis .mk { fill: var(--muted); }
+.vis .fteal { fill: var(--teal-soft); stroke: var(--teal); stroke-width: 1.5; }
+.vis .fgreen { fill: var(--right-soft); stroke: var(--right); stroke-width: 1.5; }
+.vis .fred { fill: var(--wrong-soft); stroke: var(--wrong); stroke-width: 1.5; }
+.vis .famber { fill: var(--amber-soft); stroke: var(--amber); stroke-width: 1.5; }
+.vis .fplain { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+.vis .fpeak { fill: var(--teal); stroke: var(--teal); }
+.vis .flight { fill: var(--teal-soft); stroke: var(--teal); stroke-width: 1; }
+.vis .fink { fill: var(--ink); }
+
+.vtable { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+.vtable th, .vtable td { border: 1px solid var(--line); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+.vtable thead th { background: var(--teal-soft); }
+.vtable tbody th { background: var(--paper); white-space: nowrap; }
+.swatch { display: inline-block; width: 1rem; height: 1rem; border-radius: 50%; vertical-align: -2px; margin-right: 0.4rem; border: 1px solid rgba(0, 0, 0, 0.25); }
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<h1 class="brand">NUR 285 Exam 1 <small>Chapter 33: Urinary Disorders</small></h1>
+<button type="button" class="linkbtn" id="homeLink">Setup</button>
+</div></header>
+<main class="wrap" id="app" tabindex="-1"><noscript>This quiz needs JavaScript turned on.</noscript></main>
+<script>
+/* Visual helpers shared by the four quiz files */
+window.VH = (function () {
+  var DEFS = '<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="mk"/></marker></defs>';
+  function svg(w, h, alt, body) {
+    return '<svg viewBox="0 0 ' + w + " " + h + '" role="img" aria-label="' + alt + '">' + DEFS + body + "</svg>";
+  }
+  function T(x, y, s, cls, anchor) {
+    return '<text x="' + x + '" y="' + y + '" class="' + (cls || "t") + '" text-anchor="' + (anchor || "middle") + '">' + s + "</text>";
+  }
+  function R(x, y, w, h, cls, extra) {
+    return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="8" class="' + cls + '" ' + (extra || "") + "/>";
+  }
+  function A(x1, y1, x2, y2, cls) {
+    return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" class="' + (cls || "arrow") + '"/>';
+  }
+  function P(d, cls, extra) {
+    return '<path d="' + d + '" class="' + (cls || "ln") + '" ' + (extra || "") + "/>";
+  }
+  function C(cx, cy, r, cls) {
+    return '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" class="' + cls + '"/>';
+  }
+  function E(cx, cy, rx, ry, cls) {
+    return '<ellipse cx="' + cx + '" cy="' + cy + '" rx="' + rx + '" ry="' + ry + '" class="' + cls + '"/>';
+  }
+  function table(head, rows) {
+    var h = '<table class="vtable"><thead><tr>';
+    head.forEach(function (c) { h += "<th>" + c + "</th>"; });
+    h += "</tr></thead><tbody>";
+    rows.forEach(function (r) {
+      h += "<tr>";
+      r.forEach(function (c, i) { h += (i === 0 ? "<th scope=\"row\">" : "<td>") + c + (i === 0 ? "</th>" : "</td>"); });
+      h += "</tr>";
+    });
+    return h + "</tbody></table>";
+  }
+  return { svg: svg, T: T, R: R, A: A, P: P, C: C, E: E, table: table };
+})();
+
+</script>
+<script>
+(function () {
+  "use strict";
+  var V = window.VH;
+
+  window.CFG = {
+    key: "ch33",
+    title: "Chapter 33: Urinary Disorders",
+    blurb: "Covers UTI (risk factors, manifestations, diagnostics, medication, management, complications), pyelonephritis, and bladder cancer (risk factors, manifestations, diagnostics, treatment, medication, complications, nursing care).",
+    groups: [
+      { id: "uti", label: "Lower UTI" },
+      { id: "upper", label: "Pyelonephritis and urosepsis" },
+      { id: "bc", label: "Bladder cancer" }
+    ],
+    subs: [
+      { id: "uti_risk", label: "UTI: risk factors", group: "uti" },
+      { id: "uti_manif", label: "UTI: manifestations", group: "uti" },
+      { id: "uti_gero", label: "UTI: gerontologic considerations", group: "uti" },
+      { id: "uti_dx", label: "UTI: diagnostic studies", group: "uti" },
+      { id: "uti_med", label: "UTI: medication", group: "uti" },
+      { id: "uti_mgmt", label: "UTI: management, treatment, and teaching", group: "uti" },
+      { id: "uti_comp", label: "UTI: complications", group: "upper" },
+      { id: "pyelo", label: "Pyelonephritis (upper tract infection)", group: "upper" },
+      { id: "bc_risk", label: "Bladder cancer: risk factors", group: "bc" },
+      { id: "bc_manif", label: "Bladder cancer: manifestations", group: "bc" },
+      { id: "bc_dx", label: "Bladder cancer: diagnostic studies and staging", group: "bc" },
+      { id: "bc_mgmt", label: "Bladder cancer: management and treatment", group: "bc" },
+      { id: "bc_med", label: "Bladder cancer: medication", group: "bc" },
+      { id: "bc_comp", label: "Bladder cancer: complications", group: "bc" },
+      { id: "bc_nursing", label: "Bladder cancer: nursing management", group: "bc" }
+    ],
+    visuals: {
+      tract: function () {
+        var b = "";
+        b += V.E(150, 62, 34, 26, "fred") + V.E(250, 62, 34, 26, "fred");
+        b += V.T(150, 66, "Kidney", "t") + V.T(250, 66, "Kidney", "t");
+        b += V.A(150, 88, 186, 150, "ln") + V.A(250, 88, 214, 150, "ln");
+        b += V.E(200, 172, 52, 30, "famber") + V.T(200, 176, "Bladder", "t");
+        b += V.A(200, 202, 200, 272, "ln") + V.T(214, 246, "Urethra", "t", "start");
+        b += V.R(350, 26, 300, 76, "fred") + V.T(500, 48, "UPPER tract", "tr") + V.T(500, 68, "Pyelonephritis, renal abscess", "t") + V.T(500, 88, "Flank pain, fever, chills", "t");
+        b += V.A(350, 64, 288, 64);
+        b += V.R(350, 136, 300, 76, "famber") + V.T(500, 158, "LOWER tract", "tb") + V.T(500, 178, "Cystitis, urethritis, prostatitis", "t") + V.T(500, 198, "Dysuria, urgency, suprapubic pain", "t");
+        b += V.A(350, 174, 256, 174);
+        return V.svg(660, 286, "Urinary tract showing upper tract kidney infection versus lower tract bladder infection", b);
+      },
+      stages: function () {
+        var layers = [
+          [100, ["Inner", "lining"], "fteal", ["Stage 0a, 0is", "Ta: papillary", "Tis: flat"]],
+          [110, ["Connective", "tissue"], "fgreen", ["Stage I (T1)", "not into muscle"]],
+          [110, ["Bladder", "muscle"], "famber", ["Stage II (T2)", "into muscle"]],
+          [130, ["Tissue around", "the bladder"], "fred", ["Stage III", "through the muscle"]],
+          [130, ["Organs, nodes,", "distant sites"], "fplain", ["Stage IV", "pelvic wall or spread"]]
+        ];
+        var x = 40, b = V.T(330, 20, "Lumen (urine) on the left. The cancer grows outward through the wall.", "tm");
+        layers.forEach(function (l) {
+          var cx = x + (l[0] - 4) / 2;
+          b += V.R(x, 36, l[0] - 4, 70, l[2]);
+          b += V.T(cx, 66, l[1][0], "tb") + V.T(cx, 84, l[1][1], "tb");
+          l[3].forEach(function (t, i) { b += V.T(cx, 130 + i * 18, t, i === 0 ? "tb" : "tm"); });
+          x += l[0];
+        });
+        b += V.A(40, 196, 620, 196);
+        b += V.T(330, 224, "T = depth of tumor | N = lymph nodes | M = distant spread (metastasis)", "t");
+        return V.svg(660, 236, "Bladder wall layers matched to bladder cancer stages", b);
+      }
+    }
+  };
+
+  var Q = [];
+  function hash(s) { var h = 5381; for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return "q" + (h >>> 0).toString(36); }
+  function q(sub, diff, pri, type, stem, opts, a, r, w, tip, vis) {
+    Q.push({ id: hash(sub + stem), sub: sub, diff: diff === "H" ? "hard" : "medium", pri: !!pri, type: type, q: stem, opts: opts, a: a, r: r, w: w, tip: tip, vis: vis });
+  }
+
+  /* ===== UTI RISK ===== */
+  q("uti_risk", "M", 0, "sata",
+    "Which are risk factors for urinary tract infection? Select all that apply.",
+    ["Female sex", "Pregnancy", "Urethral catheterization", "Diabetes mellitus", "Urinary retention", "High daily fluid intake"], [0, 1, 2, 3, 4],
+    "Bacteria, usually **E. coli** from the bowel, enter the urethra and travel up. Risk rises with **being female (short urethra near the anus)**, **pregnancy**, **catheters** (a direct pathway), **diabetes** (sugar in urine feeds bacteria), **urinary retention and stasis** (urine that sits grows bacteria), sexual activity, poor hygiene, older age, prior UTI, and multiple antibiotic courses.",
+    "High fluid intake is protective because it flushes bacteria out.",
+    "Stagnant urine, short urethra, or a catheter invites infection.");
+  q("uti_risk", "H", 0, "mc",
+    "Which client has the highest risk for developing a urinary tract infection?",
+    ["A 78-year-old woman with diabetes, urinary incontinence, and an indwelling urinary catheter",
+     "A 25-year-old man who exercises daily and drinks 2 L of water",
+     "A 40-year-old woman who voids every 3 hours",
+     "A 30-year-old man with no medical history"], 0,
+    "This client stacks several risks: **older age, female sex, diabetes, incontinence, and a urinary catheter**. A catheter is the biggest single risk because it gives bacteria a direct path into the bladder (**complicated, catheter-related infection**). The more risk factors a client has, the higher the priority for prevention.",
+    "The other clients are healthy with few or no risk factors, and good fluid intake and regular voiding help protect them.",
+    "Catheter, diabetes, age, and incontinence: highest risk.");
+
+  /* ===== UTI MANIFESTATIONS ===== */
+  q("uti_manif", "M", 0, "sata",
+    "Which findings are expected in a client with an uncomplicated lower urinary tract infection? Select all that apply.",
+    ["Dysuria", "Urinary frequency and urgency", "Cloudy or foul-smelling urine", "Suprapubic discomfort", "Flank pain with shaking chills", "Nocturia"], [0, 1, 2, 3, 5],
+    "A bladder infection irritates the bladder lining, causing **burning with urination, frequency, urgency, nocturia, cloudy or foul-smelling urine, suprapubic discomfort**, and sometimes low-grade fever or blood in the urine.",
+    "Flank pain with shaking chills suggests the infection has reached the kidneys (pyelonephritis), which is an upper tract infection.",
+    "Low belly and burning = bladder. Flank and chills = kidney.", "tract");
+
+  /* ===== UTI GERO ===== */
+  q("uti_gero", "H", 1, "mc",
+    "An 84-year-old resident of a long-term care facility is newly confused. Temperature is 99.8 F (37.7 C), and the client has no complaints of dysuria. What should the nurse do first?",
+    ["Assess vital signs and hydration, and notify the provider while obtaining a urine specimen for urinalysis and culture",
+     "Document that the client is having sundowning",
+     "Administer a PRN sedative for the confusion",
+     "Encourage the client to rest and reassess tomorrow"], 0,
+    "In **older adults, confusion may be the main sign** of a UTI, often with a low-grade fever and without burning or frequency. Confusion can also reflect **dehydration** or sepsis. The nurse checks vital signs and hydration, and sends a **urine specimen for urinalysis and culture** while notifying the provider.",
+    "Assuming sundowning, sedating, or waiting a day can allow a treatable infection to become urosepsis, and sedation masks changing mental status.",
+    "New confusion in an elder: think infection and dehydration.");
+
+  /* ===== UTI DX ===== */
+  q("uti_dx", "M", 1, "mc",
+    "The nurse is collecting a urine specimen for culture and sensitivity from a client with suspected UTI who has been prescribed an antibiotic. Which action ensures the most accurate result?",
+    ["Collect a midstream clean-catch specimen before the first antibiotic dose",
+     "Collect the specimen after three days of antibiotics",
+     "Collect the first drops of urine without cleansing",
+     "Collect the specimen from the drainage bag of a catheter"], 0,
+    "A **urine culture and sensitivity** identifies which bacteria are causing the infection and **which antibiotics will kill them**, so it is a high nursing priority. Antibiotics can kill bacteria and cause a false-negative result, so collect **before the first dose**. Cleansing and midstream collection reduce contamination from skin bacteria.",
+    "Collecting after antibiotics or without cleansing gives unreliable results. Bag urine has been sitting and is not a sterile sample.",
+    "Culture before the first dose.");
+  q("uti_dx", "H", 0, "sata",
+    "Which statements about diagnostic studies for urinary tract infection are correct? Select all that apply.",
+    ["Urine culture and sensitivity is a high nursing priority", "A urine dipstick can detect white blood cells", "Testing for sexually transmitted organisms may be performed", "CT urogram or ultrasound is used when obstruction or a fistula is suspected", "Antibiotics should be given before the culture specimen is collected"], [0, 1, 2, 3],
+    "A UTI work-up includes a **culture and sensitivity** (organism and drug choice), a **dipstick for white cells** (a quick sign of infection), **testing for sexually transmitted organisms** when appropriate, and **imaging** (CT urogram or ultrasound) when a blockage or fistula is suspected.",
+    "Giving antibiotics first can make the culture falsely negative, so the specimen is collected before the first dose.",
+    "Culture, dipstick, STI tests, and imaging when blockage is suspected.");
+
+  /* ===== UTI MED ===== */
+  q("uti_med", "M", 0, "mc",
+    "A client with cystitis is prescribed phenazopyridine (Pyridium). Which teaching statement by the nurse is correct?",
+    ["\"This medication will turn your urine orange or red and relieves burning, but it does not cure the infection.\"",
+     "\"This medication will cure the infection, so you can stop your antibiotic.\"",
+     "\"If your urine turns red, call 911 because you are bleeding.\"",
+     "\"Take this medication only if you have a fever.\""], 0,
+    "**Phenazopyridine** is a **urinary analgesic**: it numbs the bladder lining to relieve burning and urgency. It does not kill bacteria, so the **antibiotic is still needed**. A harmless side effect is **orange or red urine**, which can stain clothing and contact lenses, and clients should be told in advance.",
+    "It does not treat the infection, the color change is expected, and it is taken for urinary pain, not fever.",
+    "Pyridium = pain relief and orange urine.");
+  q("uti_med", "H", 1, "mc",
+    "A client is prescribed a fluoroquinolone antibiotic for a UTI. Which client statement requires immediate intervention by the nurse?",
+    ["\"I plan to stop the antibiotic once my burning goes away.\"",
+     "\"I will drink plenty of fluids while taking it.\"",
+     "\"I will call my provider if I get tendon pain.\"",
+     "\"I will take the entire course as prescribed.\""], 0,
+    "Stopping early is a major problem: symptoms improve before **all** of the bacteria are gone, so stopping lets survivors multiply and creates **resistant infections** and recurrence. Clients must **finish the full course**. Fluoroquinolones also carry a risk of **tendon injury**, which should be reported.",
+    "The other three statements show correct understanding.",
+    "Finish the whole course.");
+
+  /* ===== UTI MANAGEMENT ===== */
+  q("uti_mgmt", "M", 0, "sata",
+    "Which nursing interventions help prevent catheter-associated urinary tract infection? Select all that apply.",
+    ["Maintain a closed drainage system and never disconnect the catheter from the drainage bag", "Keep the drainage bag below the level of the bladder", "Perform routine perineal hygiene", "Review daily whether the catheter is still needed", "Disconnect the tubing to empty the bag more easily"], [0, 1, 2, 3],
+    "A **closed drainage system** keeps bacteria out, so the catheter **must not be disconnected from the bag**. Keeping the bag **below the bladder** prevents urine from flowing back into the bladder. Good hygiene lowers bacteria near the urethra, and removing the catheter as soon as possible [+] removes the risk completely.",
+    "Disconnecting the tubing breaks the sterile closed system and gives bacteria a way in.",
+    "Closed system, bag low, catheter out early.");
+  q("uti_mgmt", "M", 0, "mc",
+    "Which statement by a client with recurrent UTIs indicates understanding of prevention teaching?",
+    ["\"I will wipe front to back, avoid holding my urine, and drink plenty of fluids.\"",
+     "\"I will drink less fluid so I don't have to urinate often.\"",
+     "\"I will use scented feminine sprays to stay clean.\"",
+     "\"I will wait until I have a fever to call my provider.\""], 0,
+    "Prevention teaching includes **good hygiene (front to back)**, **regular voiding without holding urine**, **drinking fluids**, avoiding bladder irritants, taking medications as prescribed, and **reporting symptoms promptly** to the provider.",
+    "Drinking less fluid lets bacteria stay in the bladder, sprays irritate the urethra, and waiting for a fever delays treatment.",
+    "Wipe front to back, drink, void, report early.");
+
+  /* ===== UTI COMPLICATIONS ===== */
+  q("uti_comp", "H", 0, "sata",
+    "Which are potential complications of an untreated or poorly treated urinary tract infection? Select all that apply.",
+    ["Pyelonephritis", "Urosepsis and bacteremia", "Chronic kidney disease or kidney failure", "Recurrent urinary tract infections", "Hyperthyroidism"], [0, 1, 2, 3],
+    "Bacteria that are not cleared from the bladder can **climb to the kidneys (pyelonephritis)**, enter the bloodstream (**urosepsis, bacteremia, septicemia**), and cause repeated damage that leads to **chronic kidney disease or kidney failure**. Incomplete treatment also leads to **recurrent infections**.",
+    "Hyperthyroidism is a thyroid condition and has no connection to urinary infections.",
+    "Bladder, then kidney, then blood.", "tract");
+
+  /* ===== PYELONEPHRITIS ===== */
+  q("pyelo", "H", 1, "mc",
+    "A client with pyelonephritis has a temperature of 103.1 F (39.5 C), heart rate 118, blood pressure 92/58, respiratory rate 24, and new confusion. What is the nurse's priority action?",
+    ["Notify the provider or rapid response team immediately and anticipate blood cultures and IV antibiotics under the sepsis protocol",
+     "Administer an oral antipyretic and reassess in 4 hours",
+     "Encourage oral fluids and rest",
+     "Document the findings and continue routine care"], 0,
+    "A fever with a fast heart rate, fast breathing, low blood pressure, and **confusion** signals **urosepsis**, meaning the urinary infection has spread to the bloodstream, which is life-threatening. The faster antibiotics and fluids are started, the better the outcome. The nurse **escalates immediately**, expects **blood cultures and IV antibiotics**, and monitors closely.",
+    "Oral medicine, rest, and routine care waiting hours could allow septic shock to develop.",
+    "Infection plus unstable vitals plus confusion: escalate now.");
+  q("pyelo", "M", 0, "sata",
+    "Which findings are most consistent with acute pyelonephritis? Select all that apply.",
+    ["Costovertebral angle (flank) pain", "Fever and chills", "Elevated white blood cell count", "Headache, vomiting, and fatigue", "Burning with urination only, with no fever or back pain"], [0, 1, 2, 3],
+    "Pyelonephritis is an infection of the **kidney and renal pelvis**, so it causes **flank pain, fever and chills, and a high white blood cell count**, plus whole-body symptoms such as headache, vomiting, tachycardia, and fatigue.",
+    "Burning with urination alone, with no fever or flank pain, is more typical of a bladder infection (cystitis).",
+    "Flank pain plus fever = kidney.", "tract");
+  q("pyelo", "H", 0, "mc",
+    "Which statement about the management of pyelonephritis is correct?",
+    ["Uncomplicated acute pyelonephritis is often treated as an outpatient with antibiotics and oral fluids; chronic pyelonephritis may require hospitalization and 3 to 4 L of fluid daily unless contraindicated",
+     "All clients with pyelonephritis require surgery",
+     "Fluids should be restricted to reduce kidney workload",
+     "Antibiotics are not needed because the kidneys heal on their own"], 0,
+    "Uncomplicated acute pyelonephritis can be managed at home with **antibiotics and plenty of oral fluids**. **Chronic pyelonephritis** may need hospital care, and fluids of **3 to 4 L per day** (if the kidneys and heart can handle it) help flush bacteria. Untreated infection can cause chronic kidney disease or kidney failure.",
+    "Surgery is not routine, fluid restriction would let bacteria grow, and the infection must be treated with antibiotics.",
+    "Antibiotics and fluids.");
+
+  /* ===== BLADDER CANCER RISK ===== */
+  q("bc_risk", "M", 0, "sata",
+    "Which are risk factors for bladder cancer? Select all that apply.",
+    ["Tobacco smoking", "Occupational chemical exposure", "Long-term indwelling urinary catheter", "Bladder stones", "Pelvic radiation therapy", "High-fiber diet"], [0, 1, 2, 3, 4],
+    "**Smoking** is the leading risk because cancer-causing chemicals pass into the urine and sit against the bladder wall. Other risks include **occupational exposures**, **chronic irritation (long-term catheters, bladder stones)**, age over 60, family history, **pelvic radiation**, certain **chemotherapy agents**, and high cholesterol intake. It is more common in men, peaking at ages 60 to 70.",
+    "A high-fiber diet is not a risk factor.",
+    "Smoking, chemicals, chronic irritation, radiation.");
+
+  /* ===== BLADDER CANCER MANIFESTATIONS ===== */
+  q("bc_manif", "M", 1, "mc",
+    "A 66-year-old man who smokes reports seeing bright red blood in his urine for two days, with no pain. What is the nurse's priority action?",
+    ["Report the finding to the provider for evaluation, because painless gross hematuria needs to be investigated for bladder cancer",
+     "Reassure the client that it is probably a urinary tract infection",
+     "Advise the client to drink more water and wait a week",
+     "Tell the client it is a normal effect of aging"], 0,
+    "**Painless gross hematuria** is the classic first sign of **bladder cancer**, especially in an older smoker. A UTI usually hurts, so painless bleeding should never be dismissed. The client needs prompt evaluation with urinalysis, cytology, and **cystoscopy with biopsy**.",
+    "Assuming a UTI, waiting, or blaming age delays diagnosis of a potentially serious cancer.",
+    "Painless blood in the urine = cancer until proven otherwise.");
+
+  /* ===== BLADDER CANCER DX ===== */
+  q("bc_dx", "H", 0, "mc",
+    "A biopsy shows that a bladder tumor has grown into the bladder muscle but has not spread beyond the muscle. Which stage does the nurse anticipate?",
+    ["Stage II (T2)", "Stage I (T1)", "Stage 0a (Ta)", "Stage IV"], 0,
+    "Think of the bladder wall as layers: **inner lining, connective tissue, muscle, then tissue outside the bladder**. A tumor **into the muscle** is **Stage II (T2)**. Stage 0a (Ta) is papillary and confined to the lining, 0is (Tis) is flat carcinoma in situ, Stage I (T1) reaches connective tissue but not muscle, Stage III extends through the muscle, and Stage IV involves the pelvic or abdominal wall, distant nodes, or organs.",
+    "Stage I stops before the muscle, Stage 0a is only in the lining, and Stage IV means spread to distant sites.",
+    "Muscle involved = Stage II.", "stages");
+  q("bc_dx", "M", 0, "mc",
+    "Which diagnostic test is used to visualize the bladder lining and obtain a biopsy to confirm bladder cancer, and what does the \"N\" in TNM staging describe?",
+    ["Cystoscopy with biopsy; lymph node involvement", "Abdominal x-ray; depth of the tumor", "Urine dipstick; distant metastasis", "Serum creatinine; tumor size"], 0,
+    "**Cystoscopy** lets the provider look inside the bladder and take a **biopsy**, which confirms cancer. In **TNM staging**, **T** describes how deeply the tumor has grown, **N** describes **lymph node involvement** (more nodes = more advanced disease), and **M** describes **metastasis** to distant sites. Urinalysis, urine cytology, and imaging support the diagnosis.",
+    "An x-ray, dipstick, or creatinine cannot confirm cancer, and the letters in TNM do not mean the other options.",
+    "T = depth, N = nodes, M = metastasis.", "stages");
+
+  /* ===== BLADDER CANCER MANAGEMENT ===== */
+  q("bc_mgmt", "M", 0, "mc",
+    "Which surgical procedure is typically used to remove superficial bladder tumors through the urethra, and which is used for muscle-invasive disease?",
+    ["Transurethral resection of the bladder tumor (TURBT) or fulguration; radical cystectomy with urinary diversion",
+     "Radical cystectomy for all superficial tumors; TURBT for advanced disease",
+     "Nephrectomy for all tumors; no surgery for muscle-invasive tumors",
+     "Radical prostatectomy; bladder irrigation"], 0,
+    "**Early, superficial tumors** are usually removed through the urethra with a scope (**TURBT**) or burned off (**fulguration**). **Muscle-invasive disease** often needs a **radical cystectomy**, which removes the bladder, and a **urinary diversion** so urine has a new path out. Adjuvant radiation and chemotherapy may be added.",
+    "Removing the bladder is too extensive for superficial tumors, and radical prostatectomy treats prostate cancer.",
+    "Scope it out when shallow; remove the bladder when deep.");
+
+  /* ===== BLADDER CANCER MEDICATION ===== */
+  q("bc_med", "H", 1, "mc",
+    "A client receives intravesical BCG (Bacillus Calmette-Guerin) for bladder cancer. Which instruction should the nurse give for after the treatment?",
+    ["Void while seated and disinfect the urine with bleach as instructed for the first several hours, and report fever or severe urinary symptoms",
+     "Void standing up so urine can splash freely",
+     "Ignore a fever because it is expected",
+     "Restrict all fluids for the next 24 hours"], 0,
+    "**BCG is a live bacterial immunotherapy placed directly into the bladder** to stimulate the immune system to attack cancer cells. Because the urine may contain live bacteria after treatment, clients commonly **void seated to avoid splashing**, **disinfect urine with bleach** for the first several hours [+], and wash hands well. A **fever or severe urinary symptoms** can signal a BCG infection and must be reported.",
+    "Splashing urine can spread the bacteria, and a fever should never be ignored. Fluids are generally encouraged after treatment, not restricted [+]. Chemotherapy and targeted therapy are other medication options for bladder cancer.",
+    "BCG: sit to void, bleach the urine, report fever.");
+
+  /* ===== BLADDER CANCER COMPLICATIONS ===== */
+  q("bc_comp", "H", 1, "mc",
+    "A client with bladder cancer reports new back pain and weakness in both legs. What is the nurse's priority action?",
+    ["Notify the provider immediately because of possible metastasis with spinal cord compression",
+     "Offer a heating pad and oral analgesic",
+     "Encourage the client to exercise the legs",
+     "Reassure the client that this is a side effect of chemotherapy"], 0,
+    "**Pelvic or back pain signals metastasis**, and tumor growing in the spine can press on the spinal cord (**spinal cord compression**). Leg weakness suggests the cord is already affected. This is an **emergency** because permanent paralysis can occur without prompt treatment. Nursing management also includes monitoring for side effects of drug therapy.",
+    "Heat, exercise, and reassurance delay recognition of a surgical or radiation emergency.",
+    "Back pain plus leg weakness with cancer: call now.");
+
+  /* ===== BLADDER CANCER NURSING ===== */
+  q("bc_nursing", "M", 1, "mc",
+    "A client is 6 hours after a radical cystectomy with an ileal conduit. Which stoma finding requires the nurse to notify the provider immediately?",
+    ["A dusky, dark purple or black stoma",
+     "A pink to red, moist stoma",
+     "Mild stoma swelling",
+     "Small amounts of mucus in the urine"], 0,
+    "A healthy stoma is **pink to red and moist**, like the inside of your cheek. A **dark, dusky, or black stoma** signals **poor blood supply (ischemia)**, which can lead to tissue death and needs immediate reporting. Mild swelling after surgery and mucus from the bowel segment used for the diversion are normal. Nursing care also includes pre- and post-operative support and monitoring for complications.",
+    "The other three findings are expected after an ileal conduit.",
+    "Pink and moist is good. Dark or dusky is an emergency.");
+
+  window.QUESTIONS = Q;
+})();
+
+</script>
+<script>
+(function () {
+  "use strict";
+
+  var CFG = window.CFG;
+  var BANK = window.QUESTIONS || [];
+  var STORE_KEY = "nur285-nclex-" + CFG.key + "-v1";
+  var SECONDS_PER_QUESTION = 90;
+  var STRIP_MAX = 40;
+  var app = document.getElementById("app");
+
+  var groupById = {}, subById = {};
+  CFG.groups.forEach(function (g) { groupById[g.id] = g; });
+  CFG.subs.forEach(function (s) { subById[s.id] = s; });
+  BANK.forEach(function (q) { q.topic = subById[q.sub].group; });
+
+  /* ---------- helpers ---------- */
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function fmt(s) {
+    return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").split("\n").map(function (p) { return "<p>" + p + "</p>"; }).join("");
+  }
+  function shuffle(a) {
+    var r = a.slice();
+    for (var i = r.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = r[i]; r[i] = r[j]; r[j] = t;
+    }
+    return r;
+  }
+  function range(n) { var r = []; for (var i = 0; i < n; i++) r.push(i); return r; }
+  function norm(s) {
+    return String(s).toLowerCase().replace(/[\u2013\u2014]/g, "-").replace(/\s*-\s*/g, "-").replace(/\s+/g, " ").replace(/\.$/, "").trim();
+  }
+  function fmtTime(sec) {
+    sec = Math.max(0, sec);
+    var m = Math.floor(sec / 60), s = sec % 60;
+    return m + ":" + (s < 10 ? "0" : "") + s;
+  }
+
+  /* ---------- saved progress ---------- */
+  function loadProgress() {
+    try { return JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); } catch (e) { return {}; }
+  }
+  var progress = loadProgress();
+  function saveProgress() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(progress)); } catch (e) { /* unavailable */ }
+  }
+  function rec(id) {
+    if (!progress[id]) progress[id] = { seen: 0, right: 0, last: null, flag: false };
+    return progress[id];
+  }
+
+  /* ---------- grading ---------- */
+  function evaluate(item) {
+    var q = item.q, r = item.resp;
+    if (q.type === "mc") return r === q.a;
+    if (q.type === "sata") {
+      if (!r || r.length !== q.a.length) return false;
+      return q.a.every(function (i) { return r.indexOf(i) !== -1; });
+    }
+    if (q.type === "fill") {
+      var v = norm(r || "");
+      return v !== "" && q.a.some(function (x) { return norm(x) === v; });
+    }
+    return r.every(function (v2, i) { return v2 === i; });
+  }
+  function isAnswered(item) {
+    var q = item.q, r = item.resp;
+    if (q.type === "mc") return r !== null;
+    if (q.type === "sata") return r.length > 0;
+    if (q.type === "fill") return String(r).trim() !== "";
+    return !!item.touched;
+  }
+  function makeItem(q) {
+    var item = { q: q, checked: false, correct: null, flagged: !!(progress[q.id] && progress[q.id].flag), recorded: false };
+    if (q.type === "mc") { item.resp = null; item.shown = shuffle(range(q.opts.length)); }
+    else if (q.type === "sata") { item.resp = []; item.shown = shuffle(range(q.opts.length)); }
+    else if (q.type === "fill") { item.resp = ""; }
+    else {
+      var p = shuffle(range(q.opts.length));
+      if (p.every(function (v, i) { return v === i; })) p.push(p.shift());
+      item.resp = p;
+    }
+    return item;
+  }
+  function correctText(q) {
+    if (q.type === "mc") return q.opts[q.a];
+    if (q.type === "sata") return q.a.map(function (i) { return q.opts[i]; }).join("; ");
+    if (q.type === "fill") return q.a[0];
+    return q.opts.map(function (t, i) { return (i + 1) + ". " + t; }).join(" ");
+  }
+  function respText(item) {
+    var q = item.q, r = item.resp;
+    if (q.type === "mc") return r === null ? "No answer" : q.opts[r];
+    if (q.type === "sata") return r.length ? r.slice().sort(function (a, b) { return a - b; }).map(function (i) { return q.opts[i]; }).join("; ") : "No answer";
+    if (q.type === "fill") return String(r).trim() === "" ? "No answer" : r;
+    return r.map(function (i, n) { return (n + 1) + ". " + q.opts[i]; }).join(" ");
+  }
+  function record(item) {
+    if (item.recorded) return;
+    item.recorded = true;
+    var p = rec(item.q.id);
+    p.seen += 1;
+    if (item.correct) p.right += 1;
+    p.last = !!item.correct;
+  }
+
+  /* ---------- coverage stats ---------- */
+  function subStats() {
+    var out = {};
+    CFG.subs.forEach(function (s) { out[s.id] = { total: 0, seen: 0, attempts: 0, right: 0 }; });
+    BANK.forEach(function (q) {
+      var s = out[q.sub];
+      s.total += 1;
+      var p = progress[q.id];
+      if (p && p.seen) { s.seen += 1; s.attempts += p.seen; s.right += p.right; }
+    });
+    return out;
+  }
+  function counts() {
+    var missed = 0, flagged = 0, pri = 0, hard = 0;
+    BANK.forEach(function (q) {
+      var p = progress[q.id];
+      if (p && p.last === false) missed++;
+      if (p && p.flag) flagged++;
+      if (q.pri) pri++;
+      if (q.diff === "hard") hard++;
+    });
+    return { missed: missed, flagged: flagged, pri: pri, hard: hard };
+  }
+
+  /* ---------- state ---------- */
+  var S = null, timerId = null;
+  function stopTimer() { if (timerId) { clearInterval(timerId); timerId = null; } }
+
+  /* ---------- home ---------- */
+  function renderHome() {
+    stopTimer();
+    S = null;
+    var st = subStats(), c = counts();
+    var h = "<h2>" + esc(CFG.title) + "</h2>";
+    h += '<p class="lede">' + BANK.length + " medium and hard NCLEX-style questions (" + c.pri + " priority-based). " + esc(CFG.blurb) + "</p>";
+
+    h += '<form id="setup" class="panel" aria-label="Session setup"><fieldset><legend>Mode</legend><div class="modes">';
+    h += modeCard("study", "Study", "One question at a time with a full explanation right after you answer.", true);
+    h += modeCard("exam", "Exam", "Timed, no feedback until you submit. Scored out of 100.", false);
+    h += modeCard("marathon", "Marathon", "Every question in your scope, with feedback. Stop whenever you like.", false);
+    h += "</div></fieldset><h3>Focus areas</h3><div class=\"topics\">";
+    CFG.groups.forEach(function (g) {
+      var n = BANK.filter(function (q) { return q.topic === g.id; }).length;
+      h += '<label class="chip"><input type="checkbox" name="topic" value="' + g.id + '" checked> ' + esc(g.label) + " <em>" + n + "</em></label>";
+    });
+    h += '</div><div class="row"><label>Questions <select name="count"><option value="10">10</option><option value="20" selected>20</option><option value="30">30</option><option value="all">All</option></select></label>';
+    h += '<label>Include <select name="filter"><option value="all">All questions</option><option value="priority">Priority questions only (' + c.pri + ')</option><option value="hard">Hard only (' + c.hard + ')</option><option value="unseen">Not yet answered</option><option value="missed">Missed last time (' + c.missed + ')</option><option value="flagged">Flagged (' + c.flagged + ")</option></select></label></div>";
+    h += '<div class="actions"><button class="btn" type="submit">Start</button><span id="setupMsg" role="status" class="empty"></span></div></form>';
+
+    h += '<section class="panel" aria-labelledby="covTitle"><h3 id="covTitle">Blueprint coverage</h3><p class="hint cov-note">Every sub-topic from your Exam 1 study guide has at least one question. Numbers show how many you have tried.</p><div class="bars">';
+    CFG.subs.forEach(function (s) {
+      var x = st[s.id];
+      var acc = x.attempts ? Math.round((x.right / x.attempts) * 100) : null;
+      var cls = acc === null ? "" : acc >= 80 ? "hi" : acc >= 60 ? "mid" : "low";
+      var cover = x.total ? Math.round((x.seen / x.total) * 100) : 0;
+      h += '<div class="bar-row"><span>' + esc(s.label) + '</span><div class="bar" role="img" aria-label="' + cover + ' percent attempted"><i class="' + cls + '" style="width:' + cover + '%"></i></div><span class="num">' +
+        x.seen + "/" + x.total + (acc === null ? "" : " &middot; " + acc + "%") + "</span></div>";
+    });
+    h += '</div><div class="actions"><button class="linkbtn" id="resetBtn" type="button">Reset saved progress</button></div></section>';
+    app.innerHTML = h;
+    document.getElementById("setup").addEventListener("submit", onStart);
+    document.getElementById("resetBtn").addEventListener("click", function () {
+      if (window.confirm("Clear all saved answers, accuracy, and flags for this chapter?")) { progress = {}; saveProgress(); renderHome(); }
+    });
+  }
+  function modeCard(id, title, desc, checked) {
+    return '<label class="mode"><input type="radio" name="mode" value="' + id + '"' + (checked ? " checked" : "") + "><strong>" + title + "</strong><span>" + desc + "</span></label>";
+  }
+  function onStart(e) {
+    e.preventDefault();
+    var f = e.target;
+    var topics = Array.prototype.slice.call(f.querySelectorAll('input[name="topic"]:checked')).map(function (x) { return x.value; });
+    var mode = f.querySelector('input[name="mode"]:checked').value;
+    var count = f.elements.count.value, filter = f.elements.filter.value;
+    var msg = document.getElementById("setupMsg");
+    if (!topics.length) { msg.textContent = "Choose at least one focus area."; return; }
+    var pool = BANK.filter(function (q) {
+      if (topics.indexOf(q.topic) === -1) return false;
+      var p = progress[q.id];
+      if (filter === "priority") return q.pri;
+      if (filter === "hard") return q.diff === "hard";
+      if (filter === "unseen") return !p || !p.seen;
+      if (filter === "missed") return p && p.last === false;
+      if (filter === "flagged") return p && p.flag;
+      return true;
+    });
+    if (!pool.length) { msg.textContent = "No questions match those choices. Try a different filter or focus area."; return; }
+    startSession(mode, pool, count);
+  }
+
+  /* ---------- session ---------- */
+  function startSession(mode, pool, count) {
+    var qs = shuffle(pool);
+    if (mode !== "marathon" && count !== "all") qs = qs.slice(0, parseInt(count, 10));
+    S = { mode: mode, items: qs.map(makeItem), i: 0, started: Date.now(), limit: mode === "exam" ? qs.length * SECONDS_PER_QUESTION : 0, finished: false };
+    renderQuiz();
+    if (S.limit) { stopTimer(); timerId = setInterval(tick, 1000); }
+    window.scrollTo(0, 0);
+  }
+  function remaining() { return S.limit - Math.floor((Date.now() - S.started) / 1000); }
+  function tick() {
+    if (!S || S.finished) { stopTimer(); return; }
+    var left = remaining(), el = document.getElementById("timer");
+    if (el) { el.textContent = fmtTime(left); el.classList.toggle("low", left <= 60); }
+    if (left <= 0) finish(true);
+  }
+
+  function stripHtml() {
+    var n = S.items.length;
+    if (n > STRIP_MAX) {
+      var done = S.items.filter(function (it) { return S.mode === "exam" ? isAnswered(it) : it.checked; }).length;
+      return '<div class="plainbar" role="progressbar" aria-valuemin="0" aria-valuemax="' + n + '" aria-valuenow="' + done + '" aria-label="Questions answered"><i style="width:' + Math.round((done / n) * 100) + '%"></i></div>';
+    }
+    var h = '<div class="strip" role="group" aria-label="Question progress">';
+    S.items.forEach(function (it, idx) {
+      var cls = "beat";
+      if (S.mode !== "exam" && it.checked) cls += it.correct ? " right" : " wrong";
+      else if (S.mode === "exam" && isAnswered(it)) cls += " seen";
+      if (it.flagged) cls += " flagged";
+      if (idx === S.i) cls += " current";
+      h += '<button type="button" class="' + cls + '" data-go="' + idx + '" aria-label="Question ' + (idx + 1) + (it.flagged ? ", flagged" : "") + (idx === S.i ? ", current" : "") + '"><svg viewBox="0 0 28 30" aria-hidden="true"><path d="M0 20 H8 L10 17 L12 20 H14 L16 4 L19 26 L21 20 H24 L26 18 L28 20"/></svg></button>';
+    });
+    return h + "</div>";
+  }
+  function bindStrip() {
+    document.querySelectorAll("[data-go]").forEach(function (b) {
+      b.addEventListener("click", function () { S.i = parseInt(b.dataset.go, 10); renderQuiz(); window.scrollTo(0, 0); });
+    });
+  }
+  function refreshStrip() {
+    var el = document.getElementById("stripHost");
+    if (el) { el.innerHTML = stripHtml(); bindStrip(); }
+  }
+
+  function badges(q) {
+    var h = '<span class="badge ' + (q.diff === "hard" ? "hard" : "med") + '">' + (q.diff === "hard" ? "Hard" : "Medium") + "</span>";
+    if (q.pri) h += '<span class="badge pri">Priority</span>';
+    return h;
+  }
+  function feedbackHtml(it, ok) {
+    var q = it.q, h = '<div class="feedback ' + (ok ? "right" : "wrong") + '" role="status"><strong>' + (ok ? "Correct" : "Not quite") + "</strong>";
+    if (!ok) h += '<p><b>Correct answer:</b> ' + esc(correctText(q)) + "</p>";
+    h += '<h4>Why this is the answer</h4>' + fmt(q.r);
+    if (q.vis && CFG.visuals[q.vis]) h += '<figure class="vis">' + CFG.visuals[q.vis]() + "</figure>";
+    if (q.w) h += "<h4>Why the other choices do not fit</h4>" + fmt(q.w);
+    if (q.tip) h += '<p class="tip"><b>Remember:</b> ' + esc(q.tip) + "</p>";
+    h += '<p class="ref">Sub-topic: ' + esc(subById[q.sub].label) + "</p></div>";
+    return h;
+  }
+
+  function renderQuiz(focusSel) {
+    var it = S.items[S.i], q = it.q;
+    var showFB = it.checked && S.mode !== "exam";
+    var h = '<div id="stripHost">' + stripHtml() + "</div>";
+    h += '<section class="panel' + (showFB ? " locked" : "") + '"><div class="meta"><span>Question ' + (S.i + 1) + " of " + S.items.length + "</span>" + badges(q);
+    if (S.limit) h += '<span class="timer" id="timer" role="timer">' + fmtTime(remaining()) + "</span>";
+    h += "</div>";
+    h += '<p class="stem" id="stem">' + esc(q.q) + "</p>";
+    if (q.type === "sata") h += '<p class="hint">Select all that apply.</p>';
+    if (q.type === "order") h += '<p class="hint">Use the arrows to put the steps in the correct order, first at the top.</p>';
+    if (q.type === "fill") h += '<p class="hint">Type your answer.</p>';
+    if (q.type === "mc" || q.type === "sata") h += optionsHtml(it, showFB);
+    else if (q.type === "fill") {
+      var cls = showFB ? (it.correct ? " right" : " wrong") : "";
+      h += '<input class="fill' + cls + '" id="fillBox" type="text" autocomplete="off" aria-labelledby="stem" value="' + esc(it.resp) + '"' + (showFB ? " disabled" : "") + ">";
+    } else h += orderHtml(it, showFB);
+    if (showFB) h += feedbackHtml(it, it.correct);
+
+    h += '<div class="actions"><button class="btn ghost" type="button" id="prevBtn"' + (S.i === 0 ? " disabled" : "") + ">Previous</button>";
+    if (S.mode !== "exam" && !it.checked) h += '<button class="btn" type="button" id="checkBtn"' + (isAnswered(it) ? "" : " disabled") + ">Check answer</button>";
+    else if (S.i < S.items.length - 1) h += '<button class="btn" type="button" id="nextBtn">Next question</button>';
+    else h += '<button class="btn" type="button" id="finishBtn">' + (S.mode === "exam" ? "Submit exam" : "See results") + "</button>";
+    h += '<button class="btn ghost" type="button" id="flagBtn" aria-pressed="' + it.flagged + '">' + (it.flagged ? "Unflag" : "Flag for review") + "</button><span class=\"spacer\"></span>";
+    if (S.mode === "exam" && S.i < S.items.length - 1) h += '<button class="btn ghost" type="button" id="finishBtn">Submit exam</button>';
+    else if (S.mode !== "exam") h += '<button class="btn ghost" type="button" id="finishBtn2">End session</button>';
+    h += "</div></section>";
+    app.innerHTML = h;
+    bindQuiz();
+    if (focusSel) { var f = document.querySelector(focusSel); if (f) f.focus(); }
+  }
+
+  function optionsHtml(it, showFB) {
+    var q = it.q, h = '<ul class="opts" role="group" aria-labelledby="stem">';
+    it.shown.forEach(function (oi) {
+      var chosen = q.type === "mc" ? it.resp === oi : it.resp.indexOf(oi) !== -1;
+      var isRight = q.type === "mc" ? q.a === oi : q.a.indexOf(oi) !== -1;
+      var cls = "opt", mark = "";
+      if (showFB) {
+        if (chosen && isRight) { cls += " right"; mark = "Correct"; }
+        else if (chosen && !isRight) { cls += " wrong"; mark = "Incorrect"; }
+        else if (!chosen && isRight) { cls += " missed"; mark = "Correct answer"; }
+      }
+      h += '<li><label class="' + cls + '"><input type="' + (q.type === "mc" ? "radio" : "checkbox") + '" name="opt" value="' + oi + '"' + (chosen ? " checked" : "") + (showFB ? " disabled" : "") + "><span>" + esc(q.opts[oi]) + "</span>" + (mark ? '<span class="mark">' + mark + "</span>" : "") + "</label></li>";
+    });
+    return h + "</ul>";
+  }
+  function orderHtml(it, showFB) {
+    var q = it.q, h = '<ol class="seq">';
+    it.resp.forEach(function (oi, pos) {
+      var cls = showFB ? (oi === pos ? "right" : "wrong") : "";
+      h += '<li class="' + cls + '"><span class="pos">' + (pos + 1) + '</span><span class="txt">' + esc(q.opts[oi]) + "</span>";
+      if (!showFB) {
+        h += '<button type="button" data-move="up" data-pos="' + pos + '" aria-label="Move up"' + (pos === 0 ? " disabled" : "") + ">&uarr;</button>";
+        h += '<button type="button" data-move="down" data-pos="' + pos + '" aria-label="Move down"' + (pos === it.resp.length - 1 ? " disabled" : "") + ">&darr;</button>";
+      }
+      h += "</li>";
+    });
+    return h + "</ol>";
+  }
+
+  function bindQuiz() {
+    var it = S.items[S.i], q = it.q;
+    var on = function (id, fn) { var el = document.getElementById(id); if (el) el.addEventListener("click", fn); };
+    bindStrip();
+    document.querySelectorAll('input[name="opt"]').forEach(function (inp) {
+      inp.addEventListener("change", function () {
+        var v = parseInt(inp.value, 10);
+        if (q.type === "mc") it.resp = v;
+        else {
+          var idx = it.resp.indexOf(v);
+          if (inp.checked && idx === -1) it.resp.push(v);
+          if (!inp.checked && idx !== -1) it.resp.splice(idx, 1);
+        }
+        afterAnswerChange();
+      });
+    });
+    var fb = document.getElementById("fillBox");
+    if (fb) {
+      fb.addEventListener("input", function () { it.resp = fb.value; afterAnswerChange(); });
+      fb.addEventListener("keydown", function (e) { if (e.key === "Enter" && S.mode !== "exam") { e.preventDefault(); doCheck(); } });
+    }
+    document.querySelectorAll("[data-move]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var pos = parseInt(b.dataset.pos, 10), to = b.dataset.move === "up" ? pos - 1 : pos + 1;
+        var t = it.resp[pos]; it.resp[pos] = it.resp[to]; it.resp[to] = t;
+        it.touched = true;
+        afterAnswerChange();
+        renderQuiz('[data-move="' + b.dataset.move + '"][data-pos="' + to + '"]');
+      });
+    });
+    on("prevBtn", function () { S.i -= 1; renderQuiz(); window.scrollTo(0, 0); });
+    on("nextBtn", function () { S.i += 1; renderQuiz(); window.scrollTo(0, 0); });
+    on("checkBtn", doCheck);
+    on("flagBtn", function () {
+      it.flagged = !it.flagged;
+      rec(q.id).flag = it.flagged;
+      saveProgress();
+      renderQuiz("#flagBtn");
+    });
+    on("finishBtn", confirmFinish);
+    on("finishBtn2", confirmFinish);
+  }
+  function afterAnswerChange() {
+    var it = S.items[S.i], btn = document.getElementById("checkBtn");
+    if (btn) btn.disabled = !isAnswered(it);
+    if (S.mode === "exam") refreshStrip();
+  }
+  function doCheck() {
+    var it = S.items[S.i];
+    if (!isAnswered(it) || it.checked) return;
+    it.checked = true;
+    it.correct = evaluate(it);
+    record(it);
+    saveProgress();
+    renderQuiz("#nextBtn, #finishBtn");
+    var fbEl = document.querySelector(".feedback");
+    if (fbEl && fbEl.scrollIntoView) fbEl.scrollIntoView({ block: "nearest" });
+  }
+  function confirmFinish() {
+    var un = S.items.filter(function (x) { return S.mode === "exam" ? !isAnswered(x) : !x.checked; }).length;
+    var msg = S.mode === "exam" ? (un ? "You have " + un + " unanswered question(s). Submit the exam anyway?" : "Submit the exam?") : "End this session and see your results?";
+    if (window.confirm(msg)) finish(false);
+  }
+
+  /* ---------- results ---------- */
+  function finish(timedOut) {
+    stopTimer();
+    S.finished = true; S.timedOut = !!timedOut;
+    S.elapsed = Math.floor((Date.now() - S.started) / 1000);
+    S.items.forEach(function (it) {
+      if (S.mode === "exam" && !it.checked) {
+        it.checked = true;
+        it.correct = isAnswered(it) ? evaluate(it) : false;
+        record(it);
+      }
+    });
+    saveProgress();
+    renderResults();
+    window.scrollTo(0, 0);
+  }
+  function renderResults() {
+    var counted = S.items.filter(function (it) { return it.checked; });
+    var right = counted.filter(function (it) { return it.correct; }).length;
+    var total = S.mode === "exam" ? S.items.length : counted.length;
+    var pct = total ? Math.round((right / total) * 100) : 0;
+    var h = "<h2>" + (S.mode === "exam" ? "Exam results" : "Session results") + "</h2>";
+    if (S.timedOut) h += '<p class="lede">Time ran out, so unanswered questions were scored as incorrect.</p>';
+    h += '<section class="panel"><div class="score"><span class="big">' + pct + "%</span><span>" + right + " of " + total + " correct" + (S.mode === "exam" ? " &middot; " + pct + " / 100 points" : "") + " &middot; " + fmtTime(S.elapsed) + "</span></div>";
+    if (!total) h += '<p class="empty">You ended the session before checking any answers.</p>';
+    var pc = counted.filter(function (it) { return it.q.pri; });
+    if (pc.length) h += "<p>Priority questions: " + pc.filter(function (it) { return it.correct; }).length + " of " + pc.length + " correct.</p>";
+    var by = {};
+    counted.forEach(function (it) { var t = it.q.topic; by[t] = by[t] || { n: 0, r: 0 }; by[t].n++; if (it.correct) by[t].r++; });
+    var keys = Object.keys(by);
+    if (keys.length) {
+      h += '<h3>By focus area</h3><div class="bars">';
+      keys.forEach(function (k) {
+        var s = by[k], a = Math.round((s.r / s.n) * 100), cls = a >= 80 ? "hi" : a >= 60 ? "mid" : "low";
+        h += '<div class="bar-row"><span>' + esc(groupById[k].label) + '</span><div class="bar" role="img" aria-label="' + a + ' percent correct"><i class="' + cls + '" style="width:' + a + '%"></i></div><span class="num">' + s.r + "/" + s.n + " &middot; " + a + "%</span></div>";
+      });
+      h += "</div>";
+    }
+    var missed = counted.filter(function (it) { return !it.correct; });
+    h += '<div class="actions">';
+    if (missed.length) h += '<button class="btn" type="button" id="retryBtn">Retry ' + missed.length + " missed in Study mode</button>";
+    h += '<button class="btn ghost" type="button" id="homeBtn">Back to setup</button></div></section>';
+    h += '<h3>Review every question</h3><div class="review">';
+    S.items.forEach(function (it, i) {
+      var q = it.q;
+      h += "<details" + (it.checked && !it.correct ? " open" : "") + '><summary><span class="' + (it.correct ? "ok" : "no") + '">' + (it.correct ? "Correct" : "Missed") + "</span><span>" + (i + 1) + ". " + esc(q.q) + '</span></summary><div class="body">';
+      h += "<p><b>Your answer:</b> " + esc(it.checked || S.mode === "exam" ? respText(it) : "Not answered") + "</p>";
+      h += feedbackHtml(it, it.correct).replace(' role="status"', "") + "</div></details>";
+    });
+    app.innerHTML = h + "</div>";
+    var rb = document.getElementById("retryBtn");
+    if (rb) rb.addEventListener("click", function () { startSession("study", missed.map(function (it) { return it.q; }), "all"); });
+    document.getElementById("homeBtn").addEventListener("click", renderHome);
+  }
+
+  document.getElementById("homeLink").addEventListener("click", function () {
+    if (S && !S.finished && !window.confirm("Leave this session? Unchecked answers will be lost.")) return;
+    renderHome();
+  });
+  renderHome();
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NUR 285 Exam 1: Chapter 3: Fluids and Electrolytes</title>
+<style>
+:root {
+  --ink: #16263a;
+  --muted: #5a6b7d;
+  --paper: #f5f9f9;
+  --card: #ffffff;
+  --line: #cfe0e0;
+  --teal: #0e6b6b;
+  --teal-deep: #0a4f4f;
+  --teal-soft: #dcefef;
+  --right: #2b7a4b;
+  --right-soft: #e1f2e8;
+  --wrong: #b3412a;
+  --wrong-soft: #f8e4de;
+  --amber: #b7791f;
+  --focus: #1d4ed8;
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e6eef3;
+    --muted: #9db0bf;
+    --paper: #0f1a24;
+    --card: #162433;
+    --line: #28404f;
+    --teal: #4fc3c3;
+    --teal-deep: #7bd9d9;
+    --teal-soft: #17353d;
+    --right: #66c48a;
+    --right-soft: #17332560;
+    --wrong: #f08c75;
+    --wrong-soft: #3b2420;
+    --amber: #e5b25d;
+    --focus: #8fb4ff;
+  }
+}
+
+* { box-sizing: border-box; }
+html { font-size: 17px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
+}
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+button { font: inherit; color: inherit; }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* ----- header ----- */
+.top { border-bottom: 1px solid var(--line); background: var(--card); }
+.top .wrap { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding-top: 1rem; padding-bottom: 1rem; }
+.brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; margin: 0; }
+.brand small { font-family: var(--sans); font-weight: 400; color: var(--muted); font-size: 0.85rem; margin-left: 0.5rem; }
+.linkbtn { background: none; border: 0; color: var(--teal); text-decoration: underline; cursor: pointer; padding: 0.25rem; }
+
+main { padding: 1.75rem 0 4rem; }
+h2 { font-family: var(--serif); font-size: 1.5rem; margin: 0 0 0.35rem; }
+h3 { font-family: var(--serif); font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+.lede { color: var(--muted); margin: 0 0 1.5rem; max-width: 60ch; }
+
+/* ----- panels ----- */
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 1.25rem; margin-bottom: 1.25rem; }
+.panel > h3:first-child { margin-top: 0; }
+
+.modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.mode { position: relative; display: block; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.85rem 1rem; cursor: pointer; background: var(--card); }
+.mode input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.mode strong { display: block; font-family: var(--serif); font-size: 1.05rem; }
+.mode span { color: var(--muted); font-size: 0.88rem; }
+.mode:has(input:checked) { border-color: var(--teal); background: var(--teal-soft); }
+.mode:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+fieldset { border: 0; padding: 0; margin: 0; }
+legend { font-family: var(--serif); font-weight: 700; margin-bottom: 0.4rem; padding: 0; }
+.chapter { margin: 0 0 0.9rem; }
+.chapter-head { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; margin-bottom: 0.3rem; }
+.topics { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip { position: relative; display: inline-flex; align-items: center; gap: 0.35rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.8rem; font-size: 0.9rem; cursor: pointer; background: var(--card); }
+.chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.chip:has(input:checked) { background: var(--teal); color: #fff; border-color: var(--teal); }
+@media (prefers-color-scheme: dark) { .chip:has(input:checked) { color: #0b1620; } }
+.chip:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+.chip em { font-style: normal; opacity: 0.75; font-size: 0.8rem; }
+
+.row { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; margin-top: 1rem; }
+select { font: inherit; padding: 0.35rem 0.5rem; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--ink); }
+.check { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+.btn { background: var(--teal); color: #fff; border: 0; border-radius: 8px; padding: 0.65rem 1.3rem; font-weight: 600; cursor: pointer; }
+@media (prefers-color-scheme: dark) { .btn { color: #0b1620; } }
+.btn:hover { background: var(--teal-deep); }
+@media (prefers-color-scheme: dark) { .btn:hover { color: #0b1620; } }
+.btn.ghost { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
+.btn.ghost:hover { background: var(--teal-soft); }
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.25rem; align-items: center; }
+.spacer { flex: 1; }
+
+/* ----- progress by topic ----- */
+.bars { display: grid; gap: 0.6rem; }
+.bar-row { display: grid; grid-template-columns: minmax(150px, 1.2fr) 3fr auto; gap: 0.75rem; align-items: center; font-size: 0.92rem; }
+.bar { height: 10px; background: var(--teal-soft); border-radius: 999px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--teal); }
+.bar i.low { background: var(--wrong); }
+.bar i.mid { background: var(--amber); }
+.bar i.hi { background: var(--right); }
+.num { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 6.5em; text-align: right; }
+
+/* ----- rhythm strip (progress) ----- */
+.strip { display: flex; align-items: flex-end; gap: 0; margin: 0 0 1.25rem; overflow-x: auto; padding-bottom: 4px; }
+.beat { flex: 0 0 auto; width: 28px; height: 30px; padding: 0; background: none; border: 0; cursor: pointer; }
+.beat svg { display: block; width: 100%; height: 100%; }
+.beat path { fill: none; stroke: var(--line); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.beat.seen path { stroke: var(--teal); }
+.beat.right path { stroke: var(--right); }
+.beat.wrong path { stroke: var(--wrong); }
+.beat.flagged path { stroke-dasharray: 3 2; }
+.beat.current { background: var(--teal-soft); border-radius: 4px; }
+.plainbar { height: 8px; background: var(--teal-soft); border-radius: 999px; overflow: hidden; margin: 0 0 1.25rem; }
+.plainbar i { display: block; height: 100%; background: var(--teal); }
+
+/* ----- question ----- */
+.meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; color: var(--muted); font-size: 0.88rem; margin-bottom: 0.6rem; }
+.tag { background: var(--teal-soft); color: var(--teal-deep); border-radius: 4px; padding: 0.1rem 0.5rem; }
+.timer { margin-left: auto; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+.timer.low { color: var(--wrong); }
+.stem { font-family: var(--serif); font-size: 1.2rem; line-height: 1.45; margin: 0 0 1rem; max-width: 62ch; }
+.hint { color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 0.9rem; }
+.bars + .hint { margin: 1rem 0 0; }
+
+.opts { display: grid; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.opt { position: relative; display: flex; gap: 0.75rem; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.7rem 0.9rem; background: var(--card); cursor: pointer; }
+.opt input { margin-top: 0.3rem; accent-color: var(--teal); }
+.opt:has(input:checked) { border-color: var(--teal); background: var(--teal-soft); }
+.opt:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+.opt.right, .opt.right:has(input:checked) { border-color: var(--right); background: var(--right-soft); }
+.opt.wrong, .opt.wrong:has(input:checked) { border-color: var(--wrong); background: var(--wrong-soft); }
+.opt.missed { border-style: dashed; border-color: var(--right); }
+.locked .opt { cursor: default; }
+.mark { margin-left: auto; font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
+.right .mark { color: var(--right); }
+.wrong .mark { color: var(--wrong); }
+.missed .mark { color: var(--right); }
+
+.fill { width: 100%; max-width: 24rem; font: inherit; padding: 0.6rem 0.75rem; border: 1.5px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); }
+.fill.right { border-color: var(--right); background: var(--right-soft); }
+.fill.wrong { border-color: var(--wrong); background: var(--wrong-soft); }
+
+.seq { display: grid; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.seq li { display: flex; align-items: center; gap: 0.6rem; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.55rem 0.75rem; background: var(--card); }
+.seq .pos { font-weight: 700; color: var(--teal); min-width: 1.4em; }
+.seq .txt { flex: 1; }
+.seq button { border: 1px solid var(--line); background: var(--card); border-radius: 6px; width: 2rem; height: 2rem; cursor: pointer; }
+.seq button[disabled] { opacity: 0.35; cursor: not-allowed; }
+.seq li.right { border-color: var(--right); background: var(--right-soft); }
+.seq li.wrong { border-color: var(--wrong); background: var(--wrong-soft); }
+
+.feedback { margin-top: 1.1rem; border-left: 4px solid var(--teal); background: var(--teal-soft); padding: 0.8rem 1rem; border-radius: 0 8px 8px 0; }
+.feedback.right { border-color: var(--right); background: var(--right-soft); }
+.feedback.wrong { border-color: var(--wrong); background: var(--wrong-soft); }
+.feedback strong { display: block; margin-bottom: 0.25rem; }
+.feedback p { margin: 0.25rem 0 0; }
+.feedback .ref { color: var(--muted); font-size: 0.88rem; }
+
+/* ----- results ----- */
+.score { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.25rem; margin-bottom: 0.5rem; }
+.score .big { font-family: var(--serif); font-size: 2.6rem; font-weight: 700; line-height: 1; }
+.review { display: grid; gap: 0.75rem; margin-top: 1rem; }
+.review details { border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+.review summary { cursor: pointer; padding: 0.7rem 0.9rem; display: flex; gap: 0.6rem; align-items: baseline; }
+.review summary .ok { color: var(--right); font-weight: 700; }
+.review summary .no { color: var(--wrong); font-weight: 700; }
+.review .body { padding: 0 0.9rem 0.9rem; }
+.review .body p { margin: 0.35rem 0; }
+.empty { color: var(--muted); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .modes { grid-template-columns: 1fr; }
+  .bar-row { grid-template-columns: 1fr; gap: 0.2rem; }
+  .num { text-align: left; }
+  .stem { font-size: 1.12rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bar i, .plainbar i { transition: width 0.4s ease; }
+}
+
+:root { --amber-soft: #f6e7c8; }
+@media (prefers-color-scheme: dark) { :root { --amber-soft: #3a3020; } }
+
+.badge { border-radius: 4px; padding: 0.1rem 0.5rem; font-size: 0.82rem; font-weight: 600; }
+.badge.med { background: var(--teal-soft); color: var(--teal-deep); }
+.badge.hard { background: var(--wrong-soft); color: var(--wrong); }
+.badge.pri { background: var(--amber-soft); color: var(--amber); border: 1px solid var(--amber); }
+.cov-note { margin: 0 0 0.9rem; }
+
+.feedback h4 { font-family: var(--serif); font-size: 1rem; margin: 0.9rem 0 0.2rem; }
+.feedback p { margin: 0.3rem 0; max-width: 68ch; }
+.feedback .tip { margin-top: 0.8rem; padding: 0.5rem 0.75rem; background: var(--card); border-radius: 6px; border: 1px dashed var(--line); }
+.review .feedback { margin-top: 0.5rem; }
+
+.vis { margin: 0.9rem 0; padding: 0.75rem; background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow-x: auto; }
+.vis svg { display: block; width: 100%; max-width: 680px; height: auto; margin: 0 auto; }
+.vis .t { fill: var(--ink); font: 13px var(--sans); }
+.vis .tb { fill: var(--ink); font: 700 13px var(--sans); }
+.vis .tm { fill: var(--muted); font: 12px var(--sans); }
+.vis .tr { fill: var(--wrong); font: 700 13px var(--sans); }
+.vis .tg { fill: var(--right); font: 700 13px var(--sans); }
+.vis .ln { stroke: var(--ink); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.vis .ln-teal { stroke: var(--teal); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.vis .ln-red { stroke: var(--wrong); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.vis .ln-green { stroke: var(--right); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.vis .dash { stroke: var(--muted); fill: none; stroke-width: 1.5; stroke-dasharray: 5 4; }
+.vis .arrow { stroke: var(--muted); stroke-width: 2; fill: none; marker-end: url(#ah); }
+.vis .mk { fill: var(--muted); }
+.vis .fteal { fill: var(--teal-soft); stroke: var(--teal); stroke-width: 1.5; }
+.vis .fgreen { fill: var(--right-soft); stroke: var(--right); stroke-width: 1.5; }
+.vis .fred { fill: var(--wrong-soft); stroke: var(--wrong); stroke-width: 1.5; }
+.vis .famber { fill: var(--amber-soft); stroke: var(--amber); stroke-width: 1.5; }
+.vis .fplain { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+.vis .fpeak { fill: var(--teal); stroke: var(--teal); }
+.vis .flight { fill: var(--teal-soft); stroke: var(--teal); stroke-width: 1; }
+.vis .fink { fill: var(--ink); }
+
+.vtable { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+.vtable th, .vtable td { border: 1px solid var(--line); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+.vtable thead th { background: var(--teal-soft); }
+.vtable tbody th { background: var(--paper); white-space: nowrap; }
+.swatch { display: inline-block; width: 1rem; height: 1rem; border-radius: 50%; vertical-align: -2px; margin-right: 0.4rem; border: 1px solid rgba(0, 0, 0, 0.25); }
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<h1 class="brand">NUR 285 Exam 1 <small>Chapter 3: Fluids and Electrolytes</small></h1>
+<button type="button" class="linkbtn" id="homeLink">Setup</button>
+</div></header>
+<main class="wrap" id="app" tabindex="-1"><noscript>This quiz needs JavaScript turned on.</noscript></main>
+<script>
+/* Visual helpers shared by the four quiz files */
+window.VH = (function () {
+  var DEFS = '<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="mk"/></marker></defs>';
+  function svg(w, h, alt, body) {
+    return '<svg viewBox="0 0 ' + w + " " + h + '" role="img" aria-label="' + alt + '">' + DEFS + body + "</svg>";
+  }
+  function T(x, y, s, cls, anchor) {
+    return '<text x="' + x + '" y="' + y + '" class="' + (cls || "t") + '" text-anchor="' + (anchor || "middle") + '">' + s + "</text>";
+  }
+  function R(x, y, w, h, cls, extra) {
+    return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="8" class="' + cls + '" ' + (extra || "") + "/>";
+  }
+  function A(x1, y1, x2, y2, cls) {
+    return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" class="' + (cls || "arrow") + '"/>';
+  }
+  function P(d, cls, extra) {
+    return '<path d="' + d + '" class="' + (cls || "ln") + '" ' + (extra || "") + "/>";
+  }
+  function C(cx, cy, r, cls) {
+    return '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" class="' + cls + '"/>';
+  }
+  function E(cx, cy, rx, ry, cls) {
+    return '<ellipse cx="' + cx + '" cy="' + cy + '" rx="' + rx + '" ry="' + ry + '" class="' + cls + '"/>';
+  }
+  function table(head, rows) {
+    var h = '<table class="vtable"><thead><tr>';
+    head.forEach(function (c) { h += "<th>" + c + "</th>"; });
+    h += "</tr></thead><tbody>";
+    rows.forEach(function (r) {
+      h += "<tr>";
+      r.forEach(function (c, i) { h += (i === 0 ? "<th scope=\"row\">" : "<td>") + c + (i === 0 ? "</th>" : "</td>"); });
+      h += "</tr>";
+    });
+    return h + "</tbody></table>";
+  }
+  return { svg: svg, T: T, R: R, A: A, P: P, C: C, E: E, table: table };
+})();
+
+</script>
+<script>
+(function () {
+  "use strict";
+  var V = window.VH;
+
+  window.CFG = {
+    key: "ch3",
+    title: "Chapter 3: Fluids and Electrolytes",
+    blurb: "Covers fluid movement, compartments, spacing, hypo/hypervolemia, IV therapy, acid-base, and every electrolyte imbalance.",
+    groups: [
+      { id: "fluid", label: "Fluid balance and therapy" },
+      { id: "acidbase", label: "Acid-base" },
+      { id: "lytes", label: "Electrolytes" }
+    ],
+    subs: [
+      { id: "mech", label: "Mechanisms controlling fluid and electrolyte movement", group: "fluid" },
+      { id: "comp", label: "Fluid compartments (ICF/ECF)", group: "fluid" },
+      { id: "spacing", label: "Fluid spacing", group: "fluid" },
+      { id: "hypovol", label: "Hypovolemia", group: "fluid" },
+      { id: "hypervol", label: "Hypervolemia", group: "fluid" },
+      { id: "therapy", label: "Fluid volume imbalances: IV therapy", group: "fluid" },
+      { id: "acidbase", label: "Acid-base imbalances", group: "acidbase" },
+      { id: "hyponat", label: "Hyponatremia", group: "lytes" },
+      { id: "hypernat", label: "Hypernatremia", group: "lytes" },
+      { id: "hypok", label: "Hypokalemia", group: "lytes" },
+      { id: "hyperk", label: "Hyperkalemia", group: "lytes" },
+      { id: "hypoca", label: "Hypocalcemia", group: "lytes" },
+      { id: "hyperca", label: "Hypercalcemia", group: "lytes" },
+      { id: "hypopo4", label: "Hypophosphatemia", group: "lytes" },
+      { id: "hyperpo4", label: "Hyperphosphatemia", group: "lytes" },
+      { id: "hypomg", label: "Hypomagnesemia", group: "lytes" },
+      { id: "hypermg", label: "Hypermagnesemia", group: "lytes" }
+    ],
+    visuals: {
+      tonicity: function () {
+        var b = "";
+        [[110, "Isotonic fluid", 38, "fteal", "Same solute inside and out", "No net water movement", 0],
+         [330, "Hypotonic fluid", 52, "fgreen", "Less solute outside the cell", "Water moves IN: cell swells", 1],
+         [550, "Hypertonic fluid", 26, "fred", "More solute outside the cell", "Water moves OUT: cell shrinks", 2]].forEach(function (c) {
+          var x = c[0];
+          b += V.T(x, 24, c[1], "tb") + V.C(x, 100, c[2], c[3]);
+          if (c[6] === 1) b += V.A(x - 92, 100, x - c[2] - 6, 100) + V.A(x + 92, 100, x + c[2] + 6, 100);
+          if (c[6] === 2) b += V.A(x - c[2] - 6, 100, x - 92, 100) + V.A(x + c[2] + 6, 100, x + 92, 100);
+          if (c[6] === 0) b += V.T(x, 106, "\u21C4", "tb");
+          b += V.T(x, 176, c[4], "tm") + V.T(x, 196, c[5], "t");
+        });
+        return V.svg(660, 212, "Cells shrink in hypertonic fluid and swell in hypotonic fluid", b);
+      },
+      raas: function () {
+        var b = V.T(10, 14, "RAAS: raises volume and pressure", "tb", "start");
+        var boxes = [["Low BP or", "low kidney flow", "fred"], ["Kidneys release", "renin", "fteal"], ["Angiotensin II", "(vasoconstricts)", "fteal"], ["Aldosterone", "released", "fteal"], ["Salt + water", "kept: BP up", "fgreen"]];
+        boxes.forEach(function (x, i) {
+          var X = 6 + i * 131;
+          b += V.R(X, 24, 108, 56, x[2]) + V.T(X + 54, 48, x[0], "t") + V.T(X + 54, 66, x[1], "t");
+          if (i < 4) b += V.A(X + 108, 52, X + 130, 52);
+        });
+        b += V.T(10, 124, "ANP: lowers volume (the opposite response)", "tb", "start");
+        b += V.R(10, 136, 170, 56, "famber") + V.T(95, 160, "Atria stretched by", "t") + V.T(95, 178, "excess volume", "t");
+        b += V.A(180, 164, 230, 164);
+        b += V.R(230, 136, 140, 56, "famber") + V.T(300, 160, "ANP released", "tb") + V.T(300, 178, "from the atria", "t");
+        b += V.A(370, 164, 420, 164);
+        b += V.R(420, 136, 230, 56, "fgreen") + V.T(535, 160, "Kidneys excrete Na\u207A", "t") + V.T(535, 178, "and water: BP falls", "t");
+        return V.svg(660, 206, "RAAS steps raise volume and ANP lowers volume", b);
+      },
+      compartments: function () {
+        var b = V.R(220, 6, 220, 34, "fteal") + V.T(330, 28, "Total body water", "tb");
+        b += V.A(280, 40, 190, 68) + V.A(380, 40, 480, 68);
+        b += V.R(40, 70, 300, 52, "fgreen") + V.T(190, 92, "ICF: inside cells (about 2/3)", "tb") + V.T(190, 110, "K\u207A and phosphate are the main ions", "t");
+        b += V.R(340, 70, 310, 52, "fteal") + V.T(495, 92, "ECF: outside cells (about 1/3)", "tb") + V.T(495, 110, "Na\u207A is the main cation", "t");
+        [["Intravascular", "(plasma)"], ["Interstitial", "(edema)"], ["Transcellular", "(CSF, synovial)"]].forEach(function (x, i) {
+          var X = 340 + i * 106;
+          b += V.R(X, 150, 98, 46, "fplain") + V.T(X + 49, 170, x[0], "t") + V.T(X + 49, 186, x[1], "tm");
+        });
+        b += V.A(495, 122, 495, 148);
+        b += V.R(340, 218, 310, 46, "fred", 'stroke-dasharray="6 4"') + V.T(495, 238, "THIRD space: trapped fluid", "tr") + V.T(495, 254, "ascites, burns, effusions, obstruction", "t");
+        b += V.A(495, 196, 495, 216, "dash");
+        return V.svg(660, 274, "Fluid compartments: ICF and ECF with third space", b);
+      },
+      ecg: function () {
+        var panels = [
+          [10, "Normal", "ln", "M0,100 h10 q8,-14 16,0 h12 l4,6 l5,-46 l5,52 l3,-12 h18 q16,-26 32,0 h60", "Upright rounded T wave", "Narrow QRS"],
+          [230, "Hypokalemia (K\u207A < 3.5)", "ln-red", "M0,100 h10 q8,-14 16,0 h12 l4,6 l5,-46 l5,52 l3,-6 h10 q14,-4 28,0 h6 q8,-14 16,0 h40", "Flat T wave, ST depression", "U wave appears"],
+          [450, "Hyperkalemia (K\u207A > 5.0)", "ln-teal", "M0,100 h10 q8,-14 16,0 h8 l8,6 l8,-46 l8,52 l6,-12 h6 l9,-52 l9,52 h60", "Tall, peaked T wave", "Widened QRS"]
+        ];
+        var b = "";
+        panels.forEach(function (p) {
+          b += V.T(p[0] + 100, 22, p[1], "tb") + V.R(p[0], 34, 200, 96, "fplain");
+          b += '<g transform="translate(' + (p[0] + 6) + ',16)">' + V.P(p[3], p[2]) + "</g>";
+          b += V.T(p[0] + 100, 156, p[4], "t") + V.T(p[0] + 100, 176, p[5], "tm");
+        });
+        return V.svg(660, 190, "Sketch of normal, hypokalemia, and hyperkalemia ECG patterns", b);
+      },
+      seesaw: function () {
+        var b = V.P("M330,150 L300,206 L360,206 Z", "ln");
+        b += V.P("M110,96 L550,196", "ln") + V.C(330, 146, 5, "fink");
+        b += V.R(40, 36, 190, 44, "fred") + V.T(135, 55, "PHOSPHATE high", "tr") + V.T(135, 72, "(for example 7.5 mg/dL)", "t");
+        b += V.R(440, 106, 190, 44, "famber") + V.T(535, 125, "CALCIUM low", "tr") + V.T(535, 142, "tingling, tetany", "t");
+        b += V.T(330, 230, "Inverse relationship: when one goes up, the other goes down", "tm");
+        return V.svg(660, 244, "Seesaw showing high phosphate pushes calcium down", b);
+      },
+      abg: function () {
+        return V.table(["Disorder", "pH", "PaCO\u2082 (35-45)", "HCO\u2083\u207B (22-26)", "Quick rule"], [
+          ["Respiratory acidosis", "\u2193", "\u2191 (cause)", "normal or \u2191 if compensating", "ROME: pH and CO\u2082 go OPPOSITE"],
+          ["Respiratory alkalosis", "\u2191", "\u2193 (cause)", "normal or \u2193 if compensating", "ROME: pH and CO\u2082 go OPPOSITE"],
+          ["Metabolic acidosis", "\u2193", "normal or \u2193 if compensating", "\u2193 (cause)", "ROME: pH and HCO\u2083 go EQUAL"],
+          ["Metabolic alkalosis", "\u2191", "normal or \u2191 if compensating", "\u2191 (cause)", "ROME: pH and HCO\u2083 go EQUAL"]
+        ]) + '<p class="tm" style="margin:.5rem 0 0">Partially compensated: pH still abnormal and both CO\u2082 and HCO\u2083 are abnormal. Fully compensated: pH back in range.</p>';
+      }
+    }
+  };
+
+  var Q = [];
+  function hash(s) { var h = 5381; for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return "q" + (h >>> 0).toString(36); }
+  function q(sub, diff, pri, type, stem, opts, a, r, w, tip, vis) {
+    Q.push({ id: hash(sub + stem), sub: sub, diff: diff === "H" ? "hard" : "medium", pri: !!pri, type: type, q: stem, opts: opts, a: a, r: r, w: w, tip: tip, vis: vis });
+  }
+
+  /* ===== MECHANISMS ===== */
+  q("mech", "M", 0, "mc",
+    "A client has lost 1.5 L of blood after a motor vehicle crash and the blood pressure is falling. Which sequence best describes the body's hormonal response to restore volume?",
+    ["Kidneys release renin, angiotensin II forms, aldosterone is released, and sodium and water are retained",
+     "Atria release ANP, the kidneys excrete sodium, and urine output increases",
+     "Aldosterone is released first, then renin, then angiotensin II, causing vasodilation",
+     "The posterior pituitary stops releasing ADH, so the kidneys excrete dilute urine"], 0,
+    "When blood volume and pressure drop, the kidneys sense poor blood flow and release **renin**. Renin starts a chain reaction: it leads to **angiotensin II**, which squeezes blood vessels, and then to **aldosterone**, which tells the kidneys to hold on to sodium. Where sodium goes, water follows, so volume and pressure rise. That is exactly what a bleeding client needs.\nThis whole chain is called the renin-angiotensin-aldosterone system (RAAS).",
+    "ANP does the opposite job: it is released when the atria are stretched by too much volume, so it would make a bleeding client worse. Putting the steps in a different order breaks the chain, and aldosterone does not cause vasodilation. A bleeding client needs ADH to go UP, not stop, so the kidneys keep water.",
+    "Low pressure turns RAAS ON. High volume turns ANP ON.", "raas");
+  q("mech", "H", 0, "sata",
+    "Which statements about fluid and electrolyte movement are correct? Select all that apply.",
+    ["Osmosis moves water toward the side with more dissolved particles",
+     "The sodium-potassium pump moves sodium out of the cell and potassium in, using ATP",
+     "Filtration in the glomerulus is driven by pressure",
+     "Diffusion of solutes from low to high concentration requires no energy",
+     "Active transport moves substances only down their concentration gradient"], [0, 1, 2],
+    "Think of water as following the crowd: in **osmosis**, water moves toward the area with more dissolved particles. The **sodium-potassium pump** spends ATP energy to push sodium out and pull potassium in, even though both are moving against their concentration gradients. That is why sodium stays mostly outside cells and potassium stays inside. **Filtration** uses pressure to push water and small solutes across a membrane, which is how the glomerulus makes urine.",
+    "Diffusion moves solutes from HIGH to LOW concentration and needs no energy; moving from low to high would be uphill and does need energy. Active transport is the process that works AGAINST a gradient, so saying it only moves things downhill is backwards.",
+    "Passive = downhill and free. Active = uphill and costs ATP.");
+  q("mech", "H", 0, "mc",
+    "A client's serum osmolality has risen sharply from severe dehydration, and the client is now confused. Which cellular change best explains the confusion?",
+    ["Water moves out of brain cells into the more concentrated blood, so the cells shrink",
+     "Water moves into brain cells from the blood, so the cells swell",
+     "Sodium moves out of brain cells by diffusion",
+     "Potassium shifts into brain cells and causes depolarization"], 0,
+    "When the blood becomes too concentrated (hypertonic), it acts like a sponge for water. Water leaves the brain cells to dilute the blood, and the **cells shrink**. Shrunken brain cells do not work well, which shows up as confusion, restlessness, and in severe cases seizures. The picture shows what happens to a cell in each type of fluid.",
+    "Cell swelling happens in the opposite situation, when the fluid outside the cell is too dilute (hypotonic). Sodium and potassium movements are not the main driver here; water follows the concentration of particles.",
+    "Water follows salt. Salty blood pulls water out of cells.", "tonicity");
+
+  /* ===== COMPARTMENTS ===== */
+  q("comp", "M", 0, "mc",
+    "Which statement correctly compares the two main fluid compartments?",
+    ["Intracellular fluid holds about two-thirds of body water and is rich in potassium and phosphate",
+     "Extracellular fluid holds about two-thirds of body water and is rich in potassium",
+     "Intracellular fluid is rich in sodium and chloride",
+     "Extracellular fluid includes only the plasma in the blood vessels"], 0,
+    "Most of your body water is **inside cells** (intracellular fluid, ICF, about two-thirds). The main ions inside cells are **potassium (K\u207A)** and **phosphate**. The remaining third is **extracellular fluid (ECF)**, where **sodium (Na\u207A)** is the main positive ion. The ECF is split into plasma (intravascular), the fluid between cells (interstitial), and special fluids such as CSF and synovial fluid (transcellular).",
+    "Reversing the proportions or the ions is the common trap. ECF is more than plasma alone because it also includes interstitial and transcellular fluid.",
+    "Inside cells = Potassium. Outside cells = Sodium.", "compartments");
+
+  /* ===== SPACING ===== */
+  q("spacing", "H", 1, "mc",
+    "A client 12 hours after a major burn has weight gain, widespread edema, heart rate 124, blood pressure 88/50, flat neck veins, and urine output of 15 mL/hr. Which action is the priority?",
+    ["Prepare for isotonic IV fluid resuscitation and notify the provider",
+     "Administer a prescribed loop diuretic to reduce the edema",
+     "Restrict oral and IV fluids",
+     "Elevate the extremities and reassess in one hour"], 0,
+    "This client has **third spacing**: burned tissue leaks fluid out of the blood vessels into damaged areas where it is trapped and cannot be used. Even though the client looks swollen, the blood vessels are nearly empty, which explains the low blood pressure, fast heart rate, flat neck veins, and low urine output. This is a **hypovolemic emergency**, so the priority is to restore circulating volume with isotonic fluid.",
+    "A diuretic would pull even more fluid out of an already empty circulation and could cause shock. Restricting fluids makes the volume problem worse. Elevating limbs and waiting wastes time when perfusion is already failing.",
+    "Swollen does not always mean full. Check neck veins, BP, and urine output.", "compartments");
+  q("spacing", "M", 0, "mc",
+    "Which situation is an example of third spacing?",
+    ["Ascites in a client with cirrhosis",
+     "Pitting ankle edema in a client with heart failure",
+     "Crackles in a client with fluid overload",
+     "Dry mucous membranes in a client with vomiting"], 0,
+    "**Third spacing** means fluid is trapped in a space where it does not normally collect and cannot easily return to the blood, such as the abdomen (ascites), pleural space, or burned tissue. **Second spacing** is simple edema, where extra fluid collects between cells. Ankle edema from heart failure is second spacing, not third.",
+    "Crackles reflect fluid in the lungs from overload, and dry mucous membranes show dehydration. Neither describes fluid trapped in a body space.",
+    "1st = normal. 2nd = edema. 3rd = trapped and useless.", "compartments");
+
+  /* ===== HYPOVOLEMIA ===== */
+  q("hypovol", "H", 1, "mc",
+    "The nurse is assigned four clients. Which client should the nurse assess first?",
+    ["A client with gastroenteritis, heart rate 122, blood pressure 84/50, flat neck veins, and 120 mL of urine in 8 hours",
+     "A client with heart failure who gained 1 kg overnight and has 2+ ankle edema",
+     "A client with COPD whose oxygen saturation is stable at 91% on 2 L",
+     "A client with diabetes who has a fasting glucose of 160 mg/dL"], 0,
+    "The first client shows **hypovolemic shock** developing: a fast heart rate, low blood pressure, flat neck veins, and very low urine output (less than 30 mL/hr). Organs are not getting enough blood flow, and this can worsen quickly. Unstable, life-threatening changes always come before stable chronic problems.",
+    "The heart failure client has expected, slow weight gain without respiratory distress. The COPD client is at his usual baseline. A glucose of 160 is mildly high but not an emergency.",
+    "Unstable and acute beats stable and chronic.");
+  q("hypovol", "M", 0, "sata",
+    "Which findings are consistent with hypovolemia? Select all that apply.",
+    ["Flat neck veins", "Postural hypotension", "High urine specific gravity", "Crackles in the lungs", "Weak, rapid pulse", "Peripheral edema"], [0, 1, 2, 4],
+    "In hypovolemia the body is short on fluid, so everything about volume goes down: **flat neck veins**, **blood pressure drops when standing**, and the heart speeds up with a **weak, thready pulse** to make up for it. The kidneys save water, so the urine is dark and concentrated with a **high specific gravity**.",
+    "Crackles and peripheral edema are signs of too much fluid (hypervolemia), not too little.",
+    "Hypovolemia = dry, fast, and low.");
+  q("hypovol", "H", 0, "mc",
+    "An 84-year-old client with a urinary tract infection is newly confused. Which assessment is the most reliable way to evaluate hydration status?",
+    ["Daily weights compared with baseline, intake and output, and the mucous membranes",
+     "Skin turgor on the back of the hand",
+     "Skin turgor on the forearm only",
+     "The client's report of thirst"], 0,
+    "In older adults the skin loses elasticity with age, so **skin turgor is unreliable**; the skin may stay tented even when the client is well hydrated. Better measures are **weight trends**, **intake and output**, **mucous membranes**, vital signs, and mental status. Thirst also becomes less reliable with age, and confusion can make self-reports unreliable.",
+    "Turgor on the hand or forearm will mislead you in an older adult. A thirst report depends on a mental status and thirst sensation that may both be impaired.",
+    "Old skin tents. Trust weights, I&O, and mucous membranes.");
+
+  /* ===== HYPERVOLEMIA ===== */
+  q("hypervol", "H", 1, "mc",
+    "A client with heart failure is short of breath, with bilateral crackles, an S3, SpO2 of 88%, and a 3 kg weight gain in two days. What should the nurse do first?",
+    ["Raise the head of the bed to high Fowler's position and apply oxygen as prescribed",
+     "Administer the scheduled IV furosemide",
+     "Weigh the client again to confirm the gain",
+     "Teach the client about sodium restriction"], 0,
+    "This is **pulmonary edema** from fluid overload, and the airway-breathing-circulation rule says to fix oxygenation first. Sitting the client upright lets the lungs expand and shifts fluid away from the chest, and oxygen raises the saturation immediately. The diuretic is important and will be given next, but it takes time to work.",
+    "Diuretics are needed but do not fix a low oxygen level in the next few minutes. Re-weighing and teaching are useful later, but not while the client cannot breathe well.",
+    "ABCs first: breathing before medications.");
+  q("hypervol", "M", 0, "sata",
+    "Which nursing actions are appropriate for a client with hypervolemia? Select all that apply.",
+    ["Weigh the client daily at the same time on the same scale", "Monitor intake and output", "Restrict sodium and fluids as prescribed", "Encourage extra oral fluids", "Assess for edema and lung sounds"], [0, 1, 2, 4],
+    "With too much fluid on board, the plan is to **measure it** (daily weights, strict I&O, edema, and lung sounds) and **remove or limit it** (sodium and fluid restriction, diuretics as ordered). Daily weights are the most accurate way to track fluid; 1 kg of weight is about 1 liter of fluid.",
+    "Encouraging extra fluids would add to the problem instead of limiting it.",
+    "Weigh it, measure it, limit it.");
+  q("hypervol", "M", 0, "fill",
+    "A client's weight increases by 1.5 kg in 24 hours with no change in diet. About how many liters of fluid has the client retained?",
+    null,
+    ["1.5", "1.5 L", "1.5 liters", "1.5 litres"],
+    "Water weighs about 1 kg per liter, so a rapid weight gain of 1.5 kg in one day is almost always fluid and not food or fat. **1.5 kg = about 1.5 L.** That is why daily weights are the best bedside tool for tracking hypervolemia.",
+    "", "1 kg of weight = about 1 L of fluid.");
+
+  /* ===== THERAPY ===== */
+  q("therapy", "M", 0, "sata",
+    "Which IV solutions are classified as isotonic? Select all that apply.",
+    ["0.9% sodium chloride", "Lactated Ringer's", "5% dextrose in water (as it hangs in the bag)", "0.45% sodium chloride", "3% sodium chloride"], [0, 1, 2],
+    "**Isotonic** fluids have about the same particle concentration as blood, so they stay in the ECF and expand volume without shifting water into or out of cells. 0.9% NaCl and lactated Ringer's are the classic examples. D5W is isotonic in the bag, but the body quickly uses the dextrose, so in the body it acts like free water.",
+    "0.45% NaCl is hypotonic (it moves water into cells), and 3% NaCl is hypertonic (it pulls water out of cells).",
+    "0.9 and LR are the volume expanders.");
+  q("therapy", "H", 1, "mc",
+    "A client with severe hyponatremia is receiving 3% sodium chloride. Thirty minutes into the infusion the client develops a cough, crackles at both lung bases, and an SpO2 of 90%. What is the nurse's priority action?",
+    ["Stop the infusion, raise the head of the bed, and notify the provider",
+     "Slow the infusion and recheck the sodium in 6 hours",
+     "Administer a PRN sedative for the cough",
+     "Document the finding and continue to monitor"], 0,
+    "Hypertonic saline works by pulling water into the blood vessels from the tissues. That raises blood volume quickly and can overload the lungs, causing **pulmonary edema**. New cough, crackles, and a falling oxygen level are warning signs, so the nurse **stops the infusion**, sits the client upright, and calls the provider right away.",
+    "Slowing the infusion and waiting hours ignores an active respiratory emergency. Sedating a client who cannot oxygenate is unsafe, and simply monitoring allows the problem to worsen.",
+    "3% saline = watch the lungs.");
+
+  /* ===== ACID-BASE ===== */
+  q("acidbase", "H", 0, "mc",
+    "ABG results: pH 7.31, PaCO2 31 mmHg, HCO3 15 mEq/L. Which interpretation is correct?",
+    ["Partially compensated metabolic acidosis", "Uncompensated respiratory alkalosis", "Fully compensated metabolic acidosis", "Partially compensated respiratory acidosis"], 0,
+    "Use three steps. **1) pH 7.31** is below 7.35, so it is acidic. **2) HCO3 of 15** is low, and low bicarbonate means acid, so the metabolic side matches the pH and is the cause. **3) PaCO2 of 31** is low, meaning the lungs are blowing off CO2 to compensate. Because the pH is still abnormal while CO2 has already moved, it is **partially compensated**.",
+    "In respiratory alkalosis the pH would be high. Fully compensated would mean the pH is back to normal. In respiratory acidosis the CO2 would be high, not low.",
+    "Match the pH direction to find the cause; the other value is compensating.", "abg");
+  q("acidbase", "H", 1, "mc",
+    "A client with diabetic ketoacidosis has deep, rapid respirations of 32 per minute. Which action is the priority?",
+    ["Give the prescribed IV fluids and insulin to treat the underlying cause",
+     "Coach the client to breathe slowly",
+     "Administer a prescribed sedative to lower the respiratory rate",
+     "Apply a rebreather mask"], 0,
+    "These deep, fast breaths (**Kussmaul respirations**) are the lungs doing their job: they blow off CO2 to raise the pH and offset the acid from ketones. The breathing is the body's rescue, so the fix is to treat the cause with fluids and insulin. As the acidosis resolves, the breathing slows on its own.",
+    "Slowing or sedating the breathing would remove the compensation and let the pH drop dangerously. A rebreather mask would add CO2 back in, which also worsens acidosis.",
+    "Do not stop compensation. Treat the cause.");
+  q("acidbase", "M", 1, "mc",
+    "A client with COPD is two hours post-op and receiving a morphine PCA. ABG shows pH 7.29, PaCO2 62 mmHg, HCO3 25 mEq/L, and the client is drowsy. Which action should the nurse take first?",
+    ["Stop the PCA, stimulate the client, support breathing, and notify the provider",
+     "Increase the oxygen flow rate to 6 L/min",
+     "Encourage the client to sleep to reduce pain",
+     "Recheck the ABG in 4 hours"], 0,
+    "This is **respiratory acidosis**: high CO2 with a low pH. The opioid is slowing the breathing, so CO2 builds up. The first step is to remove the cause (stop the PCA), wake and coach the client to breathe, and call for help; reversal agents may be ordered. Drowsiness here is a sign of rising CO2.",
+    "Large amounts of oxygen can further suppress breathing in clients with chronic CO2 retention. Letting the client sleep or waiting hours allows a respiratory arrest to develop.",
+    "High CO2 + sleepy + opioid = stop the opioid.");
+  q("acidbase", "M", 0, "mc",
+    "A client with a nasogastric tube to low suction has had 1,800 mL of output in 24 hours. Which acid-base imbalance and laboratory finding does the nurse anticipate?",
+    ["Metabolic alkalosis with low potassium and low chloride",
+     "Metabolic acidosis with high potassium",
+     "Respiratory acidosis with high chloride",
+     "Respiratory alkalosis with low calcium"], 0,
+    "Stomach fluid is full of **hydrochloric acid** along with potassium and chloride. Suctioning it away removes acid, so the blood becomes alkaline (**metabolic alkalosis**) and levels of **potassium and chloride fall**. Vomiting does the same thing.",
+    "Metabolic acidosis would come from losing bicarbonate, as in diarrhea. Respiratory problems would change the CO2 first, not bicarbonate.",
+    "Vomit or suction = lose acid = metabolic alkalosis.");
+
+  /* ===== HYPONATREMIA ===== */
+  q("hyponat", "H", 1, "mc",
+    "A client with SIADH has a serum sodium of 114 mEq/L and has just had a generalized seizure that has stopped. Which prescribed intervention does the nurse anticipate next?",
+    ["Cautious infusion of 3% sodium chloride with frequent sodium checks",
+     "Rapid infusion of 0.45% sodium chloride",
+     "Free-water flushes through the feeding tube",
+     "Unrestricted oral fluids"], 0,
+    "In SIADH the body holds on to too much water, which dilutes the sodium. A sodium of 114 with a seizure is an emergency because brain cells are swelling. A small amount of **3% (hypertonic) saline** pulls water out of brain cells and raises the sodium. It must be given **slowly** with frequent checks because correcting too fast can damage the brain (osmotic demyelination).",
+    "Hypotonic fluids, free water, and unrestricted fluids would all add more water and make the sodium even lower.",
+    "Too little salt, too much water: add salt slowly, limit water.");
+  q("hyponat", "M", 0, "sata",
+    "Which nursing actions are appropriate for a client with hyponatremia from water excess? Select all that apply.",
+    ["Restrict fluids as prescribed", "Perform frequent neurologic checks", "Weigh the client daily", "Monitor intake and output", "Encourage the client to drink extra water"], [0, 1, 2, 3],
+    "Because sodium is being diluted by extra water, the plan is to **limit the water** (fluid restriction) and **watch the brain** (neuro checks for headache, confusion, and seizures). Daily weights and I&O show whether the restriction is working.",
+    "Extra water makes the dilution worse.",
+    "Low Na with extra water = fluid restriction and neuro checks.");
+
+  /* ===== HYPERNATREMIA ===== */
+  q("hypernat", "M", 1, "mc",
+    "A client receiving continuous tube feedings has a serum sodium of 156 mEq/L, dry sticky mucous membranes, and new confusion. Which action is the priority?",
+    ["Assess neurologic status and request an order for free-water flushes or a hypotonic IV fluid",
+     "Increase the sodium content of the feedings",
+     "Restrict all fluids",
+     "Administer a prescribed sedative"], 0,
+    "The client is losing water or not getting enough while the feeding supplies concentrated nutrients, so the blood is too salty. High sodium draws water out of brain cells, causing confusion. The priority is to **check the brain** and ask for **more free water** or a **hypotonic fluid** (0.45% NaCl or D5W), which gradually lowers the sodium.",
+    "Adding sodium or restricting fluids would raise the sodium further. Sedation hides worsening neurologic signs.",
+    "High Na = thirsty cells. Give water, watch the brain.");
+  q("hypernat", "H", 0, "sata",
+    "Which findings are consistent with hypernatremia? Select all that apply.",
+    ["Dry, sticky mucous membranes", "Thirst", "Restlessness and agitation", "Seizures in severe cases", "Edema with weight gain"], [0, 1, 2, 3],
+    "In hypernatremia the blood is too concentrated, so water leaves cells. This produces **dry, sticky membranes and thirst**, and when brain cells shrink, **restlessness, agitation, confusion, and seizures**.",
+    "Edema with weight gain suggests extra water, not water loss.",
+    "Salty blood = thirsty, dry, and agitated.");
+
+  /* ===== HYPOKALEMIA ===== */
+  q("hypok", "H", 1, "mc",
+    "A client who takes digoxin and furosemide reports palpitations. Heart rate is irregular and the potassium level is 2.8 mEq/L. What should the nurse do first?",
+    ["Place the client on a cardiac monitor or obtain an ECG and notify the provider",
+     "Administer the scheduled dose of digoxin",
+     "Encourage a banana and orange juice and recheck in the morning",
+     "Repeat the potassium level on the next lab draw"], 0,
+    "Low potassium makes the heart muscle irritable, and it also makes the heart much more **sensitive to digoxin**, so dangerous rhythms can develop. The client has symptoms, so the first step is to see the rhythm with a **monitor or ECG** and call the provider for IV potassium. Hypokalemia often shows flat T waves and U waves.",
+    "Giving more digoxin could cause toxicity. Diet and waiting until morning are far too slow for a symptomatic client with a very low potassium.",
+    "Low K + digoxin = danger. Monitor first.", "ecg");
+  q("hypok", "M", 0, "sata",
+    "Which actions are correct when administering IV potassium chloride? Select all that apply.",
+    ["Dilute the potassium according to policy", "Use an infusion pump", "Never give it by IV push", "Check that the client has adequate urine output", "Give it undiluted through a peripheral IV for faster results"], [0, 1, 2, 3],
+    "IV potassium is high-alert because it can stop the heart if given too quickly. It must be **diluted**, given **slowly with a pump**, and **never pushed**. The kidneys remove potassium, so confirm adequate **urine output** before and during infusion. It can also irritate veins, so check the IV site often.",
+    "Undiluted potassium given quickly can cause fatal dysrhythmias, so it must never be used to \"speed up\" treatment.",
+    "K+ is never pushed. Dilute and pump.");
+
+  /* ===== HYPERKALEMIA ===== */
+  q("hyperk", "H", 1, "mc",
+    "A client with kidney failure has a potassium of 6.8 mEq/L, tall peaked T waves, and a widening QRS on the monitor. Which prescribed medication should the nurse give first?",
+    ["IV calcium gluconate", "Sodium polystyrene sulfonate (Kayexalate)", "IV furosemide", "Hemodialysis"], 0,
+    "The ECG shows that high potassium is already affecting the heart. **Calcium gluconate** works within minutes to **protect the heart muscle** from the dangerous effects of potassium. It does not lower the potassium level, so it is a bridge while other treatments are started. In the picture you can see how the T wave becomes tall and peaked and the QRS widens.",
+    "Kayexalate, furosemide, and dialysis all REMOVE potassium but take longer to work, and the heart is at risk right now. Protect first, then shift, then remove.",
+    "Calcium protects the heart. It does not lower K+.", "ecg");
+  q("hyperk", "H", 0, "sata",
+    "Which prescribed treatments move potassium INTO the cells for a client with hyperkalemia? Select all that apply.",
+    ["Regular insulin with dextrose", "Albuterol", "Sodium bicarbonate", "Sodium polystyrene sulfonate", "Hemodialysis"], [0, 1, 2],
+    "Hyperkalemia treatment has three jobs: **protect the heart** (calcium gluconate), **shift K\u207A into cells** (insulin with dextrose, albuterol, sodium bicarbonate), and **remove K\u207A from the body** (loop diuretics, Kayexalate, dialysis). Insulin carries potassium into cells with glucose, and the other two do the same through different actions. Shifting is only temporary, so removal is still needed.",
+    "Sodium polystyrene sulfonate and hemodialysis take potassium out of the body; they do not shift it into cells.",
+    "Protect, shift, remove.");
+  q("hyperk", "M", 0, "mc",
+    "A client with chronic kidney disease takes an ACE inhibitor and spironolactone. For which electrolyte problem is this client at greatest risk?",
+    ["Hyperkalemia", "Hypokalemia", "Hypernatremia", "Hypomagnesemia"], 0,
+    "Both medicines make the body **hold on to potassium**: ACE inhibitors lower aldosterone, and spironolactone is a potassium-sparing diuretic. Failing kidneys already struggle to remove potassium, so the risk is high. Teach the client to avoid salt substitutes (often potassium chloride) and to have levels checked regularly.",
+    "These drugs do not cause potassium loss. They are not associated with sodium rise or magnesium loss in the same way.",
+    "ACE inhibitor + spironolactone + kidney disease = watch K+.");
+
+  /* ===== HYPOCALCEMIA ===== */
+  q("hypoca", "H", 1, "mc",
+    "A client who had a total thyroidectomy yesterday reports tingling around the mouth and has a positive Chvostek's sign. Calcium is 7.1 mg/dL. Which action is the priority?",
+    ["Assess the airway and for laryngospasm, notify the provider, and prepare for IV calcium gluconate",
+     "Reassure the client and encourage dairy foods",
+     "Restrict fluids and recheck the calcium tomorrow",
+     "Apply a heating pad to the hands"], 0,
+    "Surgery near the thyroid can injure or remove the **parathyroid glands**, which control calcium. Low calcium makes nerves and muscles overexcitable, causing tingling, tetany, **laryngospasm**, and seizures. Because the airway can close suddenly, the nurse watches breathing, calls the provider, and gets **IV calcium gluconate** ready.",
+    "Dairy and reassurance are too slow and ignore the risk of airway spasm. Fluid restriction does not treat low calcium, and a heating pad does nothing for the cause.",
+    "Tingling after thyroid surgery = airway first, calcium next.");
+  q("hypoca", "M", 0, "mc",
+    "A nurse inflates a blood pressure cuff on a client's arm above systolic pressure for 3 minutes and the client's hand curls into a spasm. What does this finding indicate?",
+    ["A positive Trousseau's sign from hypocalcemia", "A positive Chvostek's sign from hypokalemia", "Normal calcium and potassium levels", "Hypercalcemia"], 0,
+    "**Trousseau's sign** is a hand and wrist spasm triggered by the cuff cutting off blood flow to nerves that are already overexcitable from low calcium. **Chvostek's sign** is a facial twitch when the facial nerve in front of the ear is tapped. Both point to **hypocalcemia**.",
+    "Chvostek's sign is a facial twitch, not a hand spasm, and neither sign is related to potassium or high calcium.",
+    "Trousseau = cuff and hand. Chvostek = cheek and face.");
+
+  /* ===== HYPERCALCEMIA ===== */
+  q("hyperca", "H", 1, "mc",
+    "A client with metastatic breast cancer has a calcium of 13.8 mg/dL, is confused, and is constipated. Which prescribed intervention does the nurse implement first?",
+    ["Start IV 0.9% sodium chloride", "Administer a calcium supplement", "Encourage dairy products", "Apply a thiazide diuretic"], 0,
+    "Cancer that spreads to bone releases large amounts of calcium into the blood. High calcium slows nerves and muscles, causing **confusion, constipation, weakness**, and heart rhythm changes. The first treatment is **IV normal saline**, which dilutes the calcium and helps the kidneys excrete it; loop diuretics and bisphosphonates follow.",
+    "Calcium supplements and dairy raise the level further, and thiazide diuretics make the kidneys hold on to calcium.",
+    "High calcium: fluids first, never more calcium.");
+  q("hyperca", "M", 0, "sata",
+    "Which nursing actions are appropriate for a client with hypercalcemia? Select all that apply.",
+    ["Encourage fluids of 3,000 to 4,000 mL/day unless contraindicated", "Encourage mobility as tolerated", "Handle the client gently because bones may be fragile", "Monitor the ECG and for constipation", "Provide calcium-containing antacids for stomach upset"], [0, 1, 2, 3],
+    "Extra fluids help the kidneys flush out calcium, and **movement keeps calcium in the bones** instead of the blood. When calcium has been pulled from bones, they may break easily, so handle gently. High calcium also affects heart rhythm and slows the gut.",
+    "Calcium-containing antacids would add more calcium.",
+    "Hypercalcemia: flush it, move it, protect the bones.");
+
+  /* ===== HYPOPHOSPHATEMIA ===== */
+  q("hypopo4", "H", 1, "mc",
+    "A malnourished client was started on total parenteral nutrition two days ago and now has weakness, shallow respirations, and a phosphate of 1.8 mg/dL. Which action is the priority?",
+    ["Assess respiratory status and notify the provider for phosphate replacement",
+     "Increase the TPN rate to provide more calories",
+     "Encourage the client to rest and recheck in 24 hours",
+     "Give a phosphate binder with the next meal"], 0,
+    "When a starved body is suddenly fed, glucose and insulin drive **phosphate into cells**, and the blood level drops (**refeeding syndrome**). Low phosphate means muscles, including the breathing muscles, cannot make energy, leading to weakness and **respiratory failure**. The priority is checking breathing and getting phosphate replaced.",
+    "Faster feeding worsens the shift. Waiting 24 hours is unsafe. Phosphate binders lower phosphate and would make the problem worse.",
+    "Refeeding pulls phosphate into cells. Watch the breathing.");
+
+  /* ===== HYPERPHOSPHATEMIA ===== */
+  q("hyperpo4", "H", 0, "mc",
+    "A client with chronic kidney disease has a phosphate of 7.5 mg/dL and reports tingling in the fingers. The calcium is 7.4 mg/dL. Which statement best explains the tingling?",
+    ["High phosphate causes calcium to fall, producing neuromuscular irritability",
+     "High phosphate causes calcium to rise, producing numbness",
+     "Phosphate does not affect calcium levels",
+     "The kidneys retain too much calcium"], 0,
+    "Calcium and phosphate act like a **seesaw**: when phosphate goes up, calcium goes down. In kidney failure, phosphate builds up because the kidneys cannot remove it. The resulting **low calcium** makes nerves overexcitable, causing tingling and possible tetany.",
+    "The relationship is inverse, so calcium does not rise, and the kidneys in kidney failure do not retain extra calcium.",
+    "High phosphate = low calcium.", "seesaw");
+  q("hyperpo4", "M", 0, "sata",
+    "Which teaching points are appropriate for a client with hyperphosphatemia who takes phosphate binders? Select all that apply.",
+    ["Take the binder with meals", "Limit phosphate-rich foods such as processed foods and colas", "Stopping the binder when you feel well is not recommended", "Binders replace the need for dietary changes", "Take the binder at bedtime with no food"], [0, 1, 2],
+    "Phosphate binders work by **attaching to phosphate in the food you eat**, so they only work when taken with meals. They are combined with a **low-phosphate diet** and taken as prescribed because high phosphate often causes no symptoms.",
+    "Binders do not replace diet changes, and taking them without food means there is no phosphate for them to bind.",
+    "Binder = with meals. Diet still matters.");
+
+  /* ===== HYPOMAGNESEMIA ===== */
+  q("hypomg", "H", 1, "mc",
+    "A client with chronic alcohol use is admitted with a magnesium of 1.0 mEq/L, tremors, hyperreflexia, and an irregular pulse. Which action is the priority?",
+    ["Initiate seizure precautions and cardiac monitoring and prepare for IV magnesium",
+     "Provide a quiet room and recheck the magnesium in the morning",
+     "Offer magnesium-containing antacids",
+     "Restrict dietary magnesium"], 0,
+    "Low magnesium makes nerves and muscles overexcitable (tremors, hyperreflexia, tetany, **seizures**) and the heart prone to dangerous rhythms. Alcohol use is a classic cause because of poor intake and increased losses. The priority is safety (seizure precautions), heart monitoring, and **IV magnesium**.",
+    "Waiting until morning leaves seizure and rhythm risks untreated. Antacids with magnesium are not enough for a severely low level and are not the correct emergency treatment, and restricting magnesium would worsen the problem.",
+    "Low Mg = overexcited. Protect from seizures and watch the heart.");
+  q("hypomg", "M", 0, "mc",
+    "A client has a persistently low potassium that is not responding to potassium replacement. Which other laboratory value should the nurse check?",
+    ["Magnesium", "Sodium", "Chloride", "Phosphate"], 0,
+    "The kidneys waste potassium when magnesium is low, so **potassium will not stay up until the magnesium is replaced**. Low magnesium also commonly comes with low calcium. Checking and correcting magnesium is often the missing step.",
+    "Sodium, chloride, and phosphate are not the usual explanation for potassium that will not correct.",
+    "Stubborn low K+? Check Mg.");
+
+  /* ===== HYPERMAGNESEMIA ===== */
+  q("hypermg", "H", 1, "mc",
+    "A client with kidney disease who uses magnesium-containing antacids and laxatives has a magnesium of 4.8 mEq/L, diminished deep tendon reflexes, a respiratory rate of 9, and blood pressure of 84/50. What should the nurse do first?",
+    ["Support the airway and breathing while notifying the provider, and prepare IV calcium gluconate",
+     "Encourage the client to continue taking the antacid",
+     "Provide oral fluids and recheck in the morning",
+     "Administer a prescribed IV magnesium infusion"], 0,
+    "Too much magnesium acts like a **sedative on the nerves and muscles**: reflexes fade first, then breathing slows, blood pressure falls, and the heart can stop. A respiratory rate of 9 means life is at risk, so airway and breathing support come first, with **IV calcium gluconate**, which reverses magnesium's effects, ready to give.",
+    "Continuing magnesium sources or giving IV magnesium would be harmful, and waiting to recheck delays emergency treatment.",
+    "High Mg = sleepy muscles. Reflexes go first, breathing next.");
+  q("hypermg", "M", 1, "mc",
+    "A client is receiving IV magnesium sulfate. Which assessment findings best help the nurse detect early magnesium toxicity?",
+    ["Loss of deep tendon reflexes and a falling respiratory rate",
+     "Increased appetite and thirst",
+     "Hyperactive bowel sounds",
+     "A rising temperature"], 0,
+    "Magnesium builds up first in the nerve-muscle connection, so **reflexes fade early** and then the **breathing slows**. Checking reflexes and breathing before each dose catches toxicity before it becomes an emergency.",
+    "Appetite, bowel sounds, and temperature are not reliable early signs of magnesium toxicity.",
+    "Reflexes and respirations before every dose.");
+
+  /* ===== NORMAL RANGES ===== */
+  q("hypok", "H", 0, "sata",
+    "A client's morning labs are: sodium 138 mEq/L, potassium 3.2 mEq/L, calcium 9.8 mg/dL, magnesium 2.6 mEq/L, phosphate 2.1 mg/dL, chloride 101 mEq/L. Which results are outside the normal range? Select all that apply.",
+    ["Potassium 3.2 mEq/L", "Magnesium 2.6 mEq/L", "Phosphate 2.1 mg/dL", "Sodium 138 mEq/L", "Calcium 9.8 mg/dL", "Chloride 101 mEq/L"], [0, 1, 2],
+    "Compare each value with its normal range: **sodium 135-145**, **potassium 3.5-5.0**, **calcium 9-10.5**, **magnesium 1.3-2.1**, **phosphate 3-4.5**, **chloride 96-106**. Potassium 3.2 is low, magnesium 2.6 is high, and phosphate 2.1 is low. Sodium, calcium, and chloride are normal.",
+    "Sodium 138, calcium 9.8, and chloride 101 all fall inside their ranges.",
+    "Memorize the six ranges, then every lab is easy.");
+  q("hyperk", "M", 1, "mc",
+    "The nurse receives four laboratory reports. Which result should be reported to the provider immediately?",
+    ["Potassium 6.6 mEq/L in a client on a cardiac monitor", "Sodium 134 mEq/L in a client on a thiazide", "Calcium 8.8 mg/dL in a client post-surgery", "Magnesium 1.4 mEq/L in a client who is eating well"], 0,
+    "A potassium of **6.6** is well above the normal 3.5-5.0 and can cause life-threatening heart rhythms, so it needs treatment right away. The other values are normal or only slightly off: sodium 134 is barely low, calcium 8.8 is only slightly low, and magnesium 1.4 is within the normal 1.3-2.1.",
+    "These three values are normal or near normal and do not threaten the client immediately.",
+    "When in doubt, the heart-threatening value goes first.");
+
+  window.QUESTIONS = Q;
+})();
+
+</script>
+<script>
+(function () {
+  "use strict";
+
+  var CFG = window.CFG;
+  var BANK = window.QUESTIONS || [];
+  var STORE_KEY = "nur285-nclex-" + CFG.key + "-v1";
+  var SECONDS_PER_QUESTION = 90;
+  var STRIP_MAX = 40;
+  var app = document.getElementById("app");
+
+  var groupById = {}, subById = {};
+  CFG.groups.forEach(function (g) { groupById[g.id] = g; });
+  CFG.subs.forEach(function (s) { subById[s.id] = s; });
+  BANK.forEach(function (q) { q.topic = subById[q.sub].group; });
+
+  /* ---------- helpers ---------- */
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function fmt(s) {
+    return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").split("\n").map(function (p) { return "<p>" + p + "</p>"; }).join("");
+  }
+  function shuffle(a) {
+    var r = a.slice();
+    for (var i = r.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = r[i]; r[i] = r[j]; r[j] = t;
+    }
+    return r;
+  }
+  function range(n) { var r = []; for (var i = 0; i < n; i++) r.push(i); return r; }
+  function norm(s) {
+    return String(s).toLowerCase().replace(/[\u2013\u2014]/g, "-").replace(/\s*-\s*/g, "-").replace(/\s+/g, " ").replace(/\.$/, "").trim();
+  }
+  function fmtTime(sec) {
+    sec = Math.max(0, sec);
+    var m = Math.floor(sec / 60), s = sec % 60;
+    return m + ":" + (s < 10 ? "0" : "") + s;
+  }
+
+  /* ---------- saved progress ---------- */
+  function loadProgress() {
+    try { return JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); } catch (e) { return {}; }
+  }
+  var progress = loadProgress();
+  function saveProgress() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(progress)); } catch (e) { /* unavailable */ }
+  }
+  function rec(id) {
+    if (!progress[id]) progress[id] = { seen: 0, right: 0, last: null, flag: false };
+    return progress[id];
+  }
+
+  /* ---------- grading ---------- */
+  function evaluate(item) {
+    var q = item.q, r = item.resp;
+    if (q.type === "mc") return r === q.a;
+    if (q.type === "sata") {
+      if (!r || r.length !== q.a.length) return false;
+      return q.a.every(function (i) { return r.indexOf(i) !== -1; });
+    }
+    if (q.type === "fill") {
+      var v = norm(r || "");
+      return v !== "" && q.a.some(function (x) { return norm(x) === v; });
+    }
+    return r.every(function (v2, i) { return v2 === i; });
+  }
+  function isAnswered(item) {
+    var q = item.q, r = item.resp;
+    if (q.type === "mc") return r !== null;
+    if (q.type === "sata") return r.length > 0;
+    if (q.type === "fill") return String(r).trim() !== "";
+    return !!item.touched;
+  }
+  function makeItem(q) {
+    var item = { q: q, checked: false, correct: null, flagged: !!(progress[q.id] && progress[q.id].flag), recorded: false };
+    if (q.type === "mc") { item.resp = null; item.shown = shuffle(range(q.opts.length)); }
+    else if (q.type === "sata") { item.resp = []; item.shown = shuffle(range(q.opts.length)); }
+    else if (q.type === "fill") { item.resp = ""; }
+    else {
+      var p = shuffle(range(q.opts.length));
+      if (p.every(function (v, i) { return v === i; })) p.push(p.shift());
+      item.resp = p;
+    }
+    return item;
+  }
+  function correctText(q) {
+    if (q.type === "mc") return q.opts[q.a];
+    if (q.type === "sata") return q.a.map(function (i) { return q.opts[i]; }).join("; ");
+    if (q.type === "fill") return q.a[0];
+    return q.opts.map(function (t, i) { return (i + 1) + ". " + t; }).join(" ");
+  }
+  function respText(item) {
+    var q = item.q, r = item.resp;
+    if (q.type === "mc") return r === null ? "No answer" : q.opts[r];
+    if (q.type === "sata") return r.length ? r.slice().sort(function (a, b) { return a - b; }).map(function (i) { return q.opts[i]; }).join("; ") : "No answer";
+    if (q.type === "fill") return String(r).trim() === "" ? "No answer" : r;
+    return r.map(function (i, n) { return (n + 1) + ". " + q.opts[i]; }).join(" ");
+  }
+  function record(item) {
+    if (item.recorded) return;
+    item.recorded = true;
+    var p = rec(item.q.id);
+    p.seen += 1;
+    if (item.correct) p.right += 1;
+    p.last = !!item.correct;
+  }
+
+  /* ---------- coverage stats ---------- */
+  function subStats() {
+    var out = {};
+    CFG.subs.forEach(function (s) { out[s.id] = { total: 0, seen: 0, attempts: 0, right: 0 }; });
+    BANK.forEach(function (q) {
+      var s = out[q.sub];
+      s.total += 1;
+      var p = progress[q.id];
+      if (p && p.seen) { s.seen += 1; s.attempts += p.seen; s.right += p.right; }
+    });
+    return out;
+  }
+  function counts() {
+    var missed = 0, flagged = 0, pri = 0, hard = 0;
+    BANK.forEach(function (q) {
+      var p = progress[q.id];
+      if (p && p.last === false) missed++;
+      if (p && p.flag) flagged++;
+      if (q.pri) pri++;
+      if (q.diff === "hard") hard++;
+    });
+    return { missed: missed, flagged: flagged, pri: pri, hard: hard };
+  }
+
+  /* ---------- state ---------- */
+  var S = null, timerId = null;
+  function stopTimer() { if (timerId) { clearInterval(timerId); timerId = null; } }
+
+  /* ---------- home ---------- */
+  function renderHome() {
+    stopTimer();
+    S = null;
+    var st = subStats(), c = counts();
+    var h = "<h2>" + esc(CFG.title) + "</h2>";
+    h += '<p class="lede">' + BANK.length + " medium and hard NCLEX-style questions (" + c.pri + " priority-based). " + esc(CFG.blurb) + "</p>";
+
+    h += '<form id="setup" class="panel" aria-label="Session setup"><fieldset><legend>Mode</legend><div class="modes">';
+    h += modeCard("study", "Study", "One question at a time with a full explanation right after you answer.", true);
+    h += modeCard("exam", "Exam", "Timed, no feedback until you submit. Scored out of 100.", false);
+    h += modeCard("marathon", "Marathon", "Every question in your scope, with feedback. Stop whenever you like.", false);
+    h += "</div></fieldset><h3>Focus areas</h3><div class=\"topics\">";
+    CFG.groups.forEach(function (g) {
+      var n = BANK.filter(function (q) { return q.topic === g.id; }).length;
+      h += '<label class="chip"><input type="checkbox" name="topic" value="' + g.id + '" checked> ' + esc(g.label) + " <em>" + n + "</em></label>";
+    });
+    h += '</div><div class="row"><label>Questions <select name="count"><option value="10">10</option><option value="20" selected>20</option><option value="30">30</option><option value="all">All</option></select></label>';
+    h += '<label>Include <select name="filter"><option value="all">All questions</option><option value="priority">Priority questions only (' + c.pri + ')</option><option value="hard">Hard only (' + c.hard + ')</option><option value="unseen">Not yet answered</option><option value="missed">Missed last time (' + c.missed + ')</option><option value="flagged">Flagged (' + c.flagged + ")</option></select></label></div>";
+    h += '<div class="actions"><button class="btn" type="submit">Start</button><span id="setupMsg" role="status" class="empty"></span></div></form>';
+
+    h += '<section class="panel" aria-labelledby="covTitle"><h3 id="covTitle">Blueprint coverage</h3><p class="hint cov-note">Every sub-topic from your Exam 1 study guide has at least one question. Numbers show how many you have tried.</p><div class="bars">';
+    CFG.subs.forEach(function (s) {
+      var x = st[s.id];
+      var acc = x.attempts ? Math.round((x.right / x.attempts) * 100) : null;
+      var cls = acc === null ? "" : acc >= 80 ? "hi" : acc >= 60 ? "mid" : "low";
+      var cover = x.total ? Math.round((x.seen / x.total) * 100) : 0;
+      h += '<div class="bar-row"><span>' + esc(s.label) + '</span><div class="bar" role="img" aria-label="' + cover + ' percent attempted"><i class="' + cls + '" style="width:' + cover + '%"></i></div><span class="num">' +
+        x.seen + "/" + x.total + (acc === null ? "" : " &middot; " + acc + "%") + "</span></div>";
+    });
+    h += '</div><div class="actions"><button class="linkbtn" id="resetBtn" type="button">Reset saved progress</button></div></section>';
+    app.innerHTML = h;
+    document.getElementById("setup").addEventListener("submit", onStart);
+    document.getElementById("resetBtn").addEventListener("click", function () {
+      if (window.confirm("Clear all saved answers, accuracy, and flags for this chapter?")) { progress = {}; saveProgress(); renderHome(); }
+    });
+  }
+  function modeCard(id, title, desc, checked) {
+    return '<label class="mode"><input type="radio" name="mode" value="' + id + '"' + (checked ? " checked" : "") + "><strong>" + title + "</strong><span>" + desc + "</span></label>";
+  }
+  function onStart(e) {
+    e.preventDefault();
+    var f = e.target;
+    var topics = Array.prototype.slice.call(f.querySelectorAll('input[name="topic"]:checked')).map(function (x) { return x.value; });
+    var mode = f.querySelector('input[name="mode"]:checked').value;
+    var count = f.elements.count.value, filter = f.elements.filter.value;
+    var msg = document.getElementById("setupMsg");
+    if (!topics.length) { msg.textContent = "Choose at least one focus area."; return; }
+    var pool = BANK.filter(function (q) {
+      if (topics.indexOf(q.topic) === -1) return false;
+      var p = progress[q.id];
+      if (filter === "priority") return q.pri;
+      if (filter === "hard") return q.diff === "hard";
+      if (filter === "unseen") return !p || !p.seen;
+      if (filter === "missed") return p && p.last === false;
+      if (filter === "flagged") return p && p.flag;
+      return true;
+    });
+    if (!pool.length) { msg.textContent = "No questions match those choices. Try a different filter or focus area."; return; }
+    startSession(mode, pool, count);
+  }
+
+  /* ---------- session ---------- */
+  function startSession(mode, pool, count) {
+    var qs = shuffle(pool);
+    if (mode !== "marathon" && count !== "all") qs = qs.slice(0, parseInt(count, 10));
+    S = { mode: mode, items: qs.map(makeItem), i: 0, started: Date.now(), limit: mode === "exam" ? qs.length * SECONDS_PER_QUESTION : 0, finished: false };
+    renderQuiz();
+    if (S.limit) { stopTimer(); timerId = setInterval(tick, 1000); }
+    window.scrollTo(0, 0);
+  }
+  function remaining() { return S.limit - Math.floor((Date.now() - S.started) / 1000); }
+  function tick() {
+    if (!S || S.finished) { stopTimer(); return; }
+    var left = remaining(), el = document.getElementById("timer");
+    if (el) { el.textContent = fmtTime(left); el.classList.toggle("low", left <= 60); }
+    if (left <= 0) finish(true);
+  }
+
+  function stripHtml() {
+    var n = S.items.length;
+    if (n > STRIP_MAX) {
+      var done = S.items.filter(function (it) { return S.mode === "exam" ? isAnswered(it) : it.checked; }).length;
+      return '<div class="plainbar" role="progressbar" aria-valuemin="0" aria-valuemax="' + n + '" aria-valuenow="' + done + '" aria-label="Questions answered"><i style="width:' + Math.round((done / n) * 100) + '%"></i></div>';
+    }
+    var h = '<div class="strip" role="group" aria-label="Question progress">';
+    S.items.forEach(function (it, idx) {
+      var cls = "beat";
+      if (S.mode !== "exam" && it.checked) cls += it.correct ? " right" : " wrong";
+      else if (S.mode === "exam" && isAnswered(it)) cls += " seen";
+      if (it.flagged) cls += " flagged";
+      if (idx === S.i) cls += " current";
+      h += '<button type="button" class="' + cls + '" data-go="' + idx + '" aria-label="Question ' + (idx + 1) + (it.flagged ? ", flagged" : "") + (idx === S.i ? ", current" : "") + '"><svg viewBox="0 0 28 30" aria-hidden="true"><path d="M0 20 H8 L10 17 L12 20 H14 L16 4 L19 26 L21 20 H24 L26 18 L28 20"/></svg></button>';
+    });
+    return h + "</div>";
+  }
+  function bindStrip() {
+    document.querySelectorAll("[data-go]").forEach(function (b) {
+      b.addEventListener("click", function () { S.i = parseInt(b.dataset.go, 10); renderQuiz(); window.scrollTo(0, 0); });
+    });
+  }
+  function refreshStrip() {
+    var el = document.getElementById("stripHost");
+    if (el) { el.innerHTML = stripHtml(); bindStrip(); }
+  }
+
+  function badges(q) {
+    var h = '<span class="badge ' + (q.diff === "hard" ? "hard" : "med") + '">' + (q.diff === "hard" ? "Hard" : "Medium") + "</span>";
+    if (q.pri) h += '<span class="badge pri">Priority</span>';
+    return h;
+  }
+  function feedbackHtml(it, ok) {
+    var q = it.q, h = '<div class="feedback ' + (ok ? "right" : "wrong") + '" role="status"><strong>' + (ok ? "Correct" : "Not quite") + "</strong>";
+    if (!ok) h += '<p><b>Correct answer:</b> ' + esc(correctText(q)) + "</p>";
+    h += '<h4>Why this is the answer</h4>' + fmt(q.r);
+    if (q.vis && CFG.visuals[q.vis]) h += '<figure class="vis">' + CFG.visuals[q.vis]() + "</figure>";
+    if (q.w) h += "<h4>Why the other choices do not fit</h4>" + fmt(q.w);
+    if (q.tip) h += '<p class="tip"><b>Remember:</b> ' + esc(q.tip) + "</p>";
+    h += '<p class="ref">Sub-topic: ' + esc(subById[q.sub].label) + "</p></div>";
+    return h;
+  }
+
+  function renderQuiz(focusSel) {
+    var it = S.items[S.i], q = it.q;
+    var showFB = it.checked && S.mode !== "exam";
+    var h = '<div id="stripHost">' + stripHtml() + "</div>";
+    h += '<section class="panel' + (showFB ? " locked" : "") + '"><div class="meta"><span>Question ' + (S.i + 1) + " of " + S.items.length + "</span>" + badges(q);
+    if (S.limit) h += '<span class="timer" id="timer" role="timer">' + fmtTime(remaining()) + "</span>";
+    h += "</div>";
+    h += '<p class="stem" id="stem">' + esc(q.q) + "</p>";
+    if (q.type === "sata") h += '<p class="hint">Select all that apply.</p>';
+    if (q.type === "order") h += '<p class="hint">Use the arrows to put the steps in the correct order, first at the top.</p>';
+    if (q.type === "fill") h += '<p class="hint">Type your answer.</p>';
+    if (q.type === "mc" || q.type === "sata") h += optionsHtml(it, showFB);
+    else if (q.type === "fill") {
+      var cls = showFB ? (it.correct ? " right" : " wrong") : "";
+      h += '<input class="fill' + cls + '" id="fillBox" type="text" autocomplete="off" aria-labelledby="stem" value="' + esc(it.resp) + '"' + (showFB ? " disabled" : "") + ">";
+    } else h += orderHtml(it, showFB);
+    if (showFB) h += feedbackHtml(it, it.correct);
+
+    h += '<div class="actions"><button class="btn ghost" type="button" id="prevBtn"' + (S.i === 0 ? " disabled" : "") + ">Previous</button>";
+    if (S.mode !== "exam" && !it.checked) h += '<button class="btn" type="button" id="checkBtn"' + (isAnswered(it) ? "" : " disabled") + ">Check answer</button>";
+    else if (S.i < S.items.length - 1) h += '<button class="btn" type="button" id="nextBtn">Next question</button>';
+    else h += '<button class="btn" type="button" id="finishBtn">' + (S.mode === "exam" ? "Submit exam" : "See results") + "</button>";
+    h += '<button class="btn ghost" type="button" id="flagBtn" aria-pressed="' + it.flagged + '">' + (it.flagged ? "Unflag" : "Flag for review") + "</button><span class=\"spacer\"></span>";
+    if (S.mode === "exam" && S.i < S.items.length - 1) h += '<button class="btn ghost" type="button" id="finishBtn">Submit exam</button>';
+    else if (S.mode !== "exam") h += '<button class="btn ghost" type="button" id="finishBtn2">End session</button>';
+    h += "</div></section>";
+    app.innerHTML = h;
+    bindQuiz();
+    if (focusSel) { var f = document.querySelector(focusSel); if (f) f.focus(); }
+  }
+
+  function optionsHtml(it, showFB) {
+    var q = it.q, h = '<ul class="opts" role="group" aria-labelledby="stem">';
+    it.shown.forEach(function (oi) {
+      var chosen = q.type === "mc" ? it.resp === oi : it.resp.indexOf(oi) !== -1;
+      var isRight = q.type === "mc" ? q.a === oi : q.a.indexOf(oi) !== -1;
+      var cls = "opt", mark = "";
+      if (showFB) {
+        if (chosen && isRight) { cls += " right"; mark = "Correct"; }
+        else if (chosen && !isRight) { cls += " wrong"; mark = "Incorrect"; }
+        else if (!chosen && isRight) { cls += " missed"; mark = "Correct answer"; }
+      }
+      h += '<li><label class="' + cls + '"><input type="' + (q.type === "mc" ? "radio" : "checkbox") + '" name="opt" value="' + oi + '"' + (chosen ? " checked" : "") + (showFB ? " disabled" : "") + "><span>" + esc(q.opts[oi]) + "</span>" + (mark ? '<span class="mark">' + mark + "</span>" : "") + "</label></li>";
+    });
+    return h + "</ul>";
+  }
+  function orderHtml(it, showFB) {
+    var q = it.q, h = '<ol class="seq">';
+    it.resp.forEach(function (oi, pos) {
+      var cls = showFB ? (oi === pos ? "right" : "wrong") : "";
+      h += '<li class="' + cls + '"><span class="pos">' + (pos + 1) + '</span><span class="txt">' + esc(q.opts[oi]) + "</span>";
+      if (!showFB) {
+        h += '<button type="button" data-move="up" data-pos="' + pos + '" aria-label="Move up"' + (pos === 0 ? " disabled" : "") + ">&uarr;</button>";
+        h += '<button type="button" data-move="down" data-pos="' + pos + '" aria-label="Move down"' + (pos === it.resp.length - 1 ? " disabled" : "") + ">&darr;</button>";
+      }
+      h += "</li>";
+    });
+    return h + "</ol>";
+  }
+
+  function bindQuiz() {
+    var it = S.items[S.i], q = it.q;
+    var on = function (id, fn) { var el = document.getElementById(id); if (el) el.addEventListener("click", fn); };
+    bindStrip();
+    document.querySelectorAll('input[name="opt"]').forEach(function (inp) {
+      inp.addEventListener("change", function () {
+        var v = parseInt(inp.value, 10);
+        if (q.type === "mc") it.resp = v;
+        else {
+          var idx = it.resp.indexOf(v);
+          if (inp.checked && idx === -1) it.resp.push(v);
+          if (!inp.checked && idx !== -1) it.resp.splice(idx, 1);
+        }
+        afterAnswerChange();
+      });
+    });
+    var fb = document.getElementById("fillBox");
+    if (fb) {
+      fb.addEventListener("input", function () { it.resp = fb.value; afterAnswerChange(); });
+      fb.addEventListener("keydown", function (e) { if (e.key === "Enter" && S.mode !== "exam") { e.preventDefault(); doCheck(); } });
+    }
+    document.querySelectorAll("[data-move]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var pos = parseInt(b.dataset.pos, 10), to = b.dataset.move === "up" ? pos - 1 : pos + 1;
+        var t = it.resp[pos]; it.resp[pos] = it.resp[to]; it.resp[to] = t;
+        it.touched = true;
+        afterAnswerChange();
+        renderQuiz('[data-move="' + b.dataset.move + '"][data-pos="' + to + '"]');
+      });
+    });
+    on("prevBtn", function () { S.i -= 1; renderQuiz(); window.scrollTo(0, 0); });
+    on("nextBtn", function () { S.i += 1; renderQuiz(); window.scrollTo(0, 0); });
+    on("checkBtn", doCheck);
+    on("flagBtn", function () {
+      it.flagged = !it.flagged;
+      rec(q.id).flag = it.flagged;
+      saveProgress();
+      renderQuiz("#flagBtn");
+    });
+    on("finishBtn", confirmFinish);
+    on("finishBtn2", confirmFinish);
+  }
+  function afterAnswerChange() {
+    var it = S.items[S.i], btn = document.getElementById("checkBtn");
+    if (btn) btn.disabled = !isAnswered(it);
+    if (S.mode === "exam") refreshStrip();
+  }
+  function doCheck() {
+    var it = S.items[S.i];
+    if (!isAnswered(it) || it.checked) return;
+    it.checked = true;
+    it.correct = evaluate(it);
+    record(it);
+    saveProgress();
+    renderQuiz("#nextBtn, #finishBtn");
+    var fbEl = document.querySelector(".feedback");
+    if (fbEl && fbEl.scrollIntoView) fbEl.scrollIntoView({ block: "nearest" });
+  }
+  function confirmFinish() {
+    var un = S.items.filter(function (x) { return S.mode === "exam" ? !isAnswered(x) : !x.checked; }).length;
+    var msg = S.mode === "exam" ? (un ? "You have " + un + " unanswered question(s). Submit the exam anyway?" : "Submit the exam?") : "End this session and see your results?";
+    if (window.confirm(msg)) finish(false);
+  }
+
+  /* ---------- results ---------- */
+  function finish(timedOut) {
+    stopTimer();
+    S.finished = true; S.timedOut = !!timedOut;
+    S.elapsed = Math.floor((Date.now() - S.started) / 1000);
+    S.items.forEach(function (it) {
+      if (S.mode === "exam" && !it.checked) {
+        it.checked = true;
+        it.correct = isAnswered(it) ? evaluate(it) : false;
+        record(it);
+      }
+    });
+    saveProgress();
+    renderResults();
+    window.scrollTo(0, 0);
+  }
+  function renderResults() {
+    var counted = S.items.filter(function (it) { return it.checked; });
+    var right = counted.filter(function (it) { return it.correct; }).length;
+    var total = S.mode === "exam" ? S.items.length : counted.length;
+    var pct = total ? Math.round((right / total) * 100) : 0;
+    var h = "<h2>" + (S.mode === "exam" ? "Exam results" : "Session results") + "</h2>";
+    if (S.timedOut) h += '<p class="lede">Time ran out, so unanswered questions were scored as incorrect.</p>';
+    h += '<section class="panel"><div class="score"><span class="big">' + pct + "%</span><span>" + right + " of " + total + " correct" + (S.mode === "exam" ? " &middot; " + pct + " / 100 points" : "") + " &middot; " + fmtTime(S.elapsed) + "</span></div>";
+    if (!total) h += '<p class="empty">You ended the session before checking any answers.</p>';
+    var pc = counted.filter(function (it) { return it.q.pri; });
+    if (pc.length) h += "<p>Priority questions: " + pc.filter(function (it) { return it.correct; }).length + " of " + pc.length + " correct.</p>";
+    var by = {};
+    counted.forEach(function (it) { var t = it.q.topic; by[t] = by[t] || { n: 0, r: 0 }; by[t].n++; if (it.correct) by[t].r++; });
+    var keys = Object.keys(by);
+    if (keys.length) {
+      h += '<h3>By focus area</h3><div class="bars">';
+      keys.forEach(function (k) {
+        var s = by[k], a = Math.round((s.r / s.n) * 100), cls = a >= 80 ? "hi" : a >= 60 ? "mid" : "low";
+        h += '<div class="bar-row"><span>' + esc(groupById[k].label) + '</span><div class="bar" role="img" aria-label="' + a + ' percent correct"><i class="' + cls + '" style="width:' + a + '%"></i></div><span class="num">' + s.r + "/" + s.n + " &middot; " + a + "%</span></div>";
+      });
+      h += "</div>";
+    }
+    var missed = counted.filter(function (it) { return !it.correct; });
+    h += '<div class="actions">';
+    if (missed.length) h += '<button class="btn" type="button" id="retryBtn">Retry ' + missed.length + " missed in Study mode</button>";
+    h += '<button class="btn ghost" type="button" id="homeBtn">Back to setup</button></div></section>';
+    h += '<h3>Review every question</h3><div class="review">';
+    S.items.forEach(function (it, i) {
+      var q = it.q;
+      h += "<details" + (it.checked && !it.correct ? " open" : "") + '><summary><span class="' + (it.correct ? "ok" : "no") + '">' + (it.correct ? "Correct" : "Missed") + "</span><span>" + (i + 1) + ". " + esc(q.q) + '</span></summary><div class="body">';
+      h += "<p><b>Your answer:</b> " + esc(it.checked || S.mode === "exam" ? respText(it) : "Not answered") + "</p>";
+      h += feedbackHtml(it, it.correct).replace(' role="status"', "") + "</div></details>";
+    });
+    app.innerHTML = h + "</div>";
+    var rb = document.getElementById("retryBtn");
+    if (rb) rb.addEventListener("click", function () { startSession("study", missed.map(function (it) { return it.q; }), "all"); });
+    document.getElementById("homeBtn").addEventListener("click", renderHome);
+  }
+
+  document.getElementById("homeLink").addEventListener("click", function () {
+    if (S && !S.finished && !window.confirm("Leave this session? Unchecked answers will be lost.")) return;
+    renderHome();
+  });
+  renderHome();
+})();
+
+</script>
+</body>
+</html>

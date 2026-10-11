@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NUR 285 Exam 1: Chapter 29: Diabetes Mellitus</title>
+<style>
+:root {
+  --ink: #16263a;
+  --muted: #5a6b7d;
+  --paper: #f5f9f9;
+  --card: #ffffff;
+  --line: #cfe0e0;
+  --teal: #0e6b6b;
+  --teal-deep: #0a4f4f;
+  --teal-soft: #dcefef;
+  --right: #2b7a4b;
+  --right-soft: #e1f2e8;
+  --wrong: #b3412a;
+  --wrong-soft: #f8e4de;
+  --amber: #b7791f;
+  --focus: #1d4ed8;
+  --serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e6eef3;
+    --muted: #9db0bf;
+    --paper: #0f1a24;
+    --card: #162433;
+    --line: #28404f;
+    --teal: #4fc3c3;
+    --teal-deep: #7bd9d9;
+    --teal-soft: #17353d;
+    --right: #66c48a;
+    --right-soft: #17332560;
+    --wrong: #f08c75;
+    --wrong-soft: #3b2420;
+    --amber: #e5b25d;
+    --focus: #8fb4ff;
+  }
+}
+
+* { box-sizing: border-box; }
+html { font-size: 17px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.5;
+}
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+button { font: inherit; color: inherit; }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* ----- header ----- */
+.top { border-bottom: 1px solid var(--line); background: var(--card); }
+.top .wrap { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding-top: 1rem; padding-bottom: 1rem; }
+.brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; margin: 0; }
+.brand small { font-family: var(--sans); font-weight: 400; color: var(--muted); font-size: 0.85rem; margin-left: 0.5rem; }
+.linkbtn { background: none; border: 0; color: var(--teal); text-decoration: underline; cursor: pointer; padding: 0.25rem; }
+
+main { padding: 1.75rem 0 4rem; }
+h2 { font-family: var(--serif); font-size: 1.5rem; margin: 0 0 0.35rem; }
+h3 { font-family: var(--serif); font-size: 1.1rem; margin: 1.5rem 0 0.5rem; }
+.lede { color: var(--muted); margin: 0 0 1.5rem; max-width: 60ch; }
+
+/* ----- panels ----- */
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 1.25rem; margin-bottom: 1.25rem; }
+.panel > h3:first-child { margin-top: 0; }
+
+.modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.mode { position: relative; display: block; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.85rem 1rem; cursor: pointer; background: var(--card); }
+.mode input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.mode strong { display: block; font-family: var(--serif); font-size: 1.05rem; }
+.mode span { color: var(--muted); font-size: 0.88rem; }
+.mode:has(input:checked) { border-color: var(--teal); background: var(--teal-soft); }
+.mode:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+fieldset { border: 0; padding: 0; margin: 0; }
+legend { font-family: var(--serif); font-weight: 700; margin-bottom: 0.4rem; padding: 0; }
+.chapter { margin: 0 0 0.9rem; }
+.chapter-head { display: flex; align-items: center; gap: 0.5rem; font-weight: 600; margin-bottom: 0.3rem; }
+.topics { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip { position: relative; display: inline-flex; align-items: center; gap: 0.35rem; border: 1px solid var(--line); border-radius: 999px; padding: 0.3rem 0.8rem; font-size: 0.9rem; cursor: pointer; background: var(--card); }
+.chip input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.chip:has(input:checked) { background: var(--teal); color: #fff; border-color: var(--teal); }
+@media (prefers-color-scheme: dark) { .chip:has(input:checked) { color: #0b1620; } }
+.chip:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+.chip em { font-style: normal; opacity: 0.75; font-size: 0.8rem; }
+
+.row { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; margin-top: 1rem; }
+select { font: inherit; padding: 0.35rem 0.5rem; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--ink); }
+.check { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+.btn { background: var(--teal); color: #fff; border: 0; border-radius: 8px; padding: 0.65rem 1.3rem; font-weight: 600; cursor: pointer; }
+@media (prefers-color-scheme: dark) { .btn { color: #0b1620; } }
+.btn:hover { background: var(--teal-deep); }
+@media (prefers-color-scheme: dark) { .btn:hover { color: #0b1620; } }
+.btn.ghost { background: transparent; color: var(--teal); border: 1.5px solid var(--teal); }
+.btn.ghost:hover { background: var(--teal-soft); }
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.25rem; align-items: center; }
+.spacer { flex: 1; }
+
+/* ----- progress by topic ----- */
+.bars { display: grid; gap: 0.6rem; }
+.bar-row { display: grid; grid-template-columns: minmax(150px, 1.2fr) 3fr auto; gap: 0.75rem; align-items: center; font-size: 0.92rem; }
+.bar { height: 10px; background: var(--teal-soft); border-radius: 999px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--teal); }
+.bar i.low { background: var(--wrong); }
+.bar i.mid { background: var(--amber); }
+.bar i.hi { background: var(--right); }
+.num { color: var(--muted); font-variant-numeric: tabular-nums; min-width: 6.5em; text-align: right; }
+
+/* ----- rhythm strip (progress) ----- */
+.strip { display: flex; align-items: flex-end; gap: 0; margin: 0 0 1.25rem; overflow-x: auto; padding-bottom: 4px; }
+.beat { flex: 0 0 auto; width: 28px; height: 30px; padding: 0; background: none; border: 0; cursor: pointer; }
+.beat svg { display: block; width: 100%; height: 100%; }
+.beat path { fill: none; stroke: var(--line); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.beat.seen path { stroke: var(--teal); }
+.beat.right path { stroke: var(--right); }
+.beat.wrong path { stroke: var(--wrong); }
+.beat.flagged path { stroke-dasharray: 3 2; }
+.beat.current { background: var(--teal-soft); border-radius: 4px; }
+.plainbar { height: 8px; background: var(--teal-soft); border-radius: 999px; overflow: hidden; margin: 0 0 1.25rem; }
+.plainbar i { display: block; height: 100%; background: var(--teal); }
+
+/* ----- question ----- */
+.meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; color: var(--muted); font-size: 0.88rem; margin-bottom: 0.6rem; }
+.tag { background: var(--teal-soft); color: var(--teal-deep); border-radius: 4px; padding: 0.1rem 0.5rem; }
+.timer { margin-left: auto; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+.timer.low { color: var(--wrong); }
+.stem { font-family: var(--serif); font-size: 1.2rem; line-height: 1.45; margin: 0 0 1rem; max-width: 62ch; }
+.hint { color: var(--muted); font-size: 0.9rem; margin: -0.5rem 0 0.9rem; }
+.bars + .hint { margin: 1rem 0 0; }
+
+.opts { display: grid; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.opt { position: relative; display: flex; gap: 0.75rem; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.7rem 0.9rem; background: var(--card); cursor: pointer; }
+.opt input { margin-top: 0.3rem; accent-color: var(--teal); }
+.opt:has(input:checked) { border-color: var(--teal); background: var(--teal-soft); }
+.opt:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+.opt.right, .opt.right:has(input:checked) { border-color: var(--right); background: var(--right-soft); }
+.opt.wrong, .opt.wrong:has(input:checked) { border-color: var(--wrong); background: var(--wrong-soft); }
+.opt.missed { border-style: dashed; border-color: var(--right); }
+.locked .opt { cursor: default; }
+.mark { margin-left: auto; font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
+.right .mark { color: var(--right); }
+.wrong .mark { color: var(--wrong); }
+.missed .mark { color: var(--right); }
+
+.fill { width: 100%; max-width: 24rem; font: inherit; padding: 0.6rem 0.75rem; border: 1.5px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); }
+.fill.right { border-color: var(--right); background: var(--right-soft); }
+.fill.wrong { border-color: var(--wrong); background: var(--wrong-soft); }
+
+.seq { display: grid; gap: 0.5rem; margin: 0; padding: 0; list-style: none; }
+.seq li { display: flex; align-items: center; gap: 0.6rem; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.55rem 0.75rem; background: var(--card); }
+.seq .pos { font-weight: 700; color: var(--teal); min-width: 1.4em; }
+.seq .txt { flex: 1; }
+.seq button { border: 1px solid var(--line); background: var(--card); border-radius: 6px; width: 2rem; height: 2rem; cursor: pointer; }
+.seq button[disabled] { opacity: 0.35; cursor: not-allowed; }
+.seq li.right { border-color: var(--right); background: var(--right-soft); }
+.seq li.wrong { border-color: var(--wrong); background: var(--wrong-soft); }
+
+.feedback { margin-top: 1.1rem; border-left: 4px solid var(--teal); background: var(--teal-soft); padding: 0.8rem 1rem; border-radius: 0 8px 8px 0; }
+.feedback.right { border-color: var(--right); background: var(--right-soft); }
+.feedback.wrong { border-color: var(--wrong); background: var(--wrong-soft); }
+.feedback strong { display: block; margin-bottom: 0.25rem; }
+.feedback p { margin: 0.25rem 0 0; }
+.feedback .ref { color: var(--muted); font-size: 0.88rem; }
+
+/* ----- results ----- */
+.score { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.25rem; margin-bottom: 0.5rem; }
+.score .big { font-family: var(--serif); font-size: 2.6rem; font-weight: 700; line-height: 1; }
+.review { display: grid; gap: 0.75rem; margin-top: 1rem; }
+.review details { border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+.review summary { cursor: pointer; padding: 0.7rem 0.9rem; display: flex; gap: 0.6rem; align-items: baseline; }
+.review summary .ok { color: var(--right); font-weight: 700; }
+.review summary .no { color: var(--wrong); font-weight: 700; }
+.review .body { padding: 0 0.9rem 0.9rem; }
+.review .body p { margin: 0.35rem 0; }
+.empty { color: var(--muted); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .modes { grid-template-columns: 1fr; }
+  .bar-row { grid-template-columns: 1fr; gap: 0.2rem; }
+  .num { text-align: left; }
+  .stem { font-size: 1.12rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bar i, .plainbar i { transition: width 0.4s ease; }
+}
+
+:root { --amber-soft: #f6e7c8; }
+@media (prefers-color-scheme: dark) { :root { --amber-soft: #3a3020; } }
+
+.badge { border-radius: 4px; padding: 0.1rem 0.5rem; font-size: 0.82rem; font-weight: 600; }
+.badge.med { background: var(--teal-soft); color: var(--teal-deep); }
+.badge.hard { background: var(--wrong-soft); color: var(--wrong); }
+.badge.pri { background: var(--amber-soft); color: var(--amber); border: 1px solid var(--amber); }
+.cov-note { margin: 0 0 0.9rem; }
+
+.feedback h4 { font-family: var(--serif); font-size: 1rem; margin: 0.9rem 0 0.2rem; }
+.feedback p { margin: 0.3rem 0; max-width: 68ch; }
+.feedback .tip { margin-top: 0.8rem; padding: 0.5rem 0.75rem; background: var(--card); border-radius: 6px; border: 1px dashed var(--line); }
+.review .feedback { margin-top: 0.5rem; }
+
+.vis { margin: 0.9rem 0; padding: 0.75rem; background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow-x: auto; }
+.vis svg { display: block; width: 100%; max-width: 680px; height: auto; margin: 0 auto; }
+.vis .t { fill: var(--ink); font: 13px var(--sans); }
+.vis .tb { fill: var(--ink); font: 700 13px var(--sans); }
+.vis .tm { fill: var(--muted); font: 12px var(--sans); }
+.vis .tr { fill: var(--wrong); font: 700 13px var(--sans); }
+.vis .tg { fill: var(--right); font: 700 13px var(--sans); }
+.vis .ln { stroke: var(--ink); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.vis .ln-teal { stroke: var(--teal); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.vis .ln-red { stroke: var(--wrong); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.vis .ln-green { stroke: var(--right); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.vis .dash { stroke: var(--muted); fill: none; stroke-width: 1.5; stroke-dasharray: 5 4; }
+.vis .arrow { stroke: var(--muted); stroke-width: 2; fill: none; marker-end: url(#ah); }
+.vis .mk { fill: var(--muted); }
+.vis .fteal { fill: var(--teal-soft); stroke: var(--teal); stroke-width: 1.5; }
+.vis .fgreen { fill: var(--right-soft); stroke: var(--right); stroke-width: 1.5; }
+.vis .fred { fill: var(--wrong-soft); stroke: var(--wrong); stroke-width: 1.5; }
+.vis .famber { fill: var(--amber-soft); stroke: var(--amber); stroke-width: 1.5; }
+.vis .fplain { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+.vis .fpeak { fill: var(--teal); stroke: var(--teal); }
+.vis .flight { fill: var(--teal-soft); stroke: var(--teal); stroke-width: 1; }
+.vis .fink { fill: var(--ink); }
+
+.vtable { border-collapse: collapse; width: 100%; font-size: 0.88rem; }
+.vtable th, .vtable td { border: 1px solid var(--line); padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+.vtable thead th { background: var(--teal-soft); }
+.vtable tbody th { background: var(--paper); white-space: nowrap; }
+.swatch { display: inline-block; width: 1rem; height: 1rem; border-radius: 50%; vertical-align: -2px; margin-right: 0.4rem; border: 1px solid rgba(0, 0, 0, 0.25); }
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<h1 class="brand">NUR 285 Exam 1 <small>Chapter 29: Diabetes Mellitus</small></h1>
+<button type="button" class="linkbtn" id="homeLink">Setup</button>
+</div></header>
+<main class="wrap" id="app" tabindex="-1"><noscript>This quiz needs JavaScript turned on.</noscript></main>
+<script>
+/* Visual helpers shared by the four quiz files */
+window.VH = (function () {
+  var DEFS = '<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="mk"/></marker></defs>';
+  function svg(w, h, alt, body) {
+    return '<svg viewBox="0 0 ' + w + " " + h + '" role="img" aria-label="' + alt + '">' + DEFS + body + "</svg>";
+  }
+  function T(x, y, s, cls, anchor) {
+    return '<text x="' + x + '" y="' + y + '" class="' + (cls || "t") + '" text-anchor="' + (anchor || "middle") + '">' + s + "</text>";
+  }
+  function R(x, y, w, h, cls, extra) {
+    return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="8" class="' + cls + '" ' + (extra || "") + "/>";
+  }
+  function A(x1, y1, x2, y2, cls) {
+    return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" class="' + (cls || "arrow") + '"/>';
+  }
+  function P(d, cls, extra) {
+    return '<path d="' + d + '" class="' + (cls || "ln") + '" ' + (extra || "") + "/>";
+  }
+  function C(cx, cy, r, cls) {
+    return '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" class="' + cls + '"/>';
+  }
+  function E(cx, cy, rx, ry, cls) {
+    return '<ellipse cx="' + cx + '" cy="' + cy + '" rx="' + rx + '" ry="' + ry + '" class="' + cls + '"/>';
+  }
+  function table(head, rows) {
+    var h = '<table class="vtable"><thead><tr>';
+    head.forEach(function (c) { h += "<th>" + c + "</th>"; });
+    h += "</tr></thead><tbody>";
+    rows.forEach(function (r) {
+      h += "<tr>";
+      r.forEach(function (c, i) { h += (i === 0 ? "<th scope=\"row\">" : "<td>") + c + (i === 0 ? "</th>" : "</td>"); });
+      h += "</tr>";
+    });
+    return h + "</tbody></table>";
+  }
+  return { svg: svg, T: T, R: R, A: A, P: P, C: C, E: E, table: table };
+})();
+
+</script>
+<script>
+(function () {
+  "use strict";
+  var V = window.VH;
+
+  window.CFG = {
+    key: "ch29",
+    title: "Chapter 29: Diabetes Mellitus",
+    blurb: "Covers onset, risk factors, manifestations, diagnostics, metformin, sulfonylureas, insulin, nutrition, Somogyi and dawn, acute and chronic complications, and gerontologic and cultural care.",
+    groups: [
+      { id: "found", label: "Foundations and diagnosis" },
+      { id: "meds", label: "Medications and insulin" },
+      { id: "acute", label: "Acute complications" },
+      { id: "chronic", label: "Chronic complications and special populations" }
+    ],
+    subs: [
+      { id: "onset", label: "Onset of disease (type 1 and type 2)", group: "found" },
+      { id: "risk", label: "Risk factors (type 1 and type 2)", group: "found" },
+      { id: "manif", label: "Clinical manifestations (type 1 and type 2)", group: "found" },
+      { id: "assess", label: "Nursing assessment and management", group: "found" },
+      { id: "dx", label: "Diagnostic studies", group: "found" },
+      { id: "nutrition", label: "Nutritional therapy goals", group: "found" },
+      { id: "metformin", label: "Biguanides (metformin)", group: "meds" },
+      { id: "sulfonyl", label: "Sulfonylureas", group: "meds" },
+      { id: "insulin", label: "Insulin therapy: types, onset, peak, duration", group: "meds" },
+      { id: "inscomp", label: "Complications of insulin therapy", group: "meds" },
+      { id: "somdawn", label: "Somogyi effect and dawn phenomenon", group: "meds" },
+      { id: "hypogly", label: "Acute: hypoglycemia", group: "acute" },
+      { id: "dka", label: "Acute: diabetic ketoacidosis", group: "acute" },
+      { id: "hhns", label: "Acute: hyperosmolar hyperglycemic syndrome", group: "acute" },
+      { id: "macro", label: "Chronic: macrovascular complications", group: "chronic" },
+      { id: "micro", label: "Chronic: retinopathy and nephropathy", group: "chronic" },
+      { id: "neuro", label: "Chronic: neuropathy and foot care", group: "chronic" },
+      { id: "gero", label: "Gerontologic considerations", group: "chronic" },
+      { id: "cultural", label: "Cultural considerations", group: "chronic" }
+    ],
+    visuals: {
+      insulin: function () {
+        var x0 = 140, pxh = 20, b = "";
+        for (var h = 0; h <= 24; h += 4) {
+          b += V.A(x0 + h * pxh, 38, x0 + h * pxh, 232, "dash") + V.T(x0 + h * pxh, 30, h + " h", "tm");
+        }
+        var rows = [
+          ["Rapid-acting", "lispro, aspart", 0.25, 0.5, 3, 4, 52],
+          ["Short (regular)", "only IV insulin", 0.5, 2, 4, 7, 100],
+          ["Intermediate", "NPH (cloudy)", 1.5, 4, 12, 18, 148],
+          ["Long-acting", "glargine, detemir", 1.5, null, null, 24, 196]
+        ];
+        rows.forEach(function (r) {
+          var y = r[6];
+          b += V.T(8, y + 14, r[0], "tb", "start") + V.T(8, y + 30, r[1], "tm", "start");
+          b += '<rect x="' + (x0 + r[2] * pxh) + '" y="' + y + '" width="' + ((r[5] - r[2]) * pxh) + '" height="24" rx="5" class="flight"/>';
+          if (r[3] !== null) b += '<rect x="' + (x0 + r[3] * pxh) + '" y="' + y + '" width="' + ((r[4] - r[3]) * pxh) + '" height="24" rx="5" class="fpeak"/>';
+        });
+        b += V.T(8, 256, "Light bar: onset to end of action. Dark bar: peak (highest hypoglycemia risk).", "tm", "start");
+        b += V.T(8, 274, "Long-acting has no true peak. Typical values; confirm with your textbook table.", "tm", "start");
+        return V.svg(660, 284, "Timeline of insulin onset, peak, and duration over 24 hours", b);
+      },
+      somogyi: function () {
+        var x0 = 70, px = 52, b = "";
+        function y(g) { return 215 - (g - 40) * 0.62; }
+        var labels = ["10 PM", "12 AM", "2 AM", "4 AM", "6 AM", "8 AM"];
+        labels.forEach(function (l, i) { b += V.T(x0 + i * 2 * px, 256, l, "tm"); });
+        b += V.A(x0, y(70), x0 + 10 * px, y(70), "dash") + V.T(x0 + 10 * px + 6, y(70) + 4, "70", "tr", "start");
+        b += V.A(x0 + 5 * px, 52, x0 + 5 * px, 226, "dash") + V.T(x0 + 5 * px, 46, "3 AM check", "tb");
+        var som = [160, 150, 130, 95, 62, 48, 120, 190, 240, 260, 265];
+        var dawn = [110, 106, 102, 100, 100, 102, 140, 190, 230, 255, 265];
+        function pts(a) { return a.map(function (g, i) { return (x0 + i * px) + "," + y(g); }).join(" "); }
+        b += '<polyline points="' + pts(som) + '" class="ln-red"/><polyline points="' + pts(dawn) + '" class="ln-teal"/>';
+        b += V.A(x0, 14, x0 + 28, 14, "ln-red") + V.T(x0 + 34, 18, "Somogyi: low at 3 AM", "t", "start");
+        b += V.A(x0 + 230, 14, x0 + 258, 14, "ln-teal") + V.T(x0 + 264, 18, "Dawn: normal at 3 AM", "t", "start");
+        b += V.T(330, 280, "Both end with a HIGH morning glucose. The 3 AM value tells them apart.", "tm");
+        return V.svg(660, 290, "Overnight glucose curves for Somogyi effect and dawn phenomenon", b);
+      },
+      rule15: function () {
+        var b = "";
+        var steps = [["Glucose below 70", "client is alert", "fred"], ["Give 15 g fast", "carbohydrate", "famber"], ["Wait", "15 minutes", "fplain"], ["Recheck", "glucose", "fteal"]];
+        steps.forEach(function (s, i) {
+          var X = 10 + i * 165;
+          b += V.R(X, 20, 140, 56, s[2]) + V.T(X + 70, 44, s[0], "tb") + V.T(X + 70, 62, s[1], "t");
+          if (i < 3) b += V.A(X + 140, 48, X + 165, 48);
+        });
+        b += V.R(335, 120, 150, 56, "fred") + V.T(410, 144, "Still below 70:", "tb") + V.T(410, 162, "repeat 15 g", "t");
+        b += V.R(500, 120, 150, 56, "fgreen") + V.T(575, 144, "70 or higher:", "tb") + V.T(575, 162, "give snack or meal", "t");
+        b += V.A(560, 76, 575, 118) + V.A(520, 76, 410, 118);
+        b += V.T(10, 150, "Unresponsive or cannot swallow?", "tr", "start") + V.T(10, 170, "Glucagon IM/SC or IV dextrose,", "t", "start") + V.T(10, 188, "never food by mouth.", "t", "start");
+        return V.svg(660, 204, "Rule of 15 steps for treating hypoglycemia", b);
+      },
+      dkahhns: function () {
+        return V.table(["", "DKA", "HHNS"], [
+          ["Typical client", "Type 1, often new onset", "Type 2, older adult, often with infection"],
+          ["Glucose", "250 or higher", "Above 600"],
+          ["pH / bicarbonate", "pH below 7.30, HCO\u2083 below 18", "Normal"],
+          ["Ketones", "Present (fruity breath, Kussmaul)", "Absent"],
+          ["Main problem", "Insulin deficiency, acidosis, dehydration", "Severe dehydration and high osmolality"],
+          ["First treatment", "IV 0.9% NaCl, then insulin infusion, replace K\u207A", "IV fluids first, then insulin, replace K\u207A"]
+        ]);
+      }
+    }
+  };
+
+  var Q = [];
+  function hash(s) { var h = 5381; for (var i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return "q" + (h >>> 0).toString(36); }
+  function q(sub, diff, pri, type, stem, opts, a, r, w, tip, vis) {
+    Q.push({ id: hash(sub + stem), sub: sub, diff: diff === "H" ? "hard" : "medium", pri: !!pri, type: type, q: stem, opts: opts, a: a, r: r, w: w, tip: tip, vis: vis });
+  }
+
+  /* ===== ONSET ===== */
+  q("onset", "M", 0, "mc",
+    "A 16-year-old is admitted with three weeks of polyuria and weight loss, vomiting, a glucose of 520 mg/dL, and positive ketones. Which statement best explains why symptoms appeared so suddenly?",
+    ["The immune system gradually destroyed the beta cells until too little insulin was left to control glucose",
+     "The pancreas suddenly stopped producing glucagon",
+     "Insulin resistance developed over several years",
+     "A viral infection permanently damaged the liver"], 0,
+    "In **type 1 diabetes**, the immune system slowly attacks the insulin-making beta cells, sometimes over months or years, with no symptoms. Once so few beta cells remain that the body cannot make enough insulin, glucose climbs quickly and the body burns fat for fuel, creating ketones. That is why type 1 often **appears suddenly and is often first found in DKA**.",
+    "Insulin resistance describes type 2 diabetes. Glucagon and the liver are not the primary problem in type 1.",
+    "Type 1: slow silent destruction, then a sudden crash.");
+  q("onset", "M", 0, "mc",
+    "A 52-year-old with a BMI of 33 has a fasting plasma glucose of 138 mg/dL on routine screening and no symptoms. Which statement explains the lack of symptoms?",
+    ["Type 2 diabetes develops gradually, and hyperglycemia may be present for years before it is noticed",
+     "The client has type 1 diabetes in the honeymoon phase",
+     "The pancreas still makes unlimited insulin",
+     "The glucose is not high enough to be abnormal"], 0,
+    "In **type 2 diabetes**, the body makes insulin but cells respond poorly (insulin resistance), and the pancreas cannot keep up. Glucose rises slowly, so symptoms are mild or missing. Many people are diagnosed only through routine blood work, or when a **complication** appears first.",
+    "A fasting glucose of 138 is above the diagnostic cut-off of 126, so it is abnormal. The honeymoon phase is a temporary period of reduced insulin need after type 1 diagnosis.",
+    "Type 2 is slow and quiet; complications may be the first clue.");
+
+  /* ===== RISK ===== */
+  q("risk", "H", 0, "sata",
+    "A nurse is screening clients at a health fair. Which findings are risk factors for type 2 diabetes? Select all that apply.",
+    ["BMI of 31", "Age 56", "Mother with type 2 diabetes", "Sedentary job with no regular exercise", "Autoimmune destruction of beta cells", "Metabolic syndrome"], [0, 1, 2, 3, 5],
+    "Type 2 diabetes is linked to **excess weight, older age (45 or older), family history, inactivity, and metabolic syndrome** (high blood pressure, abdominal obesity, abnormal lipids), all of which increase insulin resistance. Also at risk: certain racial and ethnic groups and people who had gestational diabetes.",
+    "Autoimmune destruction of beta cells is the cause of **type 1** diabetes, which is driven by genetics and an immune trigger (possibly a virus), not lifestyle.",
+    "Type 1 = immune system. Type 2 = weight, age, family, inactivity.");
+
+  /* ===== MANIFESTATIONS ===== */
+  q("manif", "M", 0, "mc",
+    "Which client presentation is most consistent with type 2 diabetes mellitus?",
+    ["A 58-year-old with a BMI of 33, recurrent yeast infections, blurred vision, fatigue, and a slow-healing foot sore",
+     "A 12-year-old with rapid weight loss, vomiting, and fruity breath",
+     "A 25-year-old with sudden abdominal pain and Kussmaul respirations",
+     "A 9-year-old with new bed-wetting, extreme thirst, and weight loss over two weeks"], 0,
+    "Type 2 symptoms are **gradual and subtle**: fatigue, blurred vision, frequent infections (especially yeast and skin), and slow healing. High glucose damages blood vessels and nerves slowly, so a foot sore or vision change may be the first clue. The classic three Ps (polyuria, polydipsia, polyphagia) may be mild.",
+    "The other clients describe the fast, dramatic start typical of type 1: rapid weight loss, vomiting, ketones, and acidosis.",
+    "Type 1 shouts. Type 2 whispers.");
+
+  /* ===== ASSESS ===== */
+  q("assess", "H", 1, "mc",
+    "A client is newly diagnosed with type 2 diabetes. Which action should the nurse take first before beginning self-management teaching?",
+    ["Assess the client's current knowledge, literacy, vision, dexterity, and readiness to learn",
+     "Give the client a booklet on carbohydrate counting",
+     "Demonstrate insulin injection technique",
+     "Schedule a follow-up visit in three months"], 0,
+    "Teaching is only useful if it fits the person. **Assessment comes first** in the nursing process: what the client already knows, reading ability, culture, vision (to read a meter), hand function (to use a lancet or syringe), and willingness to learn. Education should support and reinforce self-management and be built around those findings.",
+    "A booklet or demonstration before assessing may not match the client's needs, and the client may not even need insulin. Delaying follow-up for months does not begin education.",
+    "Assess first, then plan, then teach.");
+
+  /* ===== DX ===== */
+  q("dx", "M", 0, "sata",
+    "Which laboratory results meet the diagnostic criteria for diabetes mellitus? Select all that apply.",
+    ["Fasting plasma glucose 142 mg/dL", "Random plasma glucose 236 mg/dL with polyuria and polydipsia", "Two-hour oral glucose tolerance test result of 214 mg/dL", "Fasting plasma glucose 98 mg/dL", "A1C of 5.9%"], [0, 1, 2],
+    "From your lecture, the diagnostic values are: **fasting plasma glucose above 126**, **random plasma glucose above 200 with symptoms**, **two-hour OGTT of 200 or higher**, and **A1C of 7% or higher** (your slide value). The three results listed meet these criteria.",
+    "A fasting glucose of 98 and an A1C of 5.9% are below the diagnostic cut-offs.",
+    "126 fasting, 200 random, 200 OGTT.");
+  q("dx", "H", 0, "mc",
+    "A client's home glucose log shows morning readings of 110 to 130 mg/dL, but the A1C is 9%. Which explanation is most accurate?",
+    ["The A1C reflects average glucose over 2 to 3 months, including after-meal and unchecked highs missed by morning readings",
+     "The A1C measures only the glucose from the last 24 hours",
+     "The home meter must be broken",
+     "The A1C result is not useful for treatment decisions"], 0,
+    "The A1C measures how much glucose has stuck to red blood cells, which survive about **2 to 3 months**, so it shows the **average control over time**. Fasting readings may look fine while glucose spikes after meals or at other times of the day. The nurse should explore the pattern and encourage checking at different times.",
+    "A1C is not a 24-hour test, a faulty meter is not the most likely cause, and A1C is a key tool for managing diabetes.",
+    "Fasting numbers are snapshots. A1C is the movie.");
+
+  /* ===== NUTRITION ===== */
+  q("nutrition", "M", 0, "sata",
+    "Which are goals of nutritional therapy for a client with diabetes? Select all that apply.",
+    ["Maintain blood glucose in a healthy range", "Achieve normal lipid levels and blood pressure", "Prevent or slow the development of complications", "Meet the individual's needs while keeping the pleasure of eating", "Eliminate all carbohydrates from the diet"], [0, 1, 2, 3],
+    "Nutrition is the **cornerstone** of diabetes care. The goals are good glucose control, **healthy lipids and blood pressure**, preventing complications, and an **individual plan that still allows the enjoyment of food** so the client sticks with it. Carbohydrates have the greatest effect on glucose, but the goal is balance, not elimination.",
+    "Cutting out all carbohydrates is not a goal and is unrealistic and unsafe, especially with insulin or sulfonylureas, because it raises hypoglycemia risk.",
+    "Healthy glucose, lipids, and BP, tailored to the person.");
+
+  /* ===== METFORMIN ===== */
+  q("metformin", "H", 1, "mc",
+    "A client who takes metformin is scheduled for a CT scan with IV contrast tomorrow. Which action by the nurse is the priority?",
+    ["Notify the provider and ensure metformin is held for at least 48 hours around the contrast",
+     "Give the metformin as scheduled",
+     "Double the metformin dose today",
+     "Encourage the client to limit fluids before the scan"], 0,
+    "Contrast dye can stress the kidneys, and **metformin is cleared by the kidneys**. If the kidneys are injured, metformin can build up, which can cause a dangerous acid buildup in the blood (lactic acidosis). Metformin is **held at least 48 hours around contrast** and restarted only when kidney function is confirmed. Metformin is also avoided in kidney impairment.",
+    "Continuing or increasing metformin raises the risk of harm, and restricting fluids makes the kidneys more vulnerable to contrast injury.",
+    "Contrast + metformin = hold 48 hours.");
+  q("metformin", "M", 0, "mc",
+    "Which statement by a client taking metformin shows that teaching was effective?",
+    ["\"It lowers my blood sugar by reducing how much sugar my liver makes.\"",
+     "\"It makes my pancreas release more insulin.\"",
+     "\"It makes my body burn fat instead of sugar.\"",
+     "\"It replaces insulin in my body.\""], 0,
+    "Metformin is a **biguanide**. It mainly **reduces the amount of glucose the liver releases** and helps the body respond better to its own insulin. It does not force the pancreas to release extra insulin, so by itself it rarely causes low blood sugar and may even help with weight loss.",
+    "Stimulating the pancreas to release more insulin describes sulfonylureas, not metformin. Metformin does not replace insulin.",
+    "Metformin = the liver makes less sugar.");
+
+  /* ===== SULFONYLUREA ===== */
+  q("sulfonyl", "H", 1, "mc",
+    "A client who takes glipizide skipped lunch and now is diaphoretic and trembling, alert, with a glucose of 54 mg/dL. What should the nurse do first?",
+    ["Give 15 g of fast-acting carbohydrate such as 4 oz of juice and recheck in 15 minutes",
+     "Give the next scheduled dose of glipizide",
+     "Encourage the client to lie down and rest",
+     "Wait for the client to eat dinner"], 0,
+    "**Sulfonylureas stimulate the pancreas to release insulin whether or not the person eats**, so hypoglycemia is their most common side effect, especially when a meal is skipped. The client is alert and able to swallow, so follow the **Rule of 15**: 15 g of fast-acting carbohydrate, then recheck in 15 minutes.",
+    "More glipizide would lower the glucose further. Rest and waiting for dinner delay treatment and risk worsening hypoglycemia.",
+    "Sulfonylurea + skipped meal = low sugar.", "rule15");
+  q("sulfonyl", "M", 0, "sata",
+    "Which instructions should the nurse include when teaching a client who takes glimepiride? Select all that apply.",
+    ["Take the medication with a meal", "Carry a source of fast-acting carbohydrate", "Do not skip meals", "Limit or avoid alcohol", "Stop the medication when your glucose normalizes"], [0, 1, 2, 3],
+    "Because sulfonylureas keep forcing insulin release, the client must **eat regularly**, take the medication with meals, **always carry fast sugar**, and be careful with **alcohol**, which can drop glucose further. The glucose is normal because of the medication, so stopping it without guidance would make the glucose rise again.",
+    "Stopping the medication when glucose looks normal confuses the effect of treatment with a cure.",
+    "Sulfonylurea: eat on time and carry sugar.");
+
+  /* ===== INSULIN ===== */
+  q("insulin", "H", 0, "mc",
+    "A client takes NPH insulin at 0700. During which time frame is the client at highest risk for hypoglycemia?",
+    ["About 1100 to 1900", "0715 to 0800", "2100 to 0600 the next morning only", "Only immediately after the injection"], 0,
+    "NPH is an **intermediate-acting** insulin. It begins working in about 1 to 2 hours and **peaks about 4 to 12 hours** after the injection, so the risk is highest from late morning into the evening. The chart shows each insulin's onset, peak, and duration.",
+    "The first 15 to 60 minutes is too early for NPH to peak, and its action lasts up to 14 to 24 hours, not just overnight.",
+    "NPH peaks 4 to 12 hours after the dose.", "insulin");
+  q("insulin", "H", 0, "mc",
+    "The prescriber orders regular insulin 8 units and NPH insulin 20 units in one syringe. Which sequence is correct?",
+    ["Inject air into the NPH vial, inject air into the regular vial, withdraw the regular insulin, then withdraw the NPH",
+     "Withdraw the NPH first, then the regular insulin",
+     "Inject air into the regular vial only and withdraw both insulins",
+     "Roll both vials vigorously for one minute before drawing up"], 0,
+    "Draw up **clear before cloudy**. Inject air into the cloudy (NPH) vial first without touching the insulin, then inject air into the clear (regular) vial and withdraw the **regular** first, then withdraw the **NPH**. This prevents cloudy NPH from contaminating the regular insulin vial, which would change how it works. Gently roll the NPH to mix it; shaking creates bubbles and inaccurate doses.",
+    "Drawing the cloudy insulin first risks contaminating the regular vial. Vigorous mixing causes bubbles.",
+    "Clear before cloudy.");
+  q("insulin", "H", 1, "mc",
+    "A client is prescribed rapid-acting insulin lispro with meals. The client's meal tray is delayed by one hour. What should the nurse do?",
+    ["Hold the insulin until the meal tray is at the bedside",
+     "Give the insulin now and the meal later",
+     "Give the insulin now and a snack",
+     "Skip the dose entirely"], 0,
+    "**Rapid-acting insulin starts working in 10 to 30 minutes and peaks within 0.5 to 3 hours**, so food must be available to match it. Giving it without food can cause hypoglycemia. The nurse gives it when the meal is physically present (or about to be eaten).",
+    "Giving the insulin first leaves the client exposed to low glucose. Skipping the dose causes high glucose after the meal.",
+    "Rapid insulin and food go together.", "insulin");
+
+  /* ===== INSULIN COMPLICATIONS ===== */
+  q("inscomp", "H", 1, "mc",
+    "A client who uses an insulin pump has a glucose of 365 mg/dL, nausea, and abdominal discomfort. Which action should the nurse take first?",
+    ["Check the insertion site, tubing, and pump for a problem, and test for ketones",
+     "Tell the client to wait and recheck the glucose in four hours",
+     "Encourage the client to exercise to lower glucose",
+     "Remove the pump and take no further action"], 0,
+    "Pumps deliver **rapid-acting insulin only**, with no long-acting insulin in the body for backup. If the pump, tubing, or site fails, glucose can rise and **ketones can form within hours**, leading to DKA. The nurse checks for a blockage, kinks, or a dislodged cannula, checks **ketones**, and follows the plan for a correction dose and a backup injection.",
+    "Waiting four hours allows ketoacidosis to develop. Exercise with high glucose and ketones can make it worse.",
+    "Pump failure leads to DKA fast.");
+  q("inscomp", "M", 0, "mc",
+    "A client has hard, lumpy, thickened areas at the abdominal injection sites. Which teaching is most appropriate?",
+    ["Rotate injection sites within the same body area and avoid the lumps",
+     "Inject directly into the lumps for better absorption",
+     "Switch to injecting only the same spot each time",
+     "Stop insulin until the lumps go away"], 0,
+    "Repeated injections in the same spot cause **lipodystrophy**, which is an area of fat tissue change. Insulin absorbs unpredictably from these areas, causing swings in glucose. **Rotating sites** (within the same body region for consistent absorption) prevents it.",
+    "Injecting into lumps gives unreliable absorption, and stopping insulin would cause hyperglycemia.",
+    "Rotate, rotate, rotate.");
+
+  /* ===== SOMOGYI / DAWN ===== */
+  q("somdawn", "H", 1, "mc",
+    "A client has a fasting glucose of 238 mg/dL. The 3 AM glucose check is 54 mg/dL. The client takes NPH insulin at bedtime. What does the nurse anticipate?",
+    ["The provider will reduce the bedtime insulin dose or add a bedtime snack because this suggests the Somogyi effect",
+     "The provider will increase the bedtime insulin dose because this suggests the dawn phenomenon",
+     "No change is needed because the morning glucose is high",
+     "The provider will stop all insulin"], 0,
+    "A low reading at 3 AM followed by a high morning reading is the **Somogyi effect**: the glucose crashed overnight, and the body released stress hormones that pushed it back up. Raising the dose would make the overnight low worse, so the fix is usually to **lower the evening insulin** or add a snack.",
+    "The dawn phenomenon would show a normal 3 AM glucose, not a low one. Ignoring the pattern or stopping all insulin is unsafe.",
+    "3 AM low = Somogyi: less insulin, not more.", "somogyi");
+  q("somdawn", "M", 0, "mc",
+    "A client has a fasting glucose of 190 mg/dL. The 3 AM glucose is 142 mg/dL. Which condition is most likely?",
+    ["Dawn phenomenon caused by early-morning surges of growth hormone",
+     "Somogyi effect caused by nighttime hypoglycemia",
+     "Diabetic ketoacidosis",
+     "Insulin allergy"], 0,
+    "In the **dawn phenomenon**, glucose is normal or high at 3 AM and then rises toward morning because of **growth hormone and other hormones**. There was no overnight low, so the problem is not too much insulin. The evening insulin plan or timing is usually adjusted by the provider.",
+    "The Somogyi effect requires a low reading overnight. Neither DKA nor allergy is suggested by these numbers.",
+    "Somogyi = low first. Dawn = hormones at daybreak.", "somogyi");
+
+  /* ===== HYPOGLYCEMIA ===== */
+  q("hypogly", "H", 1, "mc",
+    "A client with type 1 diabetes is found unresponsive and diaphoretic, with a glucose of 38 mg/dL. The client has no IV access. Which action is the priority?",
+    ["Administer glucagon 1 mg intramuscularly or subcutaneously as prescribed",
+     "Give orange juice by mouth",
+     "Give regular insulin",
+     "Place the client on the side and wait for recovery"], 0,
+    "An unresponsive client cannot swallow safely, so **nothing is placed in the mouth** because of the risk of aspiration. **Glucagon** raises glucose by telling the liver to release stored sugar, and it can be given by injection without an IV. With IV access, 25 to 50 mL of 50% dextrose may be used instead.",
+    "Juice would be aspirated. Insulin would drop glucose even further. Waiting risks seizures, brain injury, and death.",
+    "Cannot swallow = injection, not juice.", "rule15");
+  q("hypogly", "H", 1, "order",
+    "Place the steps for treating an alert client who has symptoms of hypoglycemia in the correct order.",
+    ["Confirm the glucose is below 70 mg/dL", "Give 15 g of fast-acting carbohydrate", "Wait 15 minutes", "Recheck the blood glucose", "Give a snack or meal once glucose is back in range"], null,
+    "Confirm first, then treat. The body needs time to absorb sugar, so wait **15 minutes** before rechecking. If the glucose is still below 70, repeat the carbohydrate. Once it is back to normal, a snack or meal keeps the glucose from falling again.",
+    "",
+    "Check, treat, wait, recheck, then feed.", "rule15");
+
+  /* ===== DKA ===== */
+  q("dka", "H", 1, "mc",
+    "A client with type 1 diabetes is admitted with a glucose of 520 mg/dL, pH 7.12, bicarbonate 8 mEq/L, positive ketones, and fruity breath. Which intervention does the nurse expect to implement first?",
+    ["Start IV 0.9% sodium chloride", "Start a subcutaneous insulin injection", "Give sodium bicarbonate by IV push", "Teach about sick-day management"], 0,
+    "DKA causes severe **dehydration** from high glucose and vomiting, and the body needs fluid before anything else. **IV 0.9% sodium chloride** restores circulation and helps the kidneys remove ketones. A **continuous regular insulin infusion** follows, with potassium replaced as needed. Teaching is for later, once the client is stable.",
+    "Insulin alone without fluids can worsen dehydration, and subcutaneous insulin absorbs poorly in poorly perfused tissue. Bicarbonate is not routine.",
+    "DKA order: fluids, insulin, potassium.", "dkahhns");
+  q("dka", "M", 0, "sata",
+    "Which findings are expected in a client with DKA? Select all that apply.",
+    ["Fruity-smelling breath", "Kussmaul respirations", "Ketones in the urine", "Dehydration with dry mucous membranes", "Abdominal pain and vomiting", "A normal arterial pH"], [0, 1, 2, 3, 4],
+    "DKA happens when there is not enough insulin, so the body burns fat and makes **ketones**. Ketones make the blood acidic, so the lungs blow off CO2 with **deep, rapid Kussmaul breathing**. Acetone gives breath a **fruity smell**, and the high glucose causes dehydration and GI symptoms.",
+    "A normal pH is not expected: DKA is defined by acidosis (pH below 7.30).",
+    "DKA = ketones, Kussmaul, K+ shifts, fruity breath.", "dkahhns");
+
+  /* ===== HHNS ===== */
+  q("hhns", "M", 0, "mc",
+    "A 76-year-old with type 2 diabetes and pneumonia has a glucose of 780 mg/dL, pH 7.38, and high serum osmolality. No ketones are present. Which condition is most likely?",
+    ["Hyperosmolar hyperglycemic syndrome (HHNS)", "Diabetic ketoacidosis", "Hypoglycemia", "Somogyi effect"], 0,
+    "HHNS has **very high glucose (over 600), severe dehydration, high osmolality, a normal pH, and no ketones**. There is enough insulin to prevent ketones but not enough to control glucose. It is typical in **older adults with type 2 diabetes** who have an infection or illness.",
+    "DKA would show ketones and an acidic pH. Hypoglycemia means low glucose, and Somogyi is an overnight pattern.",
+    "HHNS: Huge glucose, Highly dehydrated, no ketones.", "dkahhns");
+  q("hhns", "H", 1, "mc",
+    "A 76-year-old client with HHNS is receiving a large volume of IV 0.9% sodium chloride. Which finding is the most concerning?",
+    ["New crackles in the lungs and shortness of breath",
+     "Urine output of 60 mL/hr",
+     "A glucose that has dropped from 780 to 610 mg/dL",
+     "Improved level of consciousness"], 0,
+    "HHNS treatment requires **a lot of IV fluid**, but older adults often have weaker hearts and kidneys. New **crackles and shortness of breath** suggest **fluid overload**, which is an urgent complication that needs the infusion reassessed and the provider notified.",
+    "Good urine output, a falling glucose, and improved alertness all show the treatment is working.",
+    "Treat dehydration, but watch for overload.", "dkahhns");
+
+  /* ===== MACRO ===== */
+  q("macro", "M", 0, "mc",
+    "Which complications are classified as macrovascular complications of diabetes?",
+    ["Stroke, coronary artery disease, and peripheral vascular disease",
+     "Retinopathy, nephropathy, and neuropathy",
+     "Diabetic ketoacidosis and HHNS",
+     "Hypoglycemia and lipodystrophy"], 0,
+    "**Macrovascular** complications damage the **medium and large blood vessels**: stroke, heart disease, and peripheral vascular disease. Preventing them means controlling glucose, **stopping smoking, controlling blood pressure and cholesterol**, exercising, and regular screening.",
+    "Retinopathy, nephropathy, and neuropathy are microvascular (small vessel). DKA and HHNS are acute complications. Hypoglycemia and lipodystrophy are treatment complications.",
+    "Macro = big vessels: brain, heart, legs.");
+
+  /* ===== MICRO ===== */
+  q("micro", "H", 1, "mc",
+    "A client with diabetes reports new floaters and a \"cobweb\" in the field of vision. What is the nurse's priority action?",
+    ["Notify the provider for an urgent ophthalmology evaluation", "Reassure the client that floaters are normal with diabetes", "Schedule the next routine eye exam", "Advise the client to rest the eyes"], 0,
+    "Sudden floaters, cobwebs, or vision changes can mean **bleeding in the eye from diabetic retinopathy**. Retinopathy is the most common cause of new adult blindness, and early treatment can save vision. This needs **prompt evaluation**, not reassurance. Annual dilated eye exams are recommended for all clients with diabetes.",
+    "Waiting for a routine exam or resting the eyes delays treatment and risks permanent vision loss.",
+    "New visual change in diabetes = urgent eye evaluation.");
+  q("micro", "H", 0, "mc",
+    "Which finding is the earliest sign of diabetic nephropathy, and what is the reason the nurse expects an ACE inhibitor or ARB to be prescribed?",
+    ["Albumin in the urine; these medicines lower blood pressure and protect the kidneys",
+     "Elevated blood urea nitrogen; these medicines lower glucose",
+     "Oliguria; these medicines prevent infection",
+     "Flank pain; these medicines treat neuropathy"], 0,
+    "High glucose damages the tiny filters in the kidneys, so protein (**albumin**) leaks into the urine first, long before kidney function drops. That is why **urine albumin and creatinine are screened yearly**. **ACE inhibitors (-pril) and ARBs (-sartan)** lower the pressure inside the filters and protect the kidneys. Diabetic nephropathy is the leading cause of end-stage renal disease.",
+    "BUN, oliguria, and flank pain appear later or are unrelated, and these medicines do not lower glucose or treat nerve pain.",
+    "Albumin first. -pril and -sartan protect.");
+
+  /* ===== NEURO ===== */
+  q("neuro", "H", 1, "mc",
+    "A client with long-standing diabetes becomes dizzy when standing and has early satiety and bloating after meals. Which nursing action is the priority?",
+    ["Teach the client to change positions slowly and implement fall precautions",
+     "Encourage the client to stand quickly to improve circulation",
+     "Increase the rate of oral intake",
+     "Recommend lying down after meals"], 0,
+    "These findings suggest **autonomic neuropathy**: nerves controlling blood pressure (orthostatic hypotension) and stomach emptying (gastroparesis) are damaged. The immediate danger is a **fall** from dizziness, so changing positions slowly and fall precautions come first. Other problems include resting tachycardia, painless heart attacks, neurogenic bladder, and sexual dysfunction.",
+    "Standing fast makes the dizziness worse. Eating more worsens bloating, and lying flat after meals can worsen reflux.",
+    "Dizzy on standing = prevent falls first.");
+  q("neuro", "H", 1, "mc",
+    "A client with diabetes has a painless red blister on the heel and says, \"It doesn't hurt, so it's probably nothing.\" Which action is the priority?",
+    ["Explain that loss of pain sensation is a sign of neuropathy, protect the area, and notify the provider promptly",
+     "Tell the client to pop the blister and apply a bandage",
+     "Reassure the client that painless blisters heal on their own",
+     "Soak the foot in warm water"], 0,
+    "**Neuropathy removes the warning sign of pain**, so injuries go unnoticed and become serious. Blood flow is also reduced, so healing is poor and infections spread. This can lead to ulcers and amputation (diabetes is the leading cause of non-traumatic amputation). Foot care teaching includes **daily inspection, proper footwear, never going barefoot, and reporting cuts or blisters within 24 hours**.",
+    "Popping a blister creates an open wound. Reassuring the client ignores the risk. Warm soaks can burn feet that cannot feel heat.",
+    "No pain does not mean no problem.");
+
+  /* ===== GERO ===== */
+  q("gero", "H", 0, "mc",
+    "Why might the provider set a less strict A1C goal for a frail 82-year-old with diabetes who lives alone?",
+    ["Hypoglycemia is more dangerous and harder to recognize in older adults, so avoiding it is a priority",
+     "Older adults do not develop diabetic complications",
+     "Older adults never need glucose monitoring",
+     "Insulin does not work in older adults"], 0,
+    "Older adults may have **changes in vision, thinking, kidney function, and activity**, and may live with other illnesses. Tight control raises the risk of **hypoglycemia, falls, and injury**, and low glucose may cause confusion rather than the usual warning signs. Goals are individualized to balance safety against complications. Also remember that **confusion may be the only sign** of hypoglycemia, HHNS, or infection.",
+    "Older adults can and do develop complications, and glucose monitoring and insulin still matter.",
+    "In older adults, avoid lows first.");
+
+  /* ===== CULTURAL ===== */
+  q("cultural", "M", 0, "mc",
+    "A nurse is teaching a client from a culture where large family meals feature rice-based dishes. Which approach is most effective?",
+    ["Ask about usual foods and meal preparation, and work with the client to adapt favorite dishes and portions",
+     "Tell the client to stop eating traditional foods",
+     "Give a standard American meal plan",
+     "Teach only about insulin and avoid discussing food"], 0,
+    "**Culture shapes food choices and meal preparation**, so cultural awareness and sensitivity are the first step in effective diabetes teaching. Asking about foods and working together to adapt favorite meals leads to a plan the client can actually follow. Tools such as the **MyPlate method** can be personalized to the client's foods.",
+    "Telling clients to abandon traditions or giving a generic plan ignores their values and usually results in poor adherence.",
+    "Start with the client's plate, not the textbook's.");
+
+  window.QUESTIONS = Q;
+})();
+
+</script>
+<script>
+(function () {
+  "use strict";
+
+  var CFG = window.CFG;
+  var BANK = window.QUESTIONS || [];
+  var STORE_KEY = "nur285-nclex-" + CFG.key + "-v1";
+  var SECONDS_PER_QUESTION = 90;
+  var STRIP_MAX = 40;
+  var app = document.getElementById("app");
+
+  var groupById = {}, subById = {};
+  CFG.groups.forEach(function (g) { groupById[g.id] = g; });
+  CFG.subs.forEach(function (s) { subById[s.id] = s; });
+  BANK.forEach(function (q) { q.topic = subById[q.sub].group; });
+
+  /* ---------- helpers ---------- */
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function fmt(s) {
+    return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").split("\n").map(function (p) { return "<p>" + p + "</p>"; }).join("");
+  }
+  function shuffle(a) {
+    var r = a.slice();
+    for (var i = r.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = r[i]; r[i] = r[j]; r[j] = t;
+    }
+    return r;
+  }
+  function range(n) { var r = []; for (var i = 0; i < n; i++) r.push(i); return r; }
+  function norm(s) {
+    return String(s).toLowerCase().replace(/[\u2013\u2014]/g, "-").replace(/\s*-\s*/g, "-").replace(/\s+/g, " ").replace(/\.$/, "").trim();
+  }
+  function fmtTime(sec) {
+    sec = Math.max(0, sec);
+    var m = Math.floor(sec / 60), s = sec % 60;
+    return m + ":" + (s < 10 ? "0" : "") + s;
+  }
+
+  /* ---------- saved progress ---------- */
+  function loadProgress() {
+    try { return JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); } catch (e) { return {}; }
+  }
+  var progress = loadProgress();
+  function saveProgress() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(progress)); } catch (e) { /* unavailable */ }
+  }
+  function rec(id) {
+    if (!progress[id]) progress[id] = { seen: 0, right: 0, last: null, flag: false };
+    return progress[id];
+  }
+
+  /* ---------- grading ---------- */
+  function evaluate(item) {
+    var q = item.q, r = item.resp;
+    if (q.type === "mc") return r === q.a;
+    if (q.type === "sata") {
+      if (!r || r.length !== q.a.length) return false;
+      return q.a.every(function (i) { return r.indexOf(i) !== -1; });
+    }
+    if (q.type === "fill") {
+      var v = norm(r || "");
+      return v !== "" && q.a.some(function (x) { return norm(x) === v; });
+    }
+    return r.every(function (v2, i) { return v2 === i; });
+  }
+  function isAnswered(item) {
+    var q = item.q, r = item.resp;
+    if (q.type === "mc") return r !== null;
+    if (q.type === "sata") return r.length > 0;
+    if (q.type === "fill") return String(r).trim() !== "";
+    return !!item.touched;
+  }
+  function makeItem(q) {
+    var item = { q: q, checked: false, correct: null, flagged: !!(progress[q.id] && progress[q.id].flag), recorded: false };
+    if (q.type === "mc") { item.resp = null; item.shown = shuffle(range(q.opts.length)); }
+    else if (q.type === "sata") { item.resp = []; item.shown = shuffle(range(q.opts.length)); }
+    else if (q.type === "fill") { item.resp = ""; }
+    else {
+      var p = shuffle(range(q.opts.length));
+      if (p.every(function (v, i) { return v === i; })) p.push(p.shift());
+      item.resp = p;
+    }
+    return item;
+  }
+  function correctText(q) {
+    if (q.type === "mc") return q.opts[q.a];
+    if (q.type === "sata") return q.a.map(function (i) { return q.opts[i]; }).join("; ");
+    if (q.type === "fill") return q.a[0];
+    return q.opts.map(function (t, i) { return (i + 1) + ". " + t; }).join(" ");
+  }
+  function respText(item) {
+    var q = item.q, r = item.resp;
+    if (q.type === "mc") return r === null ? "No answer" : q.opts[r];
+    if (q.type === "sata") return r.length ? r.slice().sort(function (a, b) { return a - b; }).map(function (i) { return q.opts[i]; }).join("; ") : "No answer";
+    if (q.type === "fill") return String(r).trim() === "" ? "No answer" : r;
+    return r.map(function (i, n) { return (n + 1) + ". " + q.opts[i]; }).join(" ");
+  }
+  function record(item) {
+    if (item.recorded) return;
+    item.recorded = true;
+    var p = rec(item.q.id);
+    p.seen += 1;
+    if (item.correct) p.right += 1;
+    p.last = !!item.correct;
+  }
+
+  /* ---------- coverage stats ---------- */
+  function subStats() {
+    var out = {};
+    CFG.subs.forEach(function (s) { out[s.id] = { total: 0, seen: 0, attempts: 0, right: 0 }; });
+    BANK.forEach(function (q) {
+      var s = out[q.sub];
+      s.total += 1;
+      var p = progress[q.id];
+      if (p && p.seen) { s.seen += 1; s.attempts += p.seen; s.right += p.right; }
+    });
+    return out;
+  }
+  function counts() {
+    var missed = 0, flagged = 0, pri = 0, hard = 0;
+    BANK.forEach(function (q) {
+      var p = progress[q.id];
+      if (p && p.last === false) missed++;
+      if (p && p.flag) flagged++;
+      if (q.pri) pri++;
+      if (q.diff === "hard") hard++;
+    });
+    return { missed: missed, flagged: flagged, pri: pri, hard: hard };
+  }
+
+  /* ---------- state ---------- */
+  var S = null, timerId = null;
+  function stopTimer() { if (timerId) { clearInterval(timerId); timerId = null; } }
+
+  /* ---------- home ---------- */
+  function renderHome() {
+    stopTimer();
+    S = null;
+    var st = subStats(), c = counts();
+    var h = "<h2>" + esc(CFG.title) + "</h2>";
+    h += '<p class="lede">' + BANK.length + " medium and hard NCLEX-style questions (" + c.pri + " priority-based). " + esc(CFG.blurb) + "</p>";
+
+    h += '<form id="setup" class="panel" aria-label="Session setup"><fieldset><legend>Mode</legend><div class="modes">';
+    h += modeCard("study", "Study", "One question at a time with a full explanation right after you answer.", true);
+    h += modeCard("exam", "Exam", "Timed, no feedback until you submit. Scored out of 100.", false);
+    h += modeCard("marathon", "Marathon", "Every question in your scope, with feedback. Stop whenever you like.", false);
+    h += "</div></fieldset><h3>Focus areas</h3><div class=\"topics\">";
+    CFG.groups.forEach(function (g) {
+      var n = BANK.filter(function (q) { return q.topic === g.id; }).length;
+      h += '<label class="chip"><input type="checkbox" name="topic" value="' + g.id + '" checked> ' + esc(g.label) + " <em>" + n + "</em></label>";
+    });
+    h += '</div><div class="row"><label>Questions <select name="count"><option value="10">10</option><option value="20" selected>20</option><option value="30">30</option><option value="all">All</option></select></label>';
+    h += '<label>Include <select name="filter"><option value="all">All questions</option><option value="priority">Priority questions only (' + c.pri + ')</option><option value="hard">Hard only (' + c.hard + ')</option><option value="unseen">Not yet answered</option><option value="missed">Missed last time (' + c.missed + ')</option><option value="flagged">Flagged (' + c.flagged + ")</option></select></label></div>";
+    h += '<div class="actions"><button class="btn" type="submit">Start</button><span id="setupMsg" role="status" class="empty"></span></div></form>';
+
+    h += '<section class="panel" aria-labelledby="covTitle"><h3 id="covTitle">Blueprint coverage</h3><p class="hint cov-note">Every sub-topic from your Exam 1 study guide has at least one question. Numbers show how many you have tried.</p><div class="bars">';
+    CFG.subs.forEach(function (s) {
+      var x = st[s.id];
+      var acc = x.attempts ? Math.round((x.right / x.attempts) * 100) : null;
+      var cls = acc === null ? "" : acc >= 80 ? "hi" : acc >= 60 ? "mid" : "low";
+      var cover = x.total ? Math.round((x.seen / x.total) * 100) : 0;
+      h += '<div class="bar-row"><span>' + esc(s.label) + '</span><div class="bar" role="img" aria-label="' + cover + ' percent attempted"><i class="' + cls + '" style="width:' + cover + '%"></i></div><span class="num">' +
+        x.seen + "/" + x.total + (acc === null ? "" : " &middot; " + acc + "%") + "</span></div>";
+    });
+    h += '</div><div class="actions"><button class="linkbtn" id="resetBtn" type="button">Reset saved progress</button></div></section>';
+    app.innerHTML = h;
+    document.getElementById("setup").addEventListener("submit", onStart);
+    document.getElementById("resetBtn").addEventListener("click", function () {
+      if (window.confirm("Clear all saved answers, accuracy, and flags for this chapter?")) { progress = {}; saveProgress(); renderHome(); }
+    });
+  }
+  function modeCard(id, title, desc, checked) {
+    return '<label class="mode"><input type="radio" name="mode" value="' + id + '"' + (checked ? " checked" : "") + "><strong>" + title + "</strong><span>" + desc + "</span></label>";
+  }
+  function onStart(e) {
+    e.preventDefault();
+    var f = e.target;
+    var topics = Array.prototype.slice.call(f.querySelectorAll('input[name="topic"]:checked')).map(function (x) { return x.value; });
+    var mode = f.querySelector('input[name="mode"]:checked').value;
+    var count = f.elements.count.value, filter = f.elements.filter.value;
+    var msg = document.getElementById("setupMsg");
+    if (!topics.length) { msg.textContent = "Choose at least one focus area."; return; }
+    var pool = BANK.filter(function (q) {
+      if (topics.indexOf(q.topic) === -1) return false;
+      var p = progress[q.id];
+      if (filter === "priority") return q.pri;
+      if (filter === "hard") return q.diff === "hard";
+      if (filter === "unseen") return !p || !p.seen;
+      if (filter === "missed") return p && p.last === false;
+      if (filter === "flagged") return p && p.flag;
+      return true;
+    });
+    if (!pool.length) { msg.textContent = "No questions match those choices. Try a different filter or focus area."; return; }
+    startSession(mode, pool, count);
+  }
+
+  /* ---------- session ---------- */
+  function startSession(mode, pool, count) {
+    var qs = shuffle(pool);
+    if (mode !== "marathon" && count !== "all") qs = qs.slice(0, parseInt(count, 10));
+    S = { mode: mode, items: qs.map(makeItem), i: 0, started: Date.now(), limit: mode === "exam" ? qs.length * SECONDS_PER_QUESTION : 0, finished: false };
+    renderQuiz();
+    if (S.limit) { stopTimer(); timerId = setInterval(tick, 1000); }
+    window.scrollTo(0, 0);
+  }
+  function remaining() { return S.limit - Math.floor((Date.now() - S.started) / 1000); }
+  function tick() {
+    if (!S || S.finished) { stopTimer(); return; }
+    var left = remaining(), el = document.getElementById("timer");
+    if (el) { el.textContent = fmtTime(left); el.classList.toggle("low", left <= 60); }
+    if (left <= 0) finish(true);
+  }
+
+  function stripHtml() {
+    var n = S.items.length;
+    if (n > STRIP_MAX) {
+      var done = S.items.filter(function (it) { return S.mode === "exam" ? isAnswered(it) : it.checked; }).length;
+      return '<div class="plainbar" role="progressbar" aria-valuemin="0" aria-valuemax="' + n + '" aria-valuenow="' + done + '" aria-label="Questions answered"><i style="width:' + Math.round((done / n) * 100) + '%"></i></div>';
+    }
+    var h = '<div class="strip" role="group" aria-label="Question progress">';
+    S.items.forEach(function (it, idx) {
+      var cls = "beat";
+      if (S.mode !== "exam" && it.checked) cls += it.correct ? " right" : " wrong";
+      else if (S.mode === "exam" && isAnswered(it)) cls += " seen";
+      if (it.flagged) cls += " flagged";
+      if (idx === S.i) cls += " current";
+      h += '<button type="button" class="' + cls + '" data-go="' + idx + '" aria-label="Question ' + (idx + 1) + (it.flagged ? ", flagged" : "") + (idx === S.i ? ", current" : "") + '"><svg viewBox="0 0 28 30" aria-hidden="true"><path d="M0 20 H8 L10 17 L12 20 H14 L16 4 L19 26 L21 20 H24 L26 18 L28 20"/></svg></button>';
+    });
+    return h + "</div>";
+  }
+  function bindStrip() {
+    document.querySelectorAll("[data-go]").forEach(function (b) {
+      b.addEventListener("click", function () { S.i = parseInt(b.dataset.go, 10); renderQuiz(); window.scrollTo(0, 0); });
+    });
+  }
+  function refreshStrip() {
+    var el = document.getElementById("stripHost");
+    if (el) { el.innerHTML = stripHtml(); bindStrip(); }
+  }
+
+  function badges(q) {
+    var h = '<span class="badge ' + (q.diff === "hard" ? "hard" : "med") + '">' + (q.diff === "hard" ? "Hard" : "Medium") + "</span>";
+    if (q.pri) h += '<span class="badge pri">Priority</span>';
+    return h;
+  }
+  function feedbackHtml(it, ok) {
+    var q = it.q, h = '<div class="feedback ' + (ok ? "right" : "wrong") + '" role="status"><strong>' + (ok ? "Correct" : "Not quite") + "</strong>";
+    if (!ok) h += '<p><b>Correct answer:</b> ' + esc(correctText(q)) + "</p>";
+    h += '<h4>Why this is the answer</h4>' + fmt(q.r);
+    if (q.vis && CFG.visuals[q.vis]) h += '<figure class="vis">' + CFG.visuals[q.vis]() + "</figure>";
+    if (q.w) h += "<h4>Why the other choices do not fit</h4>" + fmt(q.w);
+    if (q.tip) h += '<p class="tip"><b>Remember:</b> ' + esc(q.tip) + "</p>";
+    h += '<p class="ref">Sub-topic: ' + esc(subById[q.sub].label) + "</p></div>";
+    return h;
+  }
+
+  function renderQuiz(focusSel) {
+    var it = S.items[S.i], q = it.q;
+    var showFB = it.checked && S.mode !== "exam";
+    var h = '<div id="stripHost">' + stripHtml() + "</div>";
+    h += '<section class="panel' + (showFB ? " locked" : "") + '"><div class="meta"><span>Question ' + (S.i + 1) + " of " + S.items.length + "</span>" + badges(q);
+    if (S.limit) h += '<span class="timer" id="timer" role="timer">' + fmtTime(remaining()) + "</span>";
+    h += "</div>";
+    h += '<p class="stem" id="stem">' + esc(q.q) + "</p>";
+    if (q.type === "sata") h += '<p class="hint">Select all that apply.</p>';
+    if (q.type === "order") h += '<p class="hint">Use the arrows to put the steps in the correct order, first at the top.</p>';
+    if (q.type === "fill") h += '<p class="hint">Type your answer.</p>';
+    if (q.type === "mc" || q.type === "sata") h += optionsHtml(it, showFB);
+    else if (q.type === "fill") {
+      var cls = showFB ? (it.correct ? " right" : " wrong") : "";
+      h += '<input class="fill' + cls + '" id="fillBox" type="text" autocomplete="off" aria-labelledby="stem" value="' + esc(it.resp) + '"' + (showFB ? " disabled" : "") + ">";
+    } else h += orderHtml(it, showFB);
+    if (showFB) h += feedbackHtml(it, it.correct);
+
+    h += '<div class="actions"><button class="btn ghost" type="button" id="prevBtn"' + (S.i === 0 ? " disabled" : "") + ">Previous</button>";
+    if (S.mode !== "exam" && !it.checked) h += '<button class="btn" type="button" id="checkBtn"' + (isAnswered(it) ? "" : " disabled") + ">Check answer</button>";
+    else if (S.i < S.items.length - 1) h += '<button class="btn" type="button" id="nextBtn">Next question</button>';
+    else h += '<button class="btn" type="button" id="finishBtn">' + (S.mode === "exam" ? "Submit exam" : "See results") + "</button>";
+    h += '<button class="btn ghost" type="button" id="flagBtn" aria-pressed="' + it.flagged + '">' + (it.flagged ? "Unflag" : "Flag for review") + "</button><span class=\"spacer\"></span>";
+    if (S.mode === "exam" && S.i < S.items.length - 1) h += '<button class="btn ghost" type="button" id="finishBtn">Submit exam</button>';
+    else if (S.mode !== "exam") h += '<button class="btn ghost" type="button" id="finishBtn2">End session</button>';
+    h += "</div></section>";
+    app.innerHTML = h;
+    bindQuiz();
+    if (focusSel) { var f = document.querySelector(focusSel); if (f) f.focus(); }
+  }
+
+  function optionsHtml(it, showFB) {
+    var q = it.q, h = '<ul class="opts" role="group" aria-labelledby="stem">';
+    it.shown.forEach(function (oi) {
+      var chosen = q.type === "mc" ? it.resp === oi : it.resp.indexOf(oi) !== -1;
+      var isRight = q.type === "mc" ? q.a === oi : q.a.indexOf(oi) !== -1;
+      var cls = "opt", mark = "";
+      if (showFB) {
+        if (chosen && isRight) { cls += " right"; mark = "Correct"; }
+        else if (chosen && !isRight) { cls += " wrong"; mark = "Incorrect"; }
+        else if (!chosen && isRight) { cls += " missed"; mark = "Correct answer"; }
+      }
+      h += '<li><label class="' + cls + '"><input type="' + (q.type === "mc" ? "radio" : "checkbox") + '" name="opt" value="' + oi + '"' + (chosen ? " checked" : "") + (showFB ? " disabled" : "") + "><span>" + esc(q.opts[oi]) + "</span>" + (mark ? '<span class="mark">' + mark + "</span>" : "") + "</label></li>";
+    });
+    return h + "</ul>";
+  }
+  function orderHtml(it, showFB) {
+    var q = it.q, h = '<ol class="seq">';
+    it.resp.forEach(function (oi, pos) {
+      var cls = showFB ? (oi === pos ? "right" : "wrong") : "";
+      h += '<li class="' + cls + '"><span class="pos">' + (pos + 1) + '</span><span class="txt">' + esc(q.opts[oi]) + "</span>";
+      if (!showFB) {
+        h += '<button type="button" data-move="up" data-pos="' + pos + '" aria-label="Move up"' + (pos === 0 ? " disabled" : "") + ">&uarr;</button>";
+        h += '<button type="button" data-move="down" data-pos="' + pos + '" aria-label="Move down"' + (pos === it.resp.length - 1 ? " disabled" : "") + ">&darr;</button>";
+      }
+      h += "</li>";
+    });
+    return h + "</ol>";
+  }
+
+  function bindQuiz() {
+    var it = S.items[S.i], q = it.q;
+    var on = function (id, fn) { var el = document.getElementById(id); if (el) el.addEventListener("click", fn); };
+    bindStrip();
+    document.querySelectorAll('input[name="opt"]').forEach(function (inp) {
+      inp.addEventListener("change", function () {
+        var v = parseInt(inp.value, 10);
+        if (q.type === "mc") it.resp = v;
+        else {
+          var idx = it.resp.indexOf(v);
+          if (inp.checked && idx === -1) it.resp.push(v);
+          if (!inp.checked && idx !== -1) it.resp.splice(idx, 1);
+        }
+        afterAnswerChange();
+      });
+    });
+    var fb = document.getElementById("fillBox");
+    if (fb) {
+      fb.addEventListener("input", function () { it.resp = fb.value; afterAnswerChange(); });
+      fb.addEventListener("keydown", function (e) { if (e.key === "Enter" && S.mode !== "exam") { e.preventDefault(); doCheck(); } });
+    }
+    document.querySelectorAll("[data-move]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var pos = parseInt(b.dataset.pos, 10), to = b.dataset.move === "up" ? pos - 1 : pos + 1;
+        var t = it.resp[pos]; it.resp[pos] = it.resp[to]; it.resp[to] = t;
+        it.touched = true;
+        afterAnswerChange();
+        renderQuiz('[data-move="' + b.dataset.move + '"][data-pos="' + to + '"]');
+      });
+    });
+    on("prevBtn", function () { S.i -= 1; renderQuiz(); window.scrollTo(0, 0); });
+    on("nextBtn", function () { S.i += 1; renderQuiz(); window.scrollTo(0, 0); });
+    on("checkBtn", doCheck);
+    on("flagBtn", function () {
+      it.flagged = !it.flagged;
+      rec(q.id).flag = it.flagged;
+      saveProgress();
+      renderQuiz("#flagBtn");
+    });
+    on("finishBtn", confirmFinish);
+    on("finishBtn2", confirmFinish);
+  }
+  function afterAnswerChange() {
+    var it = S.items[S.i], btn = document.getElementById("checkBtn");
+    if (btn) btn.disabled = !isAnswered(it);
+    if (S.mode === "exam") refreshStrip();
+  }
+  function doCheck() {
+    var it = S.items[S.i];
+    if (!isAnswered(it) || it.checked) return;
+    it.checked = true;
+    it.correct = evaluate(it);
+    record(it);
+    saveProgress();
+    renderQuiz("#nextBtn, #finishBtn");
+    var fbEl = document.querySelector(".feedback");
+    if (fbEl && fbEl.scrollIntoView) fbEl.scrollIntoView({ block: "nearest" });
+  }
+  function confirmFinish() {
+    var un = S.items.filter(function (x) { return S.mode === "exam" ? !isAnswered(x) : !x.checked; }).length;
+    var msg = S.mode === "exam" ? (un ? "You have " + un + " unanswered question(s). Submit the exam anyway?" : "Submit the exam?") : "End this session and see your results?";
+    if (window.confirm(msg)) finish(false);
+  }
+
+  /* ---------- results ---------- */
+  function finish(timedOut) {
+    stopTimer();
+    S.finished = true; S.timedOut = !!timedOut;
+    S.elapsed = Math.floor((Date.now() - S.started) / 1000);
+    S.items.forEach(function (it) {
+      if (S.mode === "exam" && !it.checked) {
+        it.checked = true;
+        it.correct = isAnswered(it) ? evaluate(it) : false;
+        record(it);
+      }
+    });
+    saveProgress();
+    renderResults();
+    window.scrollTo(0, 0);
+  }
+  function renderResults() {
+    var counted = S.items.filter(function (it) { return it.checked; });
+    var right = counted.filter(function (it) { return it.correct; }).length;
+    var total = S.mode === "exam" ? S.items.length : counted.length;
+    var pct = total ? Math.round((right / total) * 100) : 0;
+    var h = "<h2>" + (S.mode === "exam" ? "Exam results" : "Session results") + "</h2>";
+    if (S.timedOut) h += '<p class="lede">Time ran out, so unanswered questions were scored as incorrect.</p>';
+    h += '<section class="panel"><div class="score"><span class="big">' + pct + "%</span><span>" + right + " of " + total + " correct" + (S.mode === "exam" ? " &middot; " + pct + " / 100 points" : "") + " &middot; " + fmtTime(S.elapsed) + "</span></div>";
+    if (!total) h += '<p class="empty">You ended the session before checking any answers.</p>';
+    var pc = counted.filter(function (it) { return it.q.pri; });
+    if (pc.length) h += "<p>Priority questions: " + pc.filter(function (it) { return it.correct; }).length + " of " + pc.length + " correct.</p>";
+    var by = {};
+    counted.forEach(function (it) { var t = it.q.topic; by[t] = by[t] || { n: 0, r: 0 }; by[t].n++; if (it.correct) by[t].r++; });
+    var keys = Object.keys(by);
+    if (keys.length) {
+      h += '<h3>By focus area</h3><div class="bars">';
+      keys.forEach(function (k) {
+        var s = by[k], a = Math.round((s.r / s.n) * 100), cls = a >= 80 ? "hi" : a >= 60 ? "mid" : "low";
+        h += '<div class="bar-row"><span>' + esc(groupById[k].label) + '</span><div class="bar" role="img" aria-label="' + a + ' percent correct"><i class="' + cls + '" style="width:' + a + '%"></i></div><span class="num">' + s.r + "/" + s.n + " &middot; " + a + "%</span></div>";
+      });
+      h += "</div>";
+    }
+    var missed = counted.filter(function (it) { return !it.correct; });
+    h += '<div class="actions">';
+    if (missed.length) h += '<button class="btn" type="button" id="retryBtn">Retry ' + missed.length + " missed in Study mode</button>";
+    h += '<button class="btn ghost" type="button" id="homeBtn">Back to setup</button></div></section>';
+    h += '<h3>Review every question</h3><div class="review">';
+    S.items.forEach(function (it, i) {
+      var q = it.q;
+      h += "<details" + (it.checked && !it.correct ? " open" : "") + '><summary><span class="' + (it.correct ? "ok" : "no") + '">' + (it.correct ? "Correct" : "Missed") + "</span><span>" + (i + 1) + ". " + esc(q.q) + '</span></summary><div class="body">';
+      h += "<p><b>Your answer:</b> " + esc(it.checked || S.mode === "exam" ? respText(it) : "Not answered") + "</p>";
+      h += feedbackHtml(it, it.correct).replace(' role="status"', "") + "</div></details>";
+    });
+    app.innerHTML = h + "</div>";
+    var rb = document.getElementById("retryBtn");
+    if (rb) rb.addEventListener("click", function () { startSession("study", missed.map(function (it) { return it.q; }), "all"); });
+    document.getElementById("homeBtn").addEventListener("click", renderHome);
+  }
+
+  document.getElementById("homeLink").addEventListener("click", function () {
+    if (S && !S.finished && !window.confirm("Leave this session? Unchecked answers will be lost.")) return;
+    renderHome();
+  });
+  renderHome();
+})();
+
+</script>
+</body>
+</html>
